@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infrastructure & Learning Resources - GM University</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* CSS Variables */
+    :root {
+      --primary: #0f172a;
+      --primary-light: #1e293b;
+      --secondary: #111827;
+      --accent: #3b82f6;
+      --accent-light: #60a5fa;
+      --accent-dark: #1d4ed8;
+      --purple: #8b5cf6;
+      --purple-light: #a78bfa;
+      --purple-dark: #7c3aed;
+      --text: #0f172a;
+      --text-light: #f8fafc;
+      --text-muted: #64748b;
+      --text-secondary: #475569;
+      --bg: #ffffff;
+      --bg-secondary: #f8fafc;
+      --bg-accent: #eff6ff;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+      --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+      --border-radius: 16px;
+      --border-radius-lg: 24px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      --container: min(95vw, 1600px);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    /* Fallback for backdrop-filter */
+    .no-backdrop-filter {
+      background: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      transition: var(--transition);
+    }
+
+    .navbar.scrolled {
+      background: rgba(15, 23, 42, 0.95);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .nav-inner {
+      width: var(--container);
+      margin: 0 auto;
+      padding: 0.85rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 900;
+      font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+      font-family: "Playfair Display", serif;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: var(--transition);
+    }
+
+    .brand:hover {
+      transform: scale(1.05);
+    }
+
+    .brand img {
+      height: 40px;
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+    }
+
+    .brand-text {
+      font-size: clamp(1rem, 1.8vw, 1.3rem);
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--accent), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .menu-btn {
+      display: none;
+      background: transparent;
+      border: 0;
+      color: var(--text-light);
+      font-size: 1.6rem;
+      padding: 0.35rem 0.6rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .menu-btn:hover {
+      transform: rotate(90deg);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .nav-links a, .nav-links .dropdown-btn {
+      padding: 0.55rem 0.9rem;
+      color: rgba(248, 250, 252, 0.92);
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-links a:hover, .nav-links .dropdown-btn:hover {
+      color: var(--text-light);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links a::after, .nav-links .dropdown-btn::after {
+      content: "";
+      position: absolute;
+      left: 0.9rem;
+      right: 0.9rem;
+      bottom: 6px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--purple));
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-links a:hover::after, .nav-links a.active::after, .nav-links .dropdown-btn:hover::after {
+      transform: scaleX(1);
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: rgba(15, 23, 42, 0.98);
+      border-radius: 0.75rem;
+      box-shadow: var(--shadow-lg);
+      min-width: 200px;
+      z-index: 10;
+      overflow: hidden;
+      transition: var(--transition);
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.85rem 1.5rem;
+      color: rgba(248, 250, 252, 0.92);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .dropdown-content a:hover {
+      background: linear-gradient(90deg, var(--accent), var(--purple));
+      color: var(--text-light);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 60vh;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3b5998 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 60px 0;
+      margin-top: 60px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><rect width="80" height="80" fill="none"/><g opacity="0.1"><line x1="0" y1="0" x2="80" y2="0" stroke="white" stroke-width="0.5"/><line x1="0" y1="10" x2="80" y2="10" stroke="white" stroke-width="0.5"/><line x1="0" y1="20" x2="80" y2="20" stroke="white" stroke-width="0.5"/><line x1="0" y1="30" x2="80" y2="30" stroke="white" stroke-width="0.5"/><line x1="0" y1="40" x2="80" y2="40" stroke="white" stroke-width="0.5"/><line x1="0" y1="50" x2="80" y2="50" stroke="white" stroke-width="0.5"/><line x1="0" y1="60" x2="80" y2="60" stroke="white" stroke-width="0.5"/><line x1="0" y1="70" x2="80" y2="70" stroke="white" stroke-width="0.5"/><line x1="0" y1="80" x2="80" y2="80" stroke="white" stroke-width="0.5"/><line x1="0" y1="0" x2="0" y2="80" stroke="white" stroke-width="0.5"/><line x1="10" y1="0" x2="10" y2="80" stroke="white" stroke-width="0.5"/><line x1="20" y1="0" x2="20" y2="80" stroke="white" stroke-width="0.5"/><line x1="30" y1="0" x2="30" y2="80" stroke="white" stroke-width="0.5"/><line x1="40" y1="0" x2="40" y2="80" stroke="white" stroke-width="0.5"/><line x1="50" y1="0" x2="50" y2="80" stroke="white" stroke-width="0.5"/><line x1="60" y1="0" x2="60" y2="80" stroke="white" stroke-width="0.5"/><line x1="70" y1="0" x2="70" y2="80" stroke="white" stroke-width="0.5"/><line x1="80" y1="0" x2="80" y2="80" stroke="white" stroke-width="0.5"/></g></svg>');
+      background-size: clamp(30px, 6vw, 60px);
+      animation: gridMove 20s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes gridMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 80px 80px; }
+    }
+
+    .hero-content {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      animation: slideDown 0.8s ease-out;
+    }
+
+    .hero-text p {
+      font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      animation: slideUp 0.8s ease-out 0.2s both;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--text-light);
+      padding: 12px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: var(--transition);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-cta:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      transform: perspective(800px) rotateY(-5deg) rotateX(3deg);
+      box-shadow: var(--shadow-xl);
+      transition: var(--transition);
+    }
+
+    .hero-card:hover {
+      transform: perspective(800px) rotateY(0deg) rotateX(0deg) scale(1.01);
+    }
+
+    /* Sections */
+    .section {
+      padding: 6rem 1.5rem;
+      position: relative;
+    }
+
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 150px;
+      background: linear-gradient(180deg, var(--bg-accent) 0%, transparent 100%);
+      z-index: -1;
+    }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Program Cards */
+    .program-showcase {
+      display: grid;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .program-hero-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition);
+    }
+
+    .program-hero-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--purple) 50%, var(--accent) 100%);
+      background-size: 200% 100%;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    .program-hero-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .program-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .program-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
+      border-radius: var(--border-radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--text-light);
+      box-shadow: var(--shadow);
+    }
+
+    .program-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text);
+      font-family: "Plus Jakarta Sans", sans-serif;
+    }
+
+    .program-description {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Collapsible Program Boxes */
+    .program-box {
+      background: var(--bg);
+      border: 2px solid transparent;
+      border-image: linear-gradient(90deg, var(--accent), var(--purple), var(--accent)) 1;
+      border-image-slice: 1;
+      animation: borderShimmer 4s ease-in-out infinite;
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    @keyframes borderShimmer {
+      0% { border-image-source: linear-gradient(90deg, var(--accent), var(--purple), var(--accent)); background-position: -200% 0; }
+      100% { border-image-source: linear-gradient(90deg, var(--accent), var(--purple), var(--accent)); background-position: 200% 0; }
+    }
+
+    .program-box:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+      border-image: linear-gradient(90deg, var(--accent-light), var(--purple-light)) 1;
+    }
+
+    .program-box h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+      font-family: "Plus Jakarta Sans", sans-serif;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .program-box .summary {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .program-box .details-content {
+      max-height: 100px;
+      overflow: hidden;
+      transition: max-height 0.5s ease-in-out;
+    }
+
+    .program-box .details-content.expanded {
+      max-height: 1000px;
+    }
+
+    .program-box .details-content .full-description {
+      display: none;
+    }
+
+    .program-box .details-content.expanded .full-description {
+      display: block;
+    }
+
+    .view-more-btn {
+      background: linear-gradient(90deg, var(--accent), var(--purple));
+      color: var(--text-light);
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0 auto;
+    }
+
+    .view-more-btn:hover {
+      background: linear-gradient(90deg, var(--accent-light), var(--purple-light));
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Infrastructure Table */
+    .infrastructure-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      overflow: hidden;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-lg);
+      margin-top: 2rem;
+    }
+
+    .infrastructure-table thead th {
+      background: linear-gradient(90deg, var(--accent), var(--purple));
+      color: var(--text-light);
+      padding: 1rem;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .infrastructure-table tbody tr:nth-child(even) {
+      background: var(--bg-secondary);
+    }
+
+    .infrastructure-table tbody tr:hover {
+      background: var(--bg-accent);
+    }
+
+    .infrastructure-table td {
+      padding: 1rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
+      color: var(--text-light);
+      padding: 2rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top center, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+      opacity: 0.6;
+      z-index: -1;
+    }
+
+    .footer-inner {
+      width: min(90vw, 1000px);
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .footer-grid, .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      align-items: start;
+      margin-bottom: 1rem;
+    }
+
+    .fcol {
+      padding: 0.6rem;
+      transition: var(--transition);
+    }
+
+    .fcol:hover {
+      transform: translateY(-3px);
+    }
+
+    .fcol h4 {
+      margin: 0 0 0.6rem;
+      color: var(--accent);
+      font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+      font-weight: 800;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      padding-bottom: 0.4rem;
+    }
+
+    .fcol p, .fcol a {
+      font-size: clamp(0.75rem, 0.9vw, 0.9rem);
+      color: rgba(248, 250, 252, 0.9);
+      text-decoration: none;
+      margin: 0.4rem 0;
+      display: block;
+      transition: var(--transition);
+    }
+
+    .fcol a:hover {
+      color: var(--purple);
+      transform: translateX(3px);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 0.8rem;
+      margin: 0.6rem 0;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      color: var(--text-light);
+      font-size: clamp(1rem, 1.4vw, 1.2rem);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      color: var(--purple);
+      transform: scale(1.1);
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 1rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      position: relative;
+    }
+
+    .footer-bottom::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--purple));
+      border-radius: 999px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .hero {
+        min-height: 50vh;
+        padding: 40px 0;
+        margin-top: 50px;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+      }
+
+      .hero-text h1 {
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+      }
+
+      .hero-text p {
+        font-size: clamp(0.85rem, 1.6vw, 1rem);
+      }
+
+      .hero-card {
+        padding: 1rem;
+      }
+
+      .menu-btn {
+        display: inline-block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        background: rgba(15, 23, 42, 0.98);
+        padding: 0.5rem;
+        gap: 0.15rem;
+        border-bottom-left-radius: 0.75rem;
+        border-bottom-right-radius: 0.75rem;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a, .nav-links .dropdown-btn {
+        padding: 0.85rem 1rem;
+        text-align: center;
+      }
+
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background: transparent;
+        padding-left: 0;
+      }
+
+      .dropdown-content a {
+        padding: 0.6rem 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 40vh;
+        padding: 30px 0;
+        margin-top: 40px;
+      }
+
+      .hero-text h1 {
+        font-size: clamp(1.4rem, 2.8vw, 1.8rem);
+      }
+
+      .hero-text p {
+        font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+      }
+
+      .hero-cta {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+
+      .hero-card {
+        padding: 0.8rem;
+      }
+
+      .program-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+      }
+
+      .section {
+        padding: 4rem 1rem;
+      }
+
+      .section-title {
+        font-size: clamp(1.6rem, 3vw, 2rem);
+      }
+
+      .section-subtitle {
+        font-size: 1rem;
+      }
+
+      .program-box {
+        padding: 1rem;
+      }
+
+      .infrastructure-table th, .infrastructure-table td {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+      }
+
+      .program-box .details-content {
+        max-height: 150px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        min-height: 35vh;
+        padding: 20px 0;
+        margin-top: 30px;
+      }
+
+      .hero-content {
+        padding: 0 0.8rem;
+      }
+
+      .hero-text h1 {
+        font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+      }
+
+      .hero-text p {
+        font-size: clamp(0.75rem, 1.2vw, 0.85rem);
+      }
+
+      .hero-cta {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+      }
+
+      .nav-inner {
+        padding: 0.5rem 0.8rem;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .brand {
+        font-size: clamp(1rem, 4vw, 1.25rem);
+      }
+
+      .brand img {
+        height: 30px;
+      }
+
+      .footer-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 0.8rem;
+      }
+
+      .fcol a:hover {
+        transform: none;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .program-box {
+        padding: 0.8rem;
+      }
+
+      .infrastructure-table {
+        font-size: 0.85rem;
+      }
+
+      .infrastructure-table th, .infrastructure-table td {
+        padding: 0.5rem;
+      }
+
+      .program-box .details-content {
+        max-height: 120px;
+      }
+    }
+
+    /* Scroll Animations */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Loading Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="#hero" aria-label="GMU CSE Home">
+        <img src="https://via.placeholder.com/40?text=GMU" alt="GMU CSE Logo">
+        <span class="brand-text">Dept of Computer Science & Engineering</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">☰</button>
+      <div class="nav-links" id="navLinks" role="navigation" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-btn">Academics ▾</a>
+          <div class="dropdown-content">
+            <a href="programs.html">Programs</a>
+            <a href="IQAC.html">IQAC & BOS</a>
+          </div>
+        </div>
+        <a href="placements.html">Placements</a>
+        <a href="faculty.html">Faculty</a>
+        <a href="Achievement.html">Achievements</a>
+        <a href="alumini.html">Alumni</a>
+        <a href="contact.html">Contact us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero" aria-label="Infrastructure & Learning Resources">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Infrastructure & Learning Resources</h1>
+        <p>Explore our state-of-the-art laboratories and resources designed to foster innovation and practical learning in Computer Science & Engineering.</p>
+        <a href="#infrastructure" class="hero-cta">
+          <span>Discover Facilities</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="program-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3 style="color: white; margin: 0.8rem 0 0.4rem; font-size: 1.2rem; font-weight: 700;">CSE Infrastructure</h3>
+          <p style="color: rgba(255,255,255,0.8); margin: 0; font-size: 0.9rem;">Modern Labs & Resources</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Infrastructure Section -->
+  <section id="infrastructure" class="section">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <h2 class="section-title">Infrastructure & Learning Resources</h2>
+        <p class="section-subtitle">Empowering education through advanced facilities and innovative learning environments</p>
+      </div>
+
+      <div class="program-showcase">
+        <!-- Infrastructure Content -->
+        <div class="program-box scroll-reveal">
+          <div class="program-header">
+            <div class="program-icon">
+              <i class="fas fa-desktop"></i>
+            </div>
+            <h3 class="program-title">🖥 Laboratory Infrastructure</h3>
+          </div>
+          <div class="details-content" id="detailsContent">
+            <div class="program-description">
+              <p>The Department of Computer Science & Engineering at GM University maintains advanced laboratories with over 180 computing systems, supporting courses from programming to AI, Data Science, and Cybersecurity.</p>
+            </div>
+            <div class="full-description">
+              <p>With a mix of modern high-performance machines and legacy systems, our labs cater to a wide spectrum of courses. Recent additions include I-Active All-in-One systems with 12th Gen Intel Core i5 processors, 16GB RAM, and NVMe SSD storage, providing students with industry-ready tools for hands-on learning.</p>
+              <p>The laboratories foster student-driven innovation by allowing students to submit proposals for new equipment and tools. Through close collaboration with faculty, students apply their knowledge to real-world problems, developing projects that bridge theory and practice.</p>
+              <p>Aligned with AICTE and ACM standards, the department regularly proposes upgrades to keep pace with technological advancements. Extended lab hours are provided to support hackathons, individual projects, and research activities, ensuring students have ample opportunity to explore and innovate.</p>
+              <p>Together, these practices transform CSE laboratories into innovation hubs—spaces where students acquire practical skills, faculty mentor research, and future-ready engineers emerge.</p>
+            </div>
+          </div>
+          <button class="view-more-btn" id="toggleDetails" aria-expanded="false" aria-controls="detailsContent">
+            <span>View More</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+        <!-- Table -->
+        <table class="infrastructure-table scroll-reveal">
+          <thead>
+            <tr>
+              <th>Lab Name / Location</th>
+              <th>Systems (Qty.)</th>
+              <th>Latest Configuration</th>
+              <th>Year of Upgrade / Purchase</th>
+              <th>Primary Use</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MCES Lab</td>
+              <td>27+ (mix)</td>
+              <td>I-Active AIO, Core i5 @ 2.5GHz, 16GB RAM, 512GB NVMe</td>
+              <td>2025</td>
+              <td>Programming, OS, DBMS</td>
+            </tr>
+            <tr>
+              <td>Algorithms Lab</td>
+              <td>33 (mixed)</td>
+              <td>Acer Veriton Core i5 @ 3GHz, 8GB RAM, 500GB HDD</td>
+              <td>2022</td>
+              <td>Algorithms, Data Structures, Coding Practice</td>
+            </tr>
+            <tr>
+              <td>CSE – C322</td>
+              <td>45</td>
+              <td>I-Active AIO, Core i5 @ 2.5GHz, 16GB RAM, 512GB NVMe</td>
+              <td>2025</td>
+              <td>AI/ML, Data Science, Cybersecurity</td>
+            </tr>
+            <tr>
+              <td>Windows Lab</td>
+              <td>41 (mixed)</td>
+              <td>Intel Core i5, 12th Gen, 16GB RAM, 500GB SSD</td>
+              <td>2025</td>
+              <td>Windows Programming, Software Development</td>
+            </tr>
+            <tr>
+              <td>General / Old Systems</td>
+              <td>42</td>
+              <td>AMD Assembled PCs, Intel Core i3/i5 (legacy systems)</td>
+              <td>2012–2019</td>
+              <td>Basic Computing, Training, Backup Use</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" aria-label="Footer navigation and contact information">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="fcol">
+          <h4>Information For</h4>
+          <p><a href="#" aria-label="Information for prospective students">Prospective Students</a></p>
+          <p><a href="#" aria-label="Information for current students">Current Students</a></p>
+          <p><a href="#" aria-label="Information for alumni">Alumni</a></p>
+        </div>
+        <div class="fcol">
+          <h4>Information About</h4>
+          <p><a href="#" aria-label="About GM University">About GM University</a></p>
+          <p><a href="#" aria-label="Academic programs">Academic Programs</a></p>
+          <p><a href="#" aria-label="Research at GM University">Research</a></p>
+        </div>
+        <div class="fcol">
+          <h4>Important Info</h4>
+          <p><a href="#" aria-label="Admissions information">Admissions</a></p>
+          <p><a href="#" aria-label="Career opportunities">Careers</a></p>
+          <p><a href="#" aria-label="Campus life">Campus Life</a></p>
+        </div>
+        <div class="fcol">
+          <h4>Placements & Internships</h4>
+          <p><a href="placements.html" aria-label="Placement overview">Placement Overview</a></p>
+          <p><a href="placements.html" aria-label="Star students">Star Students</a></p>
+          <p><a href="placements.html" aria-label="Top recruiters">Top Recruiters</a></p>
+        </div>
+      </div>
+      <div class="contact-grid">
+        <div class="fcol">
+          <h4>Address & Contact Info</h4>
+          <p>GM University, Davangere, Karnataka, India</p>
+          <p>Email: <a href="mailto:info@gmu.edu" aria-label="Email GM University">info@gmu.edu</a></p>
+          <p>Phone: <a href="tel:+911234567890" aria-label="Call GM University">+91-123-456-7890</a></p>
+        </div>
+        <div class="fcol">
+          <h4>Connect With Us</h4>
+          <div class="social-links">
+            <a href="https://facebook.com" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" aria-label="Visit our Twitter page"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank" aria-label="Visit our LinkedIn page"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" aria-label="Visit our YouTube page"><i class="fab fa-youtube"></i></a>
+          </div>
+          <p><a href="https://www.google.com/maps/place/Davanagere,+Karnataka" target="_blank" class="flex items-center gap-2 hover:text-blue-200" aria-label="Find us on Google Maps"><i class="fa-solid fa-location-dot"></i> Find us on Google Maps</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 GM University. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar: Mobile toggle + scroll state
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuBtn = document.getElementById('menuBtn');
+      const navLinks = document.getElementById('navLinks');
+      const navbar = document.getElementById('navbar');
+
+      if (menuBtn && navLinks && navbar) {
+        menuBtn.addEventListener('click', () => {
+          const isOpen = navLinks.classList.toggle('active');
+          menuBtn.setAttribute('aria-expanded', String(isOpen));
+          menuBtn.textContent = isOpen ? '✕' : '☰';
+        });
+
+        // Debounced scroll handler for navbar
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+          clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+          }, 50);
+        });
+      } else {
+        console.error('Navigation elements not found');
+      }
+
+      // Scroll Reveal Animation with IntersectionObserver
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.scroll-reveal').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Smooth Scrolling
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Mouse Move Effect for Hero Card
+      const heroCard = document.querySelector('.hero-card');
+      if (heroCard) {
+        heroCard.addEventListener('mousemove', (e) => {
+          const rect = heroCard.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = (y - centerY) / 15;
+          const rotateY = -(x - centerX) / 15;
+          heroCard.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.01)`;
+        });
+
+        heroCard.addEventListener('mouseleave', () => {
+          heroCard.style.transform = 'perspective(800px) rotateY(-5deg) rotateX(3deg)';
+        });
+      } else {
+        console.warn('Hero card not found');
+      }
+
+      // Toggle View More/View Less
+      const toggleDetailsContent = () => {
+        const detailsContent = document.getElementById('detailsContent');
+        const toggleButton = document.getElementById('toggleDetails');
+        if (detailsContent && toggleButton) {
+          const isExpanded = detailsContent.classList.toggle('expanded');
+          toggleButton.setAttribute('aria-expanded', String(isExpanded));
+          toggleButton.querySelector('span').textContent = isExpanded ? 'View Less' : 'View More';
+          toggleButton.querySelector('i').className = isExpanded ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
+        } else {
+          console.error('Details content or toggle button not found');
+        }
+      };
+
+      const toggleButton = document.getElementById('toggleDetails');
+      if (toggleButton) {
+        toggleButton.addEventListener('click', toggleDetailsContent);
+      }
+
+      // Fallback for backdrop-filter
+      if (!CSS.supports('backdrop-filter', 'blur(10px)')) {
+        document.querySelectorAll('.navbar, .hero-cta, .hero-card, .program-hero-card').forEach(el => {
+          el.classList.add('no-backdrop-filter');
+        });
+      }
+
+      document.body.classList.add('loaded');
+    });
+
+    // Handle Window Resize
+    window.addEventListener('resize', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.scroll-reveal').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>
