@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software & Tools - CSE Department</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        .card:hover .card-content {
+            display: block;
+        }
+        .card-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #1e40af;
+            color: white;
+            padding: 1rem;
+            z-index: 10;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-blue-50">
+    <!-- Hero Section -->
+    <section id="hero" class="bg-blue-100 py-20" data-aos="fade-up">
+        <div class="container mx-auto px-4 text-center">
+            <img src="https://images.unsplash.com/photo-1516321310763-4b6f4b86e773?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="CSE Department" class="mx-auto mb-6 rounded-lg shadow-lg max-w-full h-auto" data-aos="zoom-in">
+            <h1 class="text-4xl md:text-5xl font-bold text-blue-800">Software & Tools</h1>
+            <p class="mt-4 text-lg text-blue-600 max-w-3xl mx-auto">The Department of Computer Science & Engineering integrates a wide range of software platforms, IDEs, and frameworks to provide students with practical exposure to both commercial and open-source technologies.</p>
+        </div>
+    </section>
+
+    <!-- Programming & Development Section -->
+    <section id="programming" class="py-20 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-8 text-center" data-aos="fade-up">Programming & Development</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative bg-blue-100 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://code.visualstudio.com/assets/images/code-stable.png" alt="VS Code" class="w-12 h-12">
+                        <p class="text-blue-700">VS Code IDE, Eclipse, NetBeans, IntelliJ IDEA (Community)</p>
+                    </div>
+                    <div class="card-content">
+                        <p>VS Code: Lightweight, customizable code editor with support for debugging and embedded Git control.</p>
+                        <p>Eclipse: Popular IDE for Java, supports multiple languages.</p>
+                        <p>NetBeans: Open-source IDE for Java, PHP, and HTML5.</p>
+                        <p>IntelliJ IDEA: Community edition for JVM-based development.</p>
+                    </div>
+                </div>
+                <div class="relative bg-blue-100 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://www.python.org/static/community_logos/python-logo.png" alt="Python" class="w-12 h-12">
+                        <p class="text-blue-700">IDLE for Python, PyCharm (Community Edition), Jupyter Notebook, Anaconda</p>
+                    </div>
+                    <div class="card-content">
+                        <p>IDLE: Simple Python IDE for beginners.</p>
+                        <p>PyCharm: Professional IDE for Python development.</p>
+                        <p>Jupyter: Interactive notebook for data analysis.</p>
+                        <p>Anaconda: Python distribution for scientific computing.</p>
+                    </div>
+                </div>
+                <div class="relative bg-blue-100 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://gcc.gnu.org/img/g++.png" alt="GCC" class="w-12 h-12">
+                        <p class="text-blue-700">C/C++ Compilers (GCC, Clang, Turbo C++)</p>
+                    </div>
+                    <div class="card-content">
+                        <p>GCC: GNU Compiler Collection for C/C++.</p>
+                        <p>Clang: Modern compiler for C/C++ with diagnostics.</p>
+                        <p>Turbo C++: Legacy compiler for C++ development.</p>
+                    </div>
+                </div>
+                <div class="relative bg-blue-100 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://www.java.com/content/dam/web-assets/images/java-logo-vert-blk.png" alt="Java" class="w-12 h-12">
+                        <p class="text-blue-700">Java SDK and OpenJDK</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Java SDK: Tools for Java application development.</p>
+                        <p>OpenJDK: Open-source implementation of Java SE.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Science, AI & Machine Learning Section -->
+    <section id="data-science" class="py-20 bg-blue-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-8 text-center" data-aos="fade-up">Data Science, AI & Machine Learning</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://numpy.org/images/logo.svg" alt="NumPy" class="w-12 h-12">
+                        <p class="text-blue-700">Python Libraries: NumPy, Pandas, SciPy, Scikit-learn</p>
+                    </div>
+                    <div class="card-content">
+                        <p>NumPy: Numerical computing library.</p>
+                        <p>Pandas: Data manipulation and analysis.</p>
+                        <p>SciPy: Scientific computing tools.</p>
+                        <p>Scikit-learn: Machine learning algorithms.</p>
+                    </div>
+                </div>
+                <div class="relative bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://www.tensorflow.org/images/tf_logo_32px.png" alt="TensorFlow" class="w-12 h-12">
+                        <p class="text-blue-700">Deep Learning Frameworks: TensorFlow, PyTorch, Keras</p>
+                    </div>
+                    <div class="card-content">
+                        <p>TensorFlow: Open-source ML framework.</p>
+                        <p>PyTorch: Flexible deep learning framework.</p>
+                        <p>Keras: High-level API for neural networks.</p>
+                    </div>
+                </div>
+                <div class="relative bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://www.r-project.org/logo/Rlogo.png" alt="R" class="w-12 h-12">
+                        <p class="text-blue-700">R & RStudio for statistical computing</p>
+                    </div>
+                    <div class="card-content">
+                        <p>R: Language for statistical analysis.</p>
+                        <p>RStudio: IDE for R programming.</p>
+                    </div>
+                </div>
+                <div class="relative bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://www.mathworks.com/content/dam/mathworks/mathworks/images/brand_guidelines/logos/matlab.svg" alt="MATLAB" class="w-12 h-12">
+                        <p class="text-blue-700">MATLAB (licensed) for simulation and numerical analysis</p>
+                    </div>
+                    <div class="card-content">
+                        <p>MATLAB: Platform for numerical computing and simulation.</p>
+                    </div>
+                </div>
+                <div class="relative bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://weka.waikato.ac.nz/images/weka_logo_black.png" alt="Weka" class="w-12 h-12">
+                        <p class="text-blue-700">Weka, Orange, RapidMiner (open-source ML tools)</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Weka: Machine learning software in Java.</p>
+                        <p>Orange: Visual programming for data mining.</p>
+                        <p>RapidMiner: Platform for data science workflows.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Databases & Backend Section -->
+    <section id="databases" class="py-20 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-8 text-center" data-aos="fade-up">Databases & Backend</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative bg-blue-100 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://www.mysql.com/common/logos/logo_mysql.svg" alt="MySQL" class="w-12 h-12">
+                        <p class="text-blue-700">MySQL, PostgreSQL, MongoDB</p>
+                    </div>
+                    <div class="card-content">
+                        <p>MySQL: Popular relational database.</p>
+                        <p>PostgreSQL: Advanced open-source RDBMS.</p>
+                        <p>MongoDB: NoSQL database for modern apps.</p>
+                    </div>
+                </div>
+                <div class="relative bg-blue-100 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://www.sqlite.org/images/sqlite370_banner.gif" alt="SQLite" class="w-12 h-12">
+                        <p class="text-blue-700">SQLite (lightweight DBMS)</p>
+                    </div>
+                    <div class="card-content">
+                        <p>SQLite: Lightweight, serverless database.</p>
+                    </div>
+                </div>
+                <div class="relative bg-blue-100 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://www.apachefriends.org/images/xampp-logo.svg" alt="XAMPP" class="w-12 h-12">
+                        <p class="text-blue-700">XAMPP / WAMP stacks for web/database integration</p>
+                    </div>
+                    <div class="card-content">
+                        <p>XAMPP/WAMP: Local server stacks for web development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Web & Application Development Section -->
+    <section id="web-dev" class="py-20 bg-blue-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-8 text-center" data-aos="fade-up">Web & Application Development</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" class="w-12 h-12">
+                        <p class="text-blue-700">HTML, CSS, JavaScript toolkits</p>
+                    </div>
+                    <div class="card-content">
+                        <p>HTML/CSS: Core web technologies.</p>
+                        <p>JavaScript: Dynamic scripting for web apps.</p>
+                    </div>
+                </div>
+                <div class="relative bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://reactjs.org/logo-og.png" alt="React" class="w-12 h-12">
+                        <p class="text-blue-700">ReactJS, Angular, Node.js</p>
+                    </div>
+                    <div class="card-content">
+                        <p>ReactJS: Component-based UI library.</p>
+                        <p>Angular: Framework for dynamic web apps.</p>
+                        <p>Node.js: JavaScript runtime for server-side.</p>
+                    </div>
+                </div>
+                <div class="relative bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://www.php.net/images/logos/php-logo.svg" alt="PHP" class="w-12 h-12">
+                        <p class="text-blue-700">PHP, Django, Flask frameworks</p>
+                    </div>
+                    <div class="card-content">
+                        <p>PHP: Server-side scripting language.</p>
+                        <p>Django: Python framework for rapid development.</p>
+                        <p>Flask: Lightweight Python web framework.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Graphics, Gaming & Simulation Section -->
+    <section id="graphics" class="py-20 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-8 text-center" data-aos="fade-up">Graphics, Gaming & Simulation</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative bg-blue-100 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://unity.com/themes/custom/unity/images/logo-unity-white.svg" alt="Unity" class="w-12 h-12">
+                        <p class="text-blue-700">Unity 3D, Unreal Engine (game development)</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Unity 3D: Game development engine.</p>
+                        <p>Unreal Engine: High-fidelity game development.</p>
+                    </div>
+                </div>
+                <div class="relative bg-blue-100 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://www.blender.org/wp-content/uploads/2018/11/Blender_Logo_Color_RGB.png" alt="Blender" class="w-12 h-12">
+                        <p class="text-blue-700">Blender (3D modeling, open source)</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Blender: Open-source 3D creation suite.</p>
+                    </div>
+                </div>
+                <div class="relative bg-blue-100 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://www.opengl.org/img/OpenGL_Logo_RGB_2019.png" alt="OpenGL" class="w-12 h-12">
+                        <p class="text-blue-700">OpenGL / WebGL graphics libraries</p>
+                    </div>
+                    <div class="card-content">
+                        <p>OpenGL/WebGL: Cross-platform graphics APIs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operating Systems & Virtualization Section -->
+    <section id="os-virtual" class="py-20 bg-blue-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-8 text-center" data-aos="fade-up">Operating Systems & Virtualization</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://ubuntu.com/wp-content/uploads/2023/04/ubuntu-logo.png" alt="Ubuntu" class="w-12 h-12">
+                        <p class="text-blue-700">Linux Distros (Ubuntu, Fedora, CentOS)</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Ubuntu: User-friendly Linux distribution.</p>
+                        <p>Fedora: Cutting-edge Linux distro.</p>
+                        <p>CentOS: Stable Linux for servers.</p>
+                    </div>
+                </div>
+                <div class="relative bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://www.microsoft.com/en-us/windows/assets/images/windows-logo.png" alt="Windows" class="w-12 h-12">
+                        <p class="text-blue-700">Windows 10/11 (licensed)</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Windows 10/11: Licensed OS for general use.</p>
+                    </div>
+                </div>
+                <div class="relative bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" alt="Docker" class="w-12 h-12">
+                        <p class="text-blue-700">VMware, VirtualBox, Docker (containerization & virtualization)</p>
+                    </div>
+                    <div class="card-content">
+                        <p>VMware: Virtualization platform.</p>
+                        <p>VirtualBox: Open-source virtualization.</p>
+                        <p>Docker: Containerization for apps.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coding Practice & Learning Platforms Section -->
+    <section id="coding-practice" class="py-20 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-8 text-center" data-aos="fade-up">Coding Practice & Learning Platforms</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative bg-blue-100 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://leetcode.com/static/images/LeetCode_logo.png" alt="LeetCode" class="w-12 h-12">
+                        <p class="text-blue-700">LeetCode, HackerRank, Codeforces, Kattis</p>
+                    </div>
+                    <div class="card-content">
+                        <p>LeetCode: Coding challenges for interviews.</p>
+                        <p>HackerRank: Practice and competitions.</p>
+                        <p>Codeforces: Competitive programming platform.</p>
+                        <p>Kattis: Problem-solving for coders.</p>
+                    </div>
+                </div>
+                <div class="relative bg-blue-100 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="w-12 h-12">
+                        <p class="text-blue-700">Git & GitHub / GitLab for version control</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Git: Version control system.</p>
+                        <p>GitHub/GitLab: Platforms for code collaboration.</p>
+                    </div>
+                </div>
+                <div class="relative bg-blue-100 p-6 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://moodle.org/theme/image.php/boost/core/1619456727/moodle_logo" alt="Moodle" class="w-12 h-12">
+                        <p class="text-blue-700">Moodle, Google Classroom for e-learning</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Moodle: Open-source learning platform.</p>
+                        <p>Google Classroom: Streamlined e-learning tool.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Lenis
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smooth: true
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+     <!-- Place this where you want the navbar in index.html -->
+<div id="navbar-include"></div>
+<script>
+  fetch('nav.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-include').innerHTML = html;
+    });
+</script>
+
+<script>
+  fetch('nav.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-include').innerHTML = html;
+      // After navbar is loaded, run the navbar script
+      const menuBtn = document.getElementById('menuBtn');
+      const navLinks = document.getElementById('navLinks');
+      const navbar = document.getElementById('navbar');
+
+      function closeMenu() {
+        navLinks.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.textContent = '☰';
+      }
+
+      menuBtn.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('active');
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
+        menuBtn.textContent = isOpen ? '✕' : '☰';
+        if (isOpen) {
+          navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
+            el.setAttribute('tabindex', '0');
+          });
+        } else {
+          navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
+            el.setAttribute('tabindex', '-1');
+          });
+        }
+      });
+
+      navLinks.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A' && window.innerWidth <= 900) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('touchstart', function(e) {
+        if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== menuBtn) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+
+      let scrollTimeout;
+      window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          navbar.classList.toggle('scrolled', window.scrollY > 80);
+          highlightOnScroll();
+        }, 50);
+      });
+
+      function highlightOnScroll() {
+        const sections = ['hero', 'about', 'hod', 'news'];
+        const fromTop = window.scrollY + 120;
+        let current = null;
+        for (const id of sections) {
+          const section = document.getElementById(id);
+          if (section && section.offsetTop <= fromTop) current = id;
+        }
+        if (current) {
+          document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => {
+            const href = a.getAttribute('href');
+            if (href === `#${current}`) a.classList.add('active');
+            else if (href?.startsWith('#')) a.classList.remove('active');
+          });
+        }
+      }
+
+      function setActiveLink(element) {
+        document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => a.classList.remove('active'));
+        element.classList.add('active');
+        if (element.closest('.dropdown')) {
+          element.closest('.dropdown').querySelector('.dropdown-btn').classList.add('active');
+        }
+      }
+    });
+</script>
+<!-- Lenis Smooth Scroll -->
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // smooth easing
+    smoothWheel: true,
+    smoothTouch: false,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+</body>
+</html>

@@ -735,222 +735,7 @@
         }
     </style>
 </head>
-<!-- NAV -->
-<nav class="navbar" id="navbar">
-  <div class="nav-inner">
-    <a class="brand" href="#hero" aria-label="GMU CSE Home">
-      <img src="logo.jpg" alt="GMU CSE Logo">
-      <span class="brand-text">Dept of Computer Science & Engineering</span>
-    </a>
-    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">☰</button>
-    <div class="nav-links" id="navLinks" role="navigation" aria-label="Primary">
-      <a href="index.html" >Home</a>
-      <div class="dropdown">
-        <a href="#" class="dropdown-btn">Academics ▾</a>
-        <div class="dropdown-content">
-          <a href="programs.html">Programs</a>
-          <a href="IQAC.html">IQAC & BOS</a>
-        </div>
-      </div>
-      <a href="placements.html">Placements</a>
-      <a href="faculty.html">Faculty</a>
-      <a href="Achievement.html" class="active">Achievements</a>
-      <a href="alumini.html">Alumni</a>
-      <a href="contact.html">Contact us</a>
-    </div>
-  </div>
-</nav>
-
-<style>
-  /* Header CSS */
-  *, *::before, *::after { box-sizing: border-box; }
-  :root {
-    --primary: #0f172a;
-    --primary-2: #111827;
-    --text: #0b1220;
-    --text-light: #f8fafc;
-    --muted: #64748b;
-    --accent: #3b82f6;
-    --accent-2: #8b5cf6;
-    --bg: #f8fafc;
-    --shadow-1: 0 10px 25px rgba(0,0,0,.08);
-    --shadow-2: 0 24px 50px rgba(0,0,0,.12);
-    --container: min(95vw, 1600px);
-  }
-  html, body { height: 100%; scroll-behavior: smooth; }
-  body {
-    margin: 0; background: var(--bg); color: var(--text);
-    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6; overflow-x: hidden;
-  }
-  img { max-width: 100%; display: block; transition: transform 0.3s ease; }
-  .display-font { font-family: "Playfair Display", "Plus Jakarta Sans", Poppins, serif; }
-
-  .navbar {
-    position: fixed; inset: 0 0 auto 0; z-index: 1000;
-    background: rgba(15,23,42,.85); backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255,255,255,.12);
-    transition: background .3s ease, box-shadow .3s ease;
-  }
-  .navbar.scrolled { background: rgba(15,23,42,.95); box-shadow: 0 10px 30px rgba(0,0,0,.2); }
-  .nav-inner {
-    width: var(--container); margin: 0 auto; padding: .85rem 1rem;
-    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  }
-  .brand {
-    color: var(--text-light); text-decoration: none; font-weight: 900;
-    letter-spacing: .2px; font-size: clamp(1.25rem, 2.2vw, 1.65rem);
-    font-family: "Playfair Display", "Plus Jakarta Sans", Poppins, serif;
-    display: flex; align-items: center; gap: .75rem;
-    transition: transform 0.3s ease;
-  }
-  .brand:hover { transform: scale(1.05); }
-  .brand img {
-    height: 40px; border-radius: 50%; box-shadow: 0 4px 12px rgba(255,255,255,0.2);
-  }
-  .brand-text {
-    font-size: clamp(1rem, 1.8vw, 1.3rem);
-    font-weight: 700;
-    font-family: "Playfair Display", serif;
-    background: linear-gradient(90deg, var(--accent), var(--accent-2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .menu-btn { display: none; background: transparent; border: 0; color: #fff; font-size: 1.6rem; padding: .35rem .6rem; border-radius: .5rem; cursor: pointer; transition: transform 0.3s ease; }
-  .menu-btn:hover { transform: rotate(90deg); }
-  .nav-links { display: flex; align-items: center; gap: .25rem; }
-  .nav-links a, .nav-links .dropdown-btn {
-    --pad-x: .9rem;
-    color: rgba(248,250,252,.92); text-decoration: none; font-weight: 600;
-    padding: .55rem var(--pad-x); position: relative; display: inline-block;
-    border-radius: .5rem; transition: color 0.3s ease, background 0.3s ease;
-  }
-  .nav-links a:hover, .nav-links .dropdown-btn:hover { color: #fff; background: rgba(255,255,255,0.1); }
-  .nav-links a::after, .nav-links .dropdown-btn::after {
-    content: ""; position: absolute; left: var(--pad-x); right: var(--pad-x); bottom: 6px;
-    height: 3px; border-radius: 999px; background: linear-gradient(90deg, var(--accent), var(--accent-2));
-    transform: scaleX(0); transform-origin: center; transition: transform .25s ease;
-  }
-  .nav-links a:hover::after, .nav-links a.active::after, .nav-links .dropdown-btn:hover::after { transform: scaleX(1); }
-  .dropdown {
-    position: relative;
-  }
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%; left: 0;
-    background: rgba(15,23,42,.98);
-    border-radius: .75rem;
-    box-shadow: 0 8px 16px rgba(0,0,0,.2);
-    min-width: 200px;
-    z-index: 10;
-    overflow: hidden;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  .dropdown:hover .dropdown-content {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .dropdown-content a {
-    display: block;
-    padding: .85rem 1.5rem;
-    color: rgba(248,250,252,.92);
-    text-decoration: none;
-    transition: background 0.3s ease, color 0.3s ease;
-  }
-  .dropdown-content a:hover {
-    background: linear-gradient(90deg, var(--accent), var(--accent-2));
-    color: #fff;
-  }
-
-  @media (max-width: 900px) {
-    .menu-btn { display: inline-block; }
-    .nav-links {
-      position: absolute; top: 100%; left: 0; right: 0; display: none; flex-direction: column; align-items: stretch;
-      background: rgba(15,23,42,.98); padding: .5rem; gap: .15rem; border-bottom-left-radius: .75rem; border-bottom-right-radius: .75rem;
-    }
-    .nav-links.active { display: flex; }
-    .nav-links a, .nav-links .dropdown-btn { padding: .85rem 1rem; text-align: center; }
-    .dropdown-content {
-      position: static;
-      box-shadow: none;
-      background: transparent;
-      padding-left: 0;
-    }
-    .dropdown-content a { padding: .6rem 1rem; border-top: 1px solid rgba(255,255,255,.1); text-align: center; }
-  }
-
-  @media (max-width: 600px) {
-    .nav-inner {
-      padding: .5rem 1rem;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .brand {
-      font-size: clamp(1rem, 4vw, 1.25rem);
-    }
-    .brand img {
-      height: 30px;
-    }
-  }
-</style>
-
-<script>
-  // NAV: Mobile toggle + scroll state + active link
-  const menuBtn = document.getElementById('menuBtn');
-  const navLinks = document.getElementById('navLinks');
-  const navbar = document.getElementById('navbar');
-
-  menuBtn.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('active');
-    menuBtn.setAttribute('aria-expanded', String(isOpen));
-    menuBtn.textContent = isOpen ? '✕' : '☰';
-  });
-
-  // Debounced scroll handler
-  let scrollTimeout;
-  window.addEventListener('scroll', () => {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-      navbar.classList.toggle('scrolled', window.scrollY > 80);
-      highlightOnScroll();
-    }, 50);
-  });
-
-  function setActiveLink(element) {
-    document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => a.classList.remove('active'));
-    element.classList.add('active');
-    if (element.closest('.dropdown')) {
-      element.closest('.dropdown').querySelector('.dropdown-btn').classList.add('active');
-    }
-  }
-
-  function highlightOnScroll() {
-    const sections = ['hero', 'about', 'hod', 'news'];
-    const fromTop = window.scrollY + 120;
-    let current = null;
-    for (const id of sections) {
-      const section = document.getElementById(id);
-      if (section && section.offsetTop <= fromTop) current = id;
-    }
-    if (current) {
-      document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => {
-        const href = a.getAttribute('href');
-        if (href === `#${current}`) a.classList.add('active');
-        else if (href?.startsWith('#')) a.classList.remove('active');
-      });
-    }
-  }
-</script>
 <body>
-    <!-- Home Button
-    <a href="index.html" class="home-btn" aria-label="Return to Home">
-        <i class="fas fa-home"></i> Home
-    </a> -->
-
     <!-- Header Section -->
     <div class="achievements-header">
         <div class="container">
@@ -991,7 +776,7 @@
                         </a>
                     </div>
                 </div>
- <!-- Hackathon - Wide Card -->
+                <!-- Hackathon - Wide Card -->
                 <div class="achievement-card">
                     <div class="award-badge">
                         <i class="fas fa-briefcase"></i> 
@@ -1015,7 +800,6 @@
                     </div>
                 </div>
 
-
                 <div class="achievement-card">
                     <div class="award-badge">
                         <i class="fas fa-lightbulb"></i> Innovation
@@ -1031,51 +815,31 @@
                             <span></span>
                         </div>
                         <p class="card-description">
-                        Ideathon 2025 Was held at jain college Davangere on 23rd of April For analysis of future stocks and prediction of stocks                        </p>
+                            Ideathon 2025 was held at Jain College Davangere on 23rd of April for analysis of future stocks and prediction of stocks.
+                        </p>
                         <a href="#" class="read-more-btn">
-                             <i class="fas fa-arrow-right"></i>
+                            <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
 
-                <!--Hackathon -->
+                <!-- Hackathon -->
                 <div class="achievement-card">
                     <div class="award-badge">
                         <i class="fas fa-code"></i> Hackathon
                     </div>
                     <div class="card-image">
-                        <img src="images_ach/sachin achivement.jpg" alt=" Hackathon">
+                        <img src="images_ach/sachin achivement.jpg" alt="Hackathon">
                     </div>
                     <div class="card-content">
-                        <h3 class="card-title">Real-Time Hand Sign Detection and Text Translation
-                        </h3>
+                        <h3 class="card-title">Real-Time Hand Sign Detection and Text Translation</h3>
                         <div class="card-meta">
                             <span class="student-name"></span>
                             <span>•</span>
                             <span>CSE Department</span>
                         </div>
                         <p class="card-description">
-                        This project focuses on developing an AI-based system that detects hand signs (gestures) and translates them into text in real time. It aims to bridge the communication gap between sign language users (especially the hearing and speech-impaired community) and non-signers.
-                        </p>
-                    </div>
-                </div>
-
-                
-                <!-- EduTech Startup -->
-                <div class="achievement-card">
-                    <div class="award-badge">
-                        <i class="fas fa-rocket"></i> Startup
-                    </div>
-                    <div class="card-image">
-                        <img src="images_ach/sachi.png" alt="Hustlers.exe">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">NeuroCalm</h3>
-                        <div class="card-meta">
-                            <span class="student-name">Sachin,Abhiram,Prajwal,Sudharshan.</span>
-                        </div>
-                        <p class="card-description">
-                            this are participated at precedency in bng and got selected in top 10 .
+                            This project focuses on developing an AI-based system that detects hand signs (gestures) and translates them into text in real time. It aims to bridge the communication gap between sign language users (especially the hearing and speech-impaired community) and non-signers.
                         </p>
                     </div>
                 </div>
@@ -1091,15 +855,15 @@
                     <div class="card-content">
                         <h3 class="card-title">NeuroCalm</h3>
                         <div class="card-meta">
-                            <span class="student-name">Sachin,Abhiram,Prajwal,Sudharshan.</span>
+                            <span class="student-name">Sachin, Abhiram, Prajwal, Sudharshan</span>
                         </div>
                         <p class="card-description">
-                            this are participated at precedency in bng and got selected in top 10 .
+                            This team participated at Precedency in Bangalore and was selected in the top 10.
                         </p>
                     </div>
                 </div>
 
-                 <!-- EduTech Startup -->
+                <!-- EduTech Startup -->
                 <div class="achievement-card">
                     <div class="award-badge">
                         <i class="fas fa-rocket"></i> Startup
@@ -1110,36 +874,43 @@
                     <div class="card-content">
                         <h3 class="card-title">NeuroCalm</h3>
                         <div class="card-meta">
-                            <span class="student-name">Sachin,Abhiram,Prajwal,Sudharshan.</span>
+                            <span class="student-name">Sachin, Abhiram, Prajwal, Sudharshan</span>
                         </div>
                         <p class="card-description">
-                            this are participated at precedency in bng and got selected in top 10 .
+                            This team participated at Precedency in Bangalore and was selected in the top 10.
                         </p>
                     </div>
                 </div>
 
-                 <!-- EduTech Startup -->   
-
-                <!-- National Merit Scholar -->
-                <!-- <div class="card-avatar">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face" alt="Kevin Wang" class="avatar-image">
-                    <div class="avatar-content">
-                        <h4 class="avatar-title">National Merit Scholar</h4>
-                        <div class="avatar-subtitle">Kevin Wang • Computer Science</div>
-                        <p class="avatar-description">Awarded National Merit Scholarship for outstanding academic performance and leadership in STEM activities.</p>
+                <!-- EduTech Startup -->
+                <div class="achievement-card">
+                    <div class="award-badge">
+                        <i class="fas fa-rocket"></i> Startup
+                    </div>
+                    <div class="card-image">
+                        <img src="images_ach/sachi.png" alt="Hustlers.exe">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">NeuroCalm</h3>
+                        <div class="card-meta">
+                            <span class="student-name">Sachin, Abhiram, Prajwal, Sudharshan</span>
+                        </div>
+                        <p class="card-description">
+                            This team participated at Precedency in Bangalore and was selected in the top 10.
+                        </p>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 
     <!-- Images Gallery -->
-    <!-- <div class="section">
+    <div class="section">
         <div class="container">
             <div class="section-title">
                 <h2>Achievement Moments</h2>
                 <p>Capturing the memorable moments of success and recognition</p>
-            </div> -->
+            </div>
             
             <div class="gallery-grid">
                 <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=600&fit=crop')">
@@ -1201,7 +972,7 @@
         </div>
     </div>
 
-    <!-- Lightbox Modal -->
+   <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -1448,6 +1219,7 @@
 
 </body>
 </html>
+
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
         <span class="lightbox-close">&times;</span>
@@ -1547,5 +1319,14 @@
             });
         });
     </script>
+    <!-- Place this where you want the navbar in index.html -->
+<div id="navbar-include"></div>
+<script>
+  fetch('nav.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-include').innerHTML = html;
+    });
+</script>
 </body>
 </html>

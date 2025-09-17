@@ -7,7 +7,7 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
   <style>
@@ -80,12 +80,13 @@
   </style>
 </head>
 <body class="bg-gray-100 font-['Inter'] text-gray-900">
+  <div id="navbar-include"></div>
   <!-- Hero Section -->
-  <section class="relative bg-cover bg-center h-[500px] flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')">
-    <div class="absolute inset-0 bg-blue-900 bg-opacity-60"></div>
+  <section class="relative bg-cover bg-center h-[500px] flex items-center justify-center" style="background-image: url('student_activites.html/image.png')" aria-label="Student Activities Introduction">
+    <div class="absolute inset-0 bg-blue-10 bg-opacity-60"></div>
     <div class="relative text-center text-white px-4 fade-in">
       <h1 class="text-4xl md:text-5xl font-['Roboto_Slab'] font-bold mb-4">Empowering Students Through Innovation, Collaboration, and Competitions</h1>
-      <p class="text-lg md:text-xl max-w-2xl mx-auto">Explore how our students learn beyond classrooms through hands-on projects, hackathons, and active technical societies.</p>
+      <p class="text-lg md:text-xl max-w-2xl mx-auto">Explore how our students learn beyond classrooms through hands-on projects, hackathons, cultural events, and active technical societies.</p>
     </div>
   </section>
 
@@ -93,7 +94,7 @@
   <div class="h-1 bg-gradient-to-r from-blue-500 to-blue-700"></div>
 
   <!-- Projects & Product Models -->
-  <section id="projects" class="py-16 px-4 md:px-8 max-w-7xl mx-auto">
+  <section id="projects" class="py-16 px-4 md:px-8 max-w-7xl mx-auto" aria-label="Projects and Product Models">
     <div class="text-center mb-12 fade-in">
       <h2 class="text-3xl md:text-4xl font-['Roboto_Slab'] font-bold text-blue-900">
         <i class="fas fa-lightbulb text-blue-500 mr-2"></i> Turning Ideas into Reality
@@ -112,19 +113,19 @@
     <div class="mt-12 fade-in">
       <div class="carousel snap-x">
         <div class="carousel-item w-80 mx-2">
-          <img src="https://images.unsplash.com/photo-1516321310762-479437144403?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Project 1" class="rounded-lg shadow-md">
+          <img src="https://images.unsplash.com/photo-1516321310762-479437144403?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Smart Home Automation Project" class="rounded-lg shadow-md">
           <p class="text-center text-gray-700 mt-2">Smart Home Automation</p>
         </div>
         <div class="carousel-item w-80 mx-2">
-          <img src="https://images.unsplash.com/photo-1534665482403-a909d0d97c67?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Project 2" class="rounded-lg shadow-md">
+          <img src="https://images.unsplash.com/photo-1534665482403-a909d0d97c67?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="AI-Powered Chatbot Project" class="rounded-lg shadow-md">
           <p class="text-center text-gray-700 mt-2">AI-Powered Chatbot</p>
         </div>
         <div class="carousel-item w-80 mx-2">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Project 3" class="rounded-lg shadow-md">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="IoT-Based Health Monitor Project" class="rounded-lg shadow-md">
           <p class="text-center text-gray-700 mt-2">IoT-Based Health Monitor</p>
         </div>
         <div class="carousel-item w-80 mx-2">
-          <img src="https://images.unsplash.com/photo-1516321310762-479437144403?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Project 4" class="rounded-lg shadow-md">
+          <img src="https://images.unsplash.com/photo-1516321310762-479437144403?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Robotics Prototype Project" class="rounded-lg shadow-md">
           <p class="text-center text-gray-700 mt-2">Robotics Prototype</p>
         </div>
       </div>
@@ -135,7 +136,7 @@
   <div class="h-1 bg-gradient-to-r from-blue-500 to-blue-700"></div>
 
   <!-- Hackathons & Competitions -->
-  <section id="hackathons" class="py-16 px-4 md:px-8 max-w-7xl mx-auto bg-white">
+  <section id="hackathons" class="py-16 px-4 md:px-8 max-w-7xl mx-auto bg-white" aria-label="Hackathons and Competitions">
     <div class="text-center mb-12 fade-in">
       <h2 class="text-3xl md:text-4xl font-['Roboto_Slab'] font-bold text-blue-900">
         <i class="fas fa-bolt text-blue-500 mr-2"></i> Innovation Under Pressure
@@ -143,17 +144,17 @@
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div class="bg-gray-50 rounded-lg shadow-md p-6 hover-scale fade-in">
-        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Hackathon 1" class="rounded-lg mb-4 w-full">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="National Hackathon 2025" class="rounded-lg mb-4 w-full">
         <h3 class="text-xl font-semibold text-blue-900">National Hackathon 2025</h3>
         <p class="text-gray-600">Our team won first place by developing an AI-driven waste management solution in 48 hours.</p>
       </div>
       <div class="bg-gray-50 rounded-lg shadow-md p-6 hover-scale fade-in">
-        <img src="https://images.unsplash.com/photo-1516321310762-479437144403?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Hackathon 2" class="rounded-lg mb-4 w-full">
+        <img src="https://images.unsplash.com/photo-1516321310762-479437144403?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Global CodeSprint" class="rounded-lg mb-4 w-full">
         <h3 class="text-xl font-semibold text-blue-900">Global CodeSprint</h3>
         <p class="text-gray-600">Students showcased rapid prototyping skills, securing top ranks in this international coding challenge.</p>
       </div>
       <div class="bg-gray-50 rounded-lg shadow-md p-6 hover-scale fade-in">
-        <img src="https://images.unsplash.com/photo-1534665482403-a909d0d97c67?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Hackathon 3" class="rounded-lg mb-4 w-full">
+        <img src="https://images.unsplash.com/photo-1534665482403-a909d0d97c67?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Tech Innovators Hack" class="rounded-lg mb-4 w-full">
         <h3 class="text-xl font-semibold text-blue-900">Tech Innovators Hack</h3>
         <p class="text-gray-600">Collaborated on real-world problems, earning accolades for innovative fintech solutions.</p>
       </div>
@@ -163,8 +164,206 @@
   <!-- Section Divider -->
   <div class="h-1 bg-gradient-to-r from-blue-500 to-blue-700"></div>
 
+  <!-- Ignitrion Section -->
+  <section id="ignitrion" class="py-16 px-4 md:px-8 max-w-7xl mx-auto bg-gray-50" aria-label="Ignitrion Technical Fest">
+    <div class="text-center mb-12 fade-in">
+      <h2 class="text-3xl md:text-4xl font-['Roboto_Slab'] font-bold text-blue-900">
+        <i class="fas fa-rocket text-blue-500 mr-2"></i> Ignitrion - Technical Fest
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">GM University's premier technical festival showcasing innovation through hackathons, workshops, coding challenges, and tech exhibitions.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="gallery-item fade-in">
+        <img src="student_activites.html/ig.png" alt="Ignitrion Hackathon" class="rounded-lg">
+        <!-- <div class="caption">Hackathon Event</div> -->
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="student_activites.html/image copy 4.png" alt="Ignitrion Workshop" class="rounded-lg">
+        <!-- <div class="caption">Technical Workshop</div> -->
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="student_activites.html/ignitron.png" alt="Ignitrion Showcase" class="rounded-lg">
+        <!-- <div class="caption">Project Showcase</div> -->
+      </div>
+    </div>
+    <div class="text-center mt-8 fade-in">
+      <div class="flex items-center justify-center gap-2 text-sm text-blue-600">
+        <i class="fas fa-calendar"></i>
+        <span>Annual Event - December 2024</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="h-1 bg-gradient-to-r from-blue-500 to-blue-700"></div>
+
+  <!-- Dandiya Section -->
+  <section id="dandiya" class="py-16 px-4 md:px-8 max-w-7xl mx-auto bg-white" aria-label="Dandiya Night">
+    <div class="text-center mb-12 fade-in">
+      <h2 class="text-3xl md:text-4xl font-['Roboto_Slab'] font-bold text-blue-900">
+        <i class="fas fa-music text-yellow-500 mr-2"></i> Dandiya Night
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">A vibrant celebration of Navratri with traditional dandiya and garba dance competitions, colorful attire, and cultural performances.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="gallery-item fade-in">
+        <img src="https://gmu.ac.in/assets/events/dandiya_2024/6.jpg" alt="Dandiya Dance" class="rounded-lg">
+        <div class="caption">Dandiya Dance Competition</div>
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="https://gmu.ac.in/assets/events/dandiya_2024/10.jpg" alt="Navratri Celebration" class="rounded-lg">
+        <div class="caption">Navratri Festivities</div>
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="https://gmu.ac.in/assets/events/dandiya_2024/1.jpg" alt="Cultural Performance" class="rounded-lg">
+        <div class="caption">Cultural Performance</div>
+      </div>
+    </div>
+    <div class="text-center mt-8 fade-in">
+      <div class="flex items-center justify-center gap-2 text-sm text-blue-600">
+        <i class="fas fa-calendar"></i>
+        <span>October 2025</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="h-1 bg-gradient-to-r from-blue-500 to-blue-700"></div>
+
+  <!-- Mallika Section -->
+  <section id="mallika" class="py-16 px-4 md:px-8 max-w-7xl mx-auto bg-gray-50" aria-label="Mallika Fashion and Talent Show">
+    <div class="text-center mb-12 fade-in">
+      <h2 class="text-3xl md:text-4xl font-['Roboto_Slab'] font-bold text-blue-900">
+        <i class=""></i> Mallika 
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">A glamorous event showcasing student creativity through fashion design, modeling, and performing arts with professional ramp walks and judging.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="gallery-item fade-in">
+        <img src="student_activites.html/yakhsa.jpg" alt="Fashion Show" class="rounded-lg">
+        <!-- <div class="caption">Fashion Ramp Walk</div> -->
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="https://gmu.ac.in/public/Mallika2025/images/invi3.jpg" class="rounded-lg">
+        <!-- <div class="caption">Talent Performance</div> -->
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="https://gmu.ac.in/public/Mallika2025/images/invi8.jpg" alt="Fashion Design" class="rounded-lg">
+        <!-- <div class="caption">Fashion Design Showcase</div> -->
+      </div>
+    </div>
+    <div class="text-center mt-8 fade-in">
+      <div class="flex items-center justify-center gap-2 text-sm text-blue-600">
+        <i class="fas fa-calendar"></i>
+        <span>February 2025</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="h-1 bg-gradient-to-r from-blue-500 to-blue-700"></div>
+
+  <!-- Kannada Kala Vaibhava Section -->
+  <section id="kannada-kala-vaibhava" class="py-16 px-4 md:px-8 max-w-7xl mx-auto bg-white" aria-label="Kannada Kala Vaibhava">
+    <div class="text-center mb-12 fade-in">
+      <h2 class="text-3xl md:text-4xl font-['Roboto_Slab'] font-bold text-blue-900">
+        <i class="fas fa-book-open text-green-500 mr-2"></i> Kannada Kala Vaibhava
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Celebrating Kannada culture through traditional folk dances, classical music, poetry recitations, and literary competitions showcasing regional heritage.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="gallery-item fade-in">
+        <img src="https://images.unsplash.com/photo-1517457453436-1e6b2e1015a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Kannada Folk Dance" class="rounded-lg">
+        <div class="caption">Folk Dance Performance</div>
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="https://images.unsplash.com/photo-1516321310762-479437144403?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Kannada Poetry" class="rounded-lg">
+        <div class="caption">Poetry Recitation</div>
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="https://images.unsplash.com/photo-1543946603-3e3b6a3c9503?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Kannada Music" class="rounded-lg">
+        <div class="caption">Classical Music</div>
+      </div>
+    </div>
+    <div class="text-center mt-8 fade-in">
+      <div class="flex items-center justify-center gap-2 text-sm text-blue-600">
+        <i class="fas fa-calendar"></i>
+        <span>November 2025</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="h-1 bg-gradient-to-r from-blue-500 to-blue-700"></div>
+
+  <!-- GMU League Section -->
+  <section id="gmu-league" class="py-16 px-4 md:px-8 max-w-7xl mx-auto bg-gray-50" aria-label="GMU League Sports Championship">
+    <div class="text-center mb-12 fade-in">
+      <h2 class="text-3xl md:text-4xl font-['Roboto_Slab'] font-bold text-blue-900">
+        <i class="fas fa-trophy text-orange-500 mr-2"></i> GMU League - Sports Championship
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">University-wide sports league featuring cricket, football, badminton, volleyball, and athletics, fostering teamwork and competitive spirit.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="gallery-item fade-in">
+        <img src="student_activites.html/image copy 2.png" alt="Cricket Match" class="rounded-lg">
+        <!-- <div class="caption">Cricket Tournament</div> -->
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="student_activites.html/image copy.png" alt="Football Match" class="rounded-lg">
+        <!-- <div class="caption">Football Match</div> -->
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="student_activites.html/image copy 3.png" alt="Badminton Game" class="rounded-lg">
+        <!-- <div class="caption">Badminton Championship</div> -->
+      </div>
+    </div>
+    <div class="text-center mt-8 fade-in">
+      <div class="flex items-center justify-center gap-2 text-sm text-blue-600">
+        <i class="fas fa-calendar"></i>
+        <span>August-September 2025</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="h-1 bg-gradient-to-r from-blue-500 to-blue-700"></div>
+
+  <!-- Internal Hackothans Section -->
+  <section id="internal-hackothans" class="py-16 px-4 md:px-8 max-w-7xl mx-auto bg-white" aria-label="Internal Hackothans">
+    <div class="text-center mb-12 fade-in">
+      <h2 class="text-3xl md:text-4xl font-['Roboto_Slab'] font-bold text-blue-900">
+        <i class="fas fa-code text-purple-500 mr-2"></i> Internal Hackothans
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Department-level coding marathons and mini-hackathons organized throughout the semester to encourage continuous innovation and skill development.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="gallery-item fade-in">
+        <img src="https://images.unsplash.com/photo-1516321310762-479437144403?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Coding Marathon" class="rounded-lg">
+        <div class="caption">Coding Marathon</div>
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="https://images.unsplash.com/photo-1534665482403-a909d0d97c67?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Mini-Hackathon" class="rounded-lg">
+        <div class="caption">Mini-Hackathon</div>
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Hackothan Winners" class="rounded-lg">
+        <div class="caption">Hackothan Winners</div>
+      </div>
+    </div>
+    <div class="text-center mt-8 fade-in">
+      <div class="flex items-center justify-center gap-2 text-sm text-blue-600">
+        <i class="fas fa-calendar"></i>
+        <span>Throughout 2025</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="h-1 bg-gradient-to-r from-blue-500 to-blue-700"></div>
+
   <!-- Clubs & Technical Societies -->
-  <section id="clubs" class="py-16 px-4 md:px-8 max-w-7xl mx-auto">
+  <section id="clubs" class="py-16 px-4 md:px-8 max-w-7xl mx-auto" aria-label="Clubs and Technical Societies">
     <div class="text-center mb-12 fade-in">
       <h2 class="text-3xl md:text-4xl font-['Roboto_Slab'] font-bold text-blue-900">
         <i class="fas fa-users text-blue-500 mr-2"></i> Communities that Inspire
@@ -192,7 +391,7 @@
         <div class="caption">Club Meeting 2025</div>
       </div>
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1516321310762-479437144403?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Coding Workshop" class="rounded-lg">
+        <img src="images_workshop/13.jpeg" alt="Coding Workshop" class="rounded-lg">
         <div class="caption">Coding Workshop</div>
       </div>
       <div class="gallery-item">
@@ -210,17 +409,17 @@
   <div class="h-1 bg-gradient-to-r from-blue-500 to-blue-700"></div>
 
   <!-- Final Image Gallery -->
-  <section id="gallery" class="py-16 px-4 md:px-8 max-w-7xl mx-auto bg-white">
+  <section id="gallery" class="py-16 px-4 md:px-8 max-w-7xl mx-auto bg-white" aria-label="Moments of Innovation Gallery">
     <div class="text-center mb-12 fade-in">
       <h2 class="text-3xl md:text-4xl font-['Roboto_Slab'] font-bold text-blue-900">Moments of Innovation</h2>
     </div>
     <div class="columns-2 md:columns-3 lg:columns-4 gap-4">
       <div class="gallery-item mb-4 break-inside-avoid">
-        <img src="C:\Users\Sachin M Poojar\Desktop\website gmu cse\images\2.jpeg" alt="Project Work" class="rounded-lg">
+        <img src="images/2.jpeg" alt="Collaborative Project Work" class="rounded-lg">
         <div class="caption">Collaborative Project Work</div>
       </div>
       <div class="gallery-item mb-4 break-inside-avoid">
-        <img src="images\2.jpeg" alt="Hackathon" class="rounded-lg">
+        <img src="images/2.jpeg" alt="Hackathon 2025" class="rounded-lg">
         <div class="caption">Hackathon 2025</div>
       </div>
       <div class="gallery-item mb-4 break-inside-avoid">
@@ -232,11 +431,11 @@
         <div class="caption">Coding Challenge</div>
       </div>
       <div class="gallery-item mb-4 break-inside-avoid">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Workshop" class="rounded-lg">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="AI Workshop" class="rounded-lg">
         <div class="caption">AI Workshop</div>
       </div>
       <div class="gallery-item mb-4 break-inside-avoid">
-        <img src="https://images.unsplash.com/photo-1516321310762-479437144403?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Project Demo" class="rounded-lg">
+        <img src="https://images.unsplash.com/photo-1516321310762-479437144403?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Product Demo Day" class="rounded-lg">
         <div class="caption">Product Demo Day</div>
       </div>
     </div>
@@ -257,7 +456,115 @@
       document.querySelectorAll('.fade-in').forEach(el => {
         observer.observe(el);
       });
+
+      // Resource error handling
+      window.addEventListener('error', (event) => {
+        if (event.target.tagName === 'IMG') {
+          console.error(`Failed to load image: ${event.target.src}`);
+        }
+      });
     });
   </script>
+  <script>
+  fetch('nav.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-include').innerHTML = html;
+      // After navbar is loaded, run the navbar script
+      const menuBtn = document.getElementById('menuBtn');
+      const navLinks = document.getElementById('navLinks');
+      const navbar = document.getElementById('navbar');
+
+      function closeMenu() {
+        navLinks.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.textContent = '☰';
+      }
+
+      menuBtn.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('active');
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
+        menuBtn.textContent = isOpen ? '✕' : '☰';
+        if (isOpen) {
+          navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
+            el.setAttribute('tabindex', '0');
+          });
+        } else {
+          navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
+            el.setAttribute('tabindex', '-1');
+          });
+        }
+      });
+
+      navLinks.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A' && window.innerWidth <= 900) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('touchstart', function(e) {
+        if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== menuBtn) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+
+      let scrollTimeout;
+      window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          navbar.classList.toggle('scrolled', window.scrollY > 80);
+          highlightOnScroll();
+        }, 50);
+      });
+
+      function highlightOnScroll() {
+        const sections = ['hero', 'about', 'hod', 'news'];
+        const fromTop = window.scrollY + 120;
+        let current = null;
+        for (const id of sections) {
+          const section = document.getElementById(id);
+          if (section && section.offsetTop <= fromTop) current = id;
+        }
+        if (current) {
+          document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => {
+            const href = a.getAttribute('href');
+            if (href === `#${current}`) a.classList.add('active');
+            else if (href?.startsWith('#')) a.classList.remove('active');
+          });
+        }
+      }
+
+      function setActiveLink(element) {
+        document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => a.classList.remove('active'));
+        element.classList.add('active');
+        if (element.closest('.dropdown')) {
+          element.closest('.dropdown').querySelector('.dropdown-btn').classList.add('active');
+        }
+      }
+    });
+</script>
+<!-- Lenis Smooth Scroll -->
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // smooth easing
+    smoothWheel: true,
+    smoothTouch: false,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
 </body>
 </html>

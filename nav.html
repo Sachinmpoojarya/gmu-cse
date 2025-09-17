@@ -1,4 +1,3 @@
-<!-- nav.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,21 +56,25 @@
       gap: .75rem;
       transition: transform 0.3s ease;
     }
-    .brand:hover {
-      transform: scale(1.05);
-    }
     .brand img {
       height: 40px;
       border-radius: 50%;
       box-shadow: 0 4px 12px rgba(255,255,255,0.2);
     }
     .brand-text {
-      font-size: clamp(1rem, 1.8vw, 1.3rem);
-      font-weight: 700;
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      font-weight: 900;
       font-family: "Playfair Display", serif;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #ffffff;
+      background: linear-gradient(90deg, #3b82f6, #db2777);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+    }
+    .brand:hover .brand-text {
+      transform: scale(1.05);
+      text-shadow: 0 4px 8px rgba(0,0,0,0.4);
     }
     .menu-btn {
       display: none;
@@ -146,34 +149,43 @@
         display: inline-block;
       }
       .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
+        position: fixed;
+        top: 0;
         right: 0;
-        display: none;
+        left: 0;
+        height: 100vh;
+        background: rgba(15,23,42,0.98);
         flex-direction: column;
-        align-items: stretch;
-        background: rgba(15,23,42,.98);
-        padding: .5rem;
-        gap: .15rem;
-        border-bottom-left-radius: .75rem;
-        border-bottom-right-radius: .75rem;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 4.5rem;
+        gap: 0.5rem;
+        z-index: 2000;
+        display: none;
+        transition: transform 0.3s ease, opacity 0.3s ease;
       }
       .nav-links.active {
         display: flex;
       }
       .nav-links a, .nav-links .dropdown-btn {
-        padding: .85rem 1rem;
+        padding: 1.1rem 1.5rem;
         text-align: center;
+        font-size: 1.1rem;
       }
       .dropdown-content {
         position: static;
         box-shadow: none;
         background: transparent;
         padding-left: 0;
+        opacity: 1 !important;
+        transform: none !important;
+        display: none;
+      }
+      .dropdown.active .dropdown-content {
+        display: block;
       }
       .dropdown-content a {
-        padding: .6rem 1rem;
+        padding: .7rem 1.5rem;
         border-top: 1px solid rgba(255,255,255,.1);
         text-align: center;
       }
@@ -181,8 +193,9 @@
     @media (max-width: 600px) {
       .nav-inner {
         padding: .5rem 1rem;
-        flex-direction: column;
-        gap: 0.5rem;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
       }
       .brand {
         font-size: clamp(1rem, 4vw, 1.25rem);
@@ -190,44 +203,123 @@
       .brand img {
         height: 30px;
       }
+      .nav-links a, .nav-links .dropdown-btn {
+        font-size: 1rem;
+      }
+      .menu-btn {
+        margin-left: auto;
+      }
     }
   </style>
 </head>
 <body>
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
-      <a class="brand" href="#hero" aria-label="GMU CSE Home">
+      <a class="brand" href="index.html" aria-label="GMU CSE Home">
         <img src="logo.jpg" alt="GMU CSE Logo">
         <span class="brand-text">Dept of Computer Science & Engineering</span>
       </a>
       <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">☰</button>
       <div class="nav-links" id="navLinks" role="navigation" aria-label="Primary">
-        <a href="#hero" class="active">Home</a>
+        <a href="index.html" class="nav-link">Home</a>
         <div class="dropdown">
           <a href="#" class="dropdown-btn">Academics ▾</a>
           <div class="dropdown-content">
             <a href="programs.html">Programs</a>
             <a href="IQAC.html">IQAC & BOS</a>
+            <a href="research.html">Research</a>
           </div>
         </div>
-        <a href="placements.html">Placements</a>
-        <a href="faculty.html">Faculty</a>
-        <a href="Achievement.html">Achievements</a>
-        <a href="alumini.html">Alumni</a>
-        <a href="contact.html">Contact us</a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-btn">Infrastructure & Learning Resources ▾</a>
+          <div class="dropdown-content">
+            <a href="Laboratory Infrastructure.html">Laboratory Infrastructure</a>
+            <a href="Software & Tools.html">Software & Tools</a>
+          </div>
+        </div>
+        <a href="std.html" class="nav-link">Student Activities</a>
+        <a href="placements.html" class="nav-link">Placements</a>
+        <a href="faculty.html" class="nav-link">Faculty</a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-btn">Achievements ▾</a>
+          <div class="dropdown-content">
+            <a href="std_Achievement.html">Faculty Achievements</a>
+            <a href="Student Achievements.html">Student Achievements</a>
+          </div>
+        </div>
+        <a href="alumini.html" class="nav-link">Alumni</a>
+        <a href="contact.html" class="nav-link">Contact us</a>
       </div>
     </div>
   </nav>
   <script>
-    // NAV: Mobile toggle + scroll state + active link
+    // NAV: Mobile toggle + scroll state + active link + accessibility
     const menuBtn = document.getElementById('menuBtn');
     const navLinks = document.getElementById('navLinks');
     const navbar = document.getElementById('navbar');
+
+    // Hamburger toggle
+    function closeMenu() {
+      navLinks.classList.remove('active');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.textContent = '☰';
+      // Close all dropdowns
+      document.querySelectorAll('.dropdown').forEach(dropdown => {
+        dropdown.classList.remove('active');
+      });
+    }
 
     menuBtn.addEventListener('click', () => {
       const isOpen = navLinks.classList.toggle('active');
       menuBtn.setAttribute('aria-expanded', String(isOpen));
       menuBtn.textContent = isOpen ? '✕' : '☰';
+      if (isOpen) {
+        navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
+          el.setAttribute('tabindex', '0');
+        });
+      } else {
+        navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
+          el.setAttribute('tabindex', '-1');
+        });
+      }
+    });
+
+    // Toggle dropdowns on click for mobile
+    document.querySelectorAll('.dropdown-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        if (window.innerWidth <= 900) {
+          e.preventDefault();
+          const dropdown = btn.closest('.dropdown');
+          const isActive = dropdown.classList.toggle('active');
+          // Close other dropdowns
+          document.querySelectorAll('.dropdown').forEach(other => {
+            if (other !== dropdown) {
+              other.classList.remove('active');
+            }
+          });
+        }
+      });
+    });
+
+    // Close menu on link click (mobile)
+    navLinks.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A' && window.innerWidth <= 900 && !e.target.classList.contains('dropdown-btn')) {
+        closeMenu();
+      }
+    });
+
+    // Touch outside to close
+    document.addEventListener('touchstart', function(e) {
+      if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== menuBtn) {
+        closeMenu();
+      }
+    });
+
+    // Keyboard: ESC to close
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        closeMenu();
+      }
     });
 
     // Debounced scroll handler
@@ -241,20 +333,43 @@
     });
 
     function highlightOnScroll() {
-      const sections = ['hero', 'about', 'hod', 'news'];
+      // Get all sections on the current page
+      const sections = document.querySelectorAll('section[id]');
       const fromTop = window.scrollY + 120;
       let current = null;
-      for (const id of sections) {
-        const section = document.getElementById(id);
-        if (section && section.offsetTop <= fromTop) current = id;
-      }
+      sections.forEach(section => {
+        if (section.offsetTop <= fromTop) {
+          current = section.getAttribute('id');
+        }
+      });
       if (current) {
         document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => {
           const href = a.getAttribute('href');
-          if (href === `#${current}`) a.classList.add('active');
-          else if (href?.startsWith('#')) a.classList.remove('active');
+          if (href === `#${current}`) {
+            a.classList.add('active');
+          } else if (href?.startsWith('#')) {
+            a.classList.remove('active');
+          }
         });
       }
+      // Highlight current page link
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        if (a.getAttribute('href') === currentPage) {
+          a.classList.add('active');
+        } else {
+          a.classList.remove('active');
+        }
+      });
+      // Highlight dropdown if current page is in dropdown
+      document.querySelectorAll('.dropdown').forEach(dropdown => {
+        const dropdownLinks = dropdown.querySelectorAll('.dropdown-content a');
+        dropdownLinks.forEach(link => {
+          if (link.getAttribute('href') === currentPage) {
+            dropdown.querySelector('.dropdown-btn').classList.add('active');
+          }
+        });
+      });
     }
 
     function setActiveLink(element) {
@@ -264,6 +379,9 @@
         element.closest('.dropdown').querySelector('.dropdown-btn').classList.add('active');
       }
     }
+
+    // Run on page load to set active link
+    highlightOnScroll();
   </script>
 </body>
-</html> 
+</html>

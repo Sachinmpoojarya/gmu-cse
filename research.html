@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research & Publications - GM University (Built by CSE Students)</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8U0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Custom Styles */
+    :root {
+      --primary: #1e40af; /* Vibrant blue */
+      --secondary: #f3f4f6; /* Light grey */
+      --accent: #f97316; /* Bright orange */
+      --text: #1f2937; /* Dark grey text */
+      --text-light: #6b7280; /* Muted text */
+      --shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      --border-radius: 10px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--secondary);
+      color: var(--text);
+    }
+
+    .section-title {
+      font-family: 'Patrick Hand', cursive;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-divider {
+      border-top: 2px dashed var(--primary); /* Dashed for student vibe */
+      margin: 2rem 0;
+    }
+
+    .profile-card {
+      background: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      border: 2px solid var(--primary);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transform: rotate(0.5deg); /* Slight tilt */
+    }
+
+    .profile-card:nth-child(even) {
+      transform: rotate(-0.5deg); /* Alternate tilt */
+    }
+
+    .profile-card:hover {
+      transform: scale(1.05) rotate(0deg); /* Bouncy hover */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      border-color: var(--accent);
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      border: 2px solid var(--primary);
+      transition: transform 0.3s ease;
+      transform: rotate(0.3deg);
+    }
+
+    .gallery-item:nth-child(even) {
+      transform: rotate(-0.3deg);
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05) rotate(0deg);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      color: white;
+      padding: 1rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      text-align: center;
+      font-family: 'Patrick Hand', cursive;
+    }
+
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+    }
+
+    .card-icon {
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      color: white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Fade-in Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Research & Publications Section -->
+  <section id="research-publications" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-bold section-title">📖 Research & Publications</h2>
+        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Built by CSE students at GM University! 🚀 We’re diving into cutting-edge research in AI, IoT, and more, with faculty and students pushing the boundaries of tech!</p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <!-- Department Research Coordinator -->
+      <div class="mb-12 fade-in">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="card-icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h3 class="text-2xl font-semibold section-title">🔹 Research Coordinator</h3>
+        </div>
+        <div class="profile-card p-6 flex flex-col sm:flex-row items-center gap-6">
+          <img src="https://placehold.co/150x150?text=Dr.+Basavaraddi" alt="Dr. Chethan Chandra S. Basavaraddi" class="rounded-full w-32 h-32 object-cover shadow-md">
+          <div class="text-center sm:text-left">
+            <h4 class="text-xl font-bold text-gray-800 font-['Patrick_Hand']">Dr. Chethan Chandra S. Basavaraddi</h4>
+            <p class="text-gray-600 mb-4">Our research boss, working with GMU’s Dean and R&D Office to spark innovation!</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="mailto:chethanchandrasb.cse@gmu.ac.in" class="flex items-center gap-2 text-accent hover:underline">
+                <i class="fas fa-envelope"></i> chethanchandrasb.cse@gmu.ac.in
+              </a>
+              <a href="tel:+919844508359" class="flex items-center gap-2 text-accent hover:underline">
+                <i class="fas fa-phone"></i> +91 98445 08359
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <!-- Faculty Research Profiles -->
+      <div class="mb-12 fade-in">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="card-icon">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </div>
+          <h3 class="text-2xl font-semibold section-title">🔹 Faculty Research Profiles</h3>
+        </div>
+        <p class="text-gray-600 mb-6">Our faculty are rocking AI, ML, Cybersecurity, IoT, and more, with papers in top journals and conferences!</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Faculty Card 1 -->
+          <div class="profile-card p-6 text-center">
+            <img src="https://placehold.co/150x150?text=Faculty+1" alt="Faculty 1" class="rounded-full w-24 h-24 mx-auto mb-4 object-cover shadow-md">
+            <h4 class="text-lg font-bold text-gray-800 font-['Patrick_Hand']">Dr. John Doe</h4>
+            <p class="text-gray-600 mb-4">AI & ML Wizard</p>
+            <a href="#" class="text-accent hover:underline">Check Out More</a>
+          </div>
+          <!-- Faculty Card 2 -->
+          <div class="profile-card p-6 text-center">
+            <img src="https://placehold.co/150x150?text=Faculty+2" alt="Faculty 2" class="rounded-full w-24 h-24 mx-auto mb-4 object-cover shadow-md">
+            <h4 class="text-lg font-bold text-gray-800 font-['Patrick_Hand']">Prof. Jane Smith</h4>
+            <p class="text-gray-600 mb-4">Cybersecurity Guru</p>
+            <a href="#" class="text-accent hover:underline">Check Out More</a>
+          </div>
+          <!-- Faculty Card 3 -->
+          <div class="profile-card p-6 text-center">
+            <img src="https://placehold.co/150x150?text=Faculty+3" alt="Faculty 3" class="rounded-full w-24 h-24 mx-auto mb-4 object-cover shadow-md">
+            <h4 class="text-lg font-bold text-gray-800 font-['Patrick_Hand']">Dr. Alex Johnson</h4>
+            <p class="text-gray-600 mb-4">IoT Innovator</p>
+            <a href="#" class="text-accent hover:underline">Check Out More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <!-- Publications, Funded Projects & Patents -->
+      <div class="mb-12 fade-in">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="card-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <h3 class="text-2xl font-semibold section-title">🔹 Publications & Projects</h3>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div>
+            <p class="text-gray-600 mb-4">Our faculty are publishing in top journals and snagging cool projects!</p>
+            <ul class="list-disc pl-5 text-gray-600 space-y-2 mb-4">
+              <li>ISRO RESPOND (space & satellite data analytics 🚀)</li>
+              <li>VTU-funded initiatives (advanced computing 💻)</li>
+            </ul>
+            <p class="text-gray-600">Plus, we’re filing patents for IoT systems and intelligent computing frameworks!</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <img src="https://placehold.co/400x200?text=ISRO+Project" alt="gmu Project" class="rounded-lg shadow-md object-cover border-2 border-primary">
+            <img src="https://placehold.co/400x200?text=VTU+Project" alt="gmu Project" class="rounded-lg shadow-md object-cover border-2 border-primary">
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <!-- Student Research & Projects -->
+      <div class="mb-12 fade-in">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="card-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3 class="text-2xl font-semibold section-title">🔹 Student Research & Projects</h3>
+        </div>
+        <p class="text-gray-600 mb-6">We’re publishing in IEEE, Springer, ACM, and killing it at hackathons and symposiums!</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Student Project 1 -->
+          <div class="gallery-item">
+            <img src="https://placehold.co/300x400?text=Student+Project+1" alt="Student Project 1" class="w-full h-full object-cover">
+            <div class="gallery-caption">AI-Based Health Monitoring System</div>
+          </div>
+          <!-- Student Project 2 -->
+          <div class="gallery-item">
+            <img src="https://placehold.co/300x300?text=Student+Project+2" alt="Student Project 2" class="w-full h-full object-cover">
+            <div class="gallery-caption">Cybersecurity Hackathon Winner</div>
+          </div>
+          <!-- Student Project 3 -->
+          <div class="gallery-item">
+            <img src="https://placehold.co/300x500?text=Student+Project+3" alt="Student Project 3" class="w-full h-full object-cover">
+            <div class="gallery-caption">IoT Smart City Model</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <!-- Image Showcase -->
+      <div class="fade-in">
+        <h3 class="text-2xl font-semibold section-title mb-6 text-center">Image Showcase</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Image 1 -->
+          <div class="gallery-item">
+            <img src="https://placehold.co/300x200?text=Faculty+Conference" alt="Faculty at Conference" class="w-full h-full object-cover">
+            <div class="gallery-caption">Faculty at Global Tech Conference</div>
+          </div>
+          <!-- Image 2 -->
+          <div class="gallery-item">
+            <img src="https://placehold.co/300x200?text=Student+Symposium" alt="Students at Symposium" class="w-full h-full object-cover">
+            <div class="gallery-caption">Students Rocking the Symposium</div>
+          </div>
+          <!-- Image 3 -->
+          <div class="gallery-item">
+            <img src="https://placehold.co/300x200?text=Research+Poster" alt="Research Poster" class="w-full h-full object-cover">
+            <div class="gallery-caption">Epic Research Poster</div>
+          </div>
+          <!-- Image 4 -->
+          <div class="gallery-item">
+            <img src="https://placehold.co/300x200?text=Patent+Showcase" alt="Patent Showcase" class="w-full h-full object-cover">
+            <div class="gallery-caption">Patent Filing Party!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Fade-in Animation on Scroll
+    function fadeInOnScroll() {
+      const elements = document.querySelectorAll('.fade-in');
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 100;
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.classList.add('visible');
+        }
+      });
+    }
+
+    // Throttled Scroll Handler
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          fadeInOnScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    // Initialize on Page Load
+    document.addEventListener('DOMContentLoaded', () => {
+      fadeInOnScroll();
+    });
+
+    // Handle Window Resize
+    window.addEventListener('resize', fadeInOnScroll);
+  </script>
+  <script>
+  fetch('nav.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-include').innerHTML = html;
+      // After navbar is loaded, run the navbar script
+      const menuBtn = document.getElementById('menuBtn');
+      const navLinks = document.getElementById('navLinks');
+      const navbar = document.getElementById('navbar');
+
+      function closeMenu() {
+        navLinks.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.textContent = '☰';
+      }
+
+      menuBtn.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('active');
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
+        menuBtn.textContent = isOpen ? '✕' : '☰';
+        if (isOpen) {
+          navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
+            el.setAttribute('tabindex', '0');
+          });
+        } else {
+          navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
+            el.setAttribute('tabindex', '-1');
+          });
+        }
+      });
+
+      navLinks.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A' && window.innerWidth <= 900) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('touchstart', function(e) {
+        if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== menuBtn) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+
+      let scrollTimeout;
+      window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          navbar.classList.toggle('scrolled', window.scrollY > 80);
+          highlightOnScroll();
+        }, 50);
+      });
+
+      function highlightOnScroll() {
+        const sections = ['hero', 'about', 'hod', 'news'];
+        const fromTop = window.scrollY + 120;
+        let current = null;
+        for (const id of sections) {
+          const section = document.getElementById(id);
+          if (section && section.offsetTop <= fromTop) current = id;
+        }
+        if (current) {
+          document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => {
+            const href = a.getAttribute('href');
+            if (href === `#${current}`) a.classList.add('active');
+            else if (href?.startsWith('#')) a.classList.remove('active');
+          });
+        }
+      }
+
+      function setActiveLink(element) {
+        document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => a.classList.remove('active'));
+        element.classList.add('active');
+        if (element.closest('.dropdown')) {
+          element.closest('.dropdown').querySelector('.dropdown-btn').classList.add('active');
+        }
+      }
+    });
+</script>
+<!-- Lenis Smooth Scroll -->
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // smooth easing
+    smoothWheel: true,
+    smoothTouch: false,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+<div id="navbar-include"></div>
+    <script>
+  fetch('nav.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-include').innerHTML = html;
+      // After navbar is loaded, run the navbar script
+      const menuBtn = document.getElementById('menuBtn');
+      const navLinks = document.getElementById('navLinks');
+      const navbar = document.getElementById('navbar');
+
+      function closeMenu() {
+        navLinks.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.textContent = '☰';
+      }
+
+      menuBtn.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('active');
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
+        menuBtn.textContent = isOpen ? '✕' : '☰';
+        if (isOpen) {
+          navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
+            el.setAttribute('tabindex', '0');
+          });
+        } else {
+          navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
+            el.setAttribute('tabindex', '-1');
+          });
+        }
+      });
+
+      navLinks.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A' && window.innerWidth <= 900) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('touchstart', function(e) {
+        if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== menuBtn) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+
+      let scrollTimeout;
+      window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          navbar.classList.toggle('scrolled', window.scrollY > 80);
+          highlightOnScroll();
+        }, 50);
+      });
+
+      function highlightOnScroll() {
+        const sections = ['hero', 'about', 'hod', 'news'];
+        const fromTop = window.scrollY + 120;
+        let current = null;
+        for (const id of sections) {
+          const section = document.getElementById(id);
+          if (section && section.offsetTop <= fromTop) current = id;
+        }
+        if (current) {
+          document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => {
+            const href = a.getAttribute('href');
+            if (href === `#${current}`) a.classList.add('active');
+            else if (href?.startsWith('#')) a.classList.remove('active');
+          });
+        }
+      }
+
+      function setActiveLink(element) {
+        document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => a.classList.remove('active'));
+        element.classList.add('active');
+        if (element.closest('.dropdown')) {
+          element.closest('.dropdown').querySelector('.dropdown-btn').classList.add('active');
+        }
+      }
+    });
+</script>
+<!-- Lenis Smooth Scroll -->
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // smooth easing
+    smoothWheel: true,
+    smoothTouch: false,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+</body>
+</html>
