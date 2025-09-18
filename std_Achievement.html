@@ -141,8 +141,23 @@
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin-top: 40px;
-            align-items: start;
+            align-items: stretch;
         }
+
+        .achievement-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 500px; /* Ensures all cards are at least this tall */
+            height: 100%;
+        }
+
+        .card-content {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        
 
         /* Achievement Cards */
         .achievement-card {
@@ -759,9 +774,7 @@
             <div class="achievements-grid">
                 <!-- Hackathon - Wide Card -->
                 <div class="achievement-card">
-                    <div class="award-badge">
-                        <i class="fas fa-briefcase"></i> 
-                    </div>
+                    
                     <div class="card-image">
                         <img src="images_ach/ram.png" alt="Hackathon Success">
                     </div>
@@ -782,32 +795,28 @@
                 </div>
                 <!-- Hackathon - Wide Card -->
                 <div class="achievement-card">
-                    <div class="award-badge">
-                        <i class="fas fa-briefcase"></i> 
-                    </div>
+                   
                     <div class="card-image">
-                        <img src="images_ach/ram.png" alt="Hackathon Success">
+                        <img src="images_studentachivemnts/WhatsApp Image 2025-09-18 at 21.38.54_a5466ba9.jpg" alt="Hackathon Success">
                     </div>
                     <div class="card-content">
-                        <h3 class="card-title">National-level Vyoma Hackathon</h3>
+                        <h3 class="card-title">Paper Presentation on Climate Change</h3>
                         <div class="card-meta">
-                            <span class="student-name">Rahul, Abhiram, Yashaswini, Yashwanth</span>
+                            <span class="student-name">Bindu C Patil Shraddha Hiremath   </span>
                             <span>•</span>
                             <span>Computer Science</span>
                         </div>
-                        <p class="card-description">
-                            Under the leadership of DS Yashaswini, our team (Yashwanth V S, Devang, Abhiram Girish Naik, Rahul R Gadgimata) created an impactful Generative AI solution aimed at enhancing health and well-being during an intense 24-hour challenge in Hyderabad.
-                        </p>
-                        <a href="#" class="read-more-btn">
-                            Hackathon Details <i class="fas fa-arrow-right"></i>
+                        <p class="card-description">Took part in a paper presentation at KLE Institute of Technology, Hubli, on “The Role of Individuals in Combating Climate Change”. The presentation highlighted sustainable practices and the power of individual actions in addressing global challenges.                        </p>
+                        <!-- <a href="#" class="read-more-btn">
+                            Hackathon Details <i class="fas fa-arrow-right"></i> -->
                         </a>
                     </div>
                 </div>
 
                 <div class="achievement-card">
-                    <div class="award-badge">
+                    <!-- <div class="award-badge">
                         <i class="fas fa-lightbulb"></i> Innovation
-                    </div>
+                    </div> -->
                     <div class="card-image">
                         <img src="images_ach/arjun.png" alt="NASA Space Apps Challenge">
                     </div>
@@ -829,9 +838,6 @@
 
                 <!-- Hackathon -->
                 <div class="achievement-card">
-                    <div class="award-badge">
-                        <i class="fas fa-code"></i> Hackathon
-                    </div>
                     <div class="card-image">
                         <img src="images_ach/sachin achivement.jpg" alt="Hackathon">
                     </div>
@@ -850,58 +856,55 @@
 
                 <!-- EduTech Startup -->
                 <div class="achievement-card">
-                    <div class="award-badge">
-                        <i class="fas fa-rocket"></i> Startup
-                    </div>
                     <div class="card-image">
                         <img src="images_ach/sachi.png" alt="Hustlers.exe">
                     </div>
                     <div class="card-content">
-                        <h3 class="card-title">NeuroCalm</h3>
+                        <h3 class="card-title">NeuroCalm Project – National Hackathon Achievement</h3>
                         <div class="card-meta">
                             <span class="student-name">Sachin, Abhiram, Prajwal, Sudharshan</span>
                         </div>
                         <p class="card-description">
-                            This team participated at Precedency in Bangalore and was selected in the top 10.
-                        </p>
-                    </div>
+                        Our students participated in the National Hackathon at Presidency University with their project NeuroCalm, an innovative solution for mental well-being. Competing against 80 teams nationwide, they showcased creativity and technical skills, securing the 10th position—a proud achievement for the Department of Computer Science & Engineering, GM University.                    </div>
                 </div>
 
                 <!-- EduTech Startup -->
                 <div class="achievement-card">
-                    <div class="award-badge">
+                    <!-- <div class="award-badge">
                         <i class="fas fa-rocket"></i> Startup
-                    </div>
+                    </div> -->
                     <div class="card-image">
-                        <img src="images_ach/sachi.png" alt="Hustlers.exe">
+                        <img src="images_studentachivemnts/WhatsApp Image 2025-09-18 at 21.52.35_101e9dcd.jpg" alt="Hustlers.exe">
                     </div>
                     <div class="card-content">
-                        <h3 class="card-title">NeuroCalm</h3>
+                        <h3 class="card-title">AI-Powered Investment Exit Strategy Predictor
+                            </h3>
                         <div class="card-meta">
-                            <span class="student-name">Sachin, Abhiram, Prajwal, Sudharshan</span>
+                            <span class="student-name">Likitha C Y
+                                Harshitha H M
+                                Shreya B Yadav
+                                Lakshmi B C</span>
                         </div>
                         <p class="card-description">
-                            This team participated at Precedency in Bangalore and was selected in the top 10.
-                        </p>
-                    </div>
+                            The AI-Powered Investment Exit Strategy Predictor helps investors make smarter, data-driven exit decisions by combining valuation forecasting, exit timing optimization, and sentiment analysis. Unlike static stop-loss rules, it adapts dynamically to market signals, offering clear recommendations with explanations to reduce emotional bias, protect gains, and maximize returns.                    </div>
                 </div>
 
                 <!-- EduTech Startup -->
                 <div class="achievement-card">
-                    <div class="award-badge">
-                        <i class="fas fa-rocket"></i> Startup
-                    </div>
                     <div class="card-image">
-                        <img src="images_ach/sachi.png" alt="Hustlers.exe">
+                        <img src="images_studentachivemnts/WhatsApp Image 2025-09-18 at 22.01.09_fae21701.jpg" alt="Hustlers.exe">
                     </div>
                     <div class="card-content">
-                        <h3 class="card-title">NeuroCalm</h3>
+                        <h3 class="card-title">Code Quality Visualizer Project at Hackmitten 2.0
+                        </h3>
                         <div class="card-meta">
-                            <span class="student-name">Sachin, Abhiram, Prajwal, Sudharshan</span>
+                            <span class="student-name">Sinchana M
+                        Rohini KG
+                        Pragathi S P
+                        Prakruthi KN</span>
                         </div>
                         <p class="card-description">
-                            This team participated at Precedency in Bangalore and was selected in the top 10.
-                        </p>
+                        At Hackmitten 2.0, a National Level Hackathon organized by Maharaja Institute of Technology, Thandavapura, our team developed Code Quality Visualizer—a tool for static analysis of code repositories. It highlights complexity hotspots, probable bugs, and includes an interactive dashboard with predictive insights to help developers address issues in advance.                        </p>
                     </div>
                 </div>
             </div>
