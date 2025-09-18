@@ -8,28 +8,25 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
   <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8U0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    /* Custom Styles */
     :root {
-      --primary: #1e40af; /* Vibrant blue */
-      --secondary: #f3f4f6; /* Light grey */
-      --accent: #f97316; /* Bright orange */
-      --text: #1f2937; /* Dark grey text */
-      --text-light: #6b7280; /* Muted text */
+      --primary: #1e40af;
+      --secondary: #f3f4f6;
+      --accent: #f97316;
+      --text: #1f2937;
+      --text-light: #6b7280;
       --shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
       --border-radius: 10px;
     }
-
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--secondary);
       color: var(--text);
     }
-
     .section-title {
       font-family: 'Patrick Hand', cursive;
       font-weight: 700;
@@ -37,31 +34,26 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
     .section-divider {
-      border-top: 2px dashed var(--primary); /* Dashed for student vibe */
+      border-top: 2px dashed var(--primary);
       margin: 2rem 0;
     }
-
     .profile-card {
       background: white;
       border-radius: var(--border-radius);
       box-shadow: var(--shadow);
       border: 2px solid var(--primary);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      transform: rotate(0.5deg); /* Slight tilt */
+      transform: rotate(0.5deg);
     }
-
     .profile-card:nth-child(even) {
-      transform: rotate(-0.5deg); /* Alternate tilt */
+      transform: rotate(-0.5deg);
     }
-
     .profile-card:hover {
-      transform: scale(1.05) rotate(0deg); /* Bouncy hover */
+      transform: scale(1.05) rotate(0deg);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       border-color: var(--accent);
     }
-
     .gallery-item {
       position: relative;
       overflow: hidden;
@@ -71,15 +63,12 @@
       transition: transform 0.3s ease;
       transform: rotate(0.3deg);
     }
-
     .gallery-item:nth-child(even) {
       transform: rotate(-0.3deg);
     }
-
     .gallery-item:hover {
       transform: scale(1.05) rotate(0deg);
     }
-
     .gallery-caption {
       position: absolute;
       bottom: 0;
@@ -93,11 +82,9 @@
       text-align: center;
       font-family: 'Patrick Hand', cursive;
     }
-
     .gallery-item:hover .gallery-caption {
       transform: translateY(0);
     }
-
     .card-icon {
       background: linear-gradient(90deg, var(--primary), var(--accent));
       color: white;
@@ -109,14 +96,11 @@
       justify-content: center;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-
-    /* Fade-in Animation */
     .fade-in {
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.5s ease, transform 0.5s ease;
     }
-
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
@@ -124,16 +108,33 @@
   </style>
 </head>
 <body>
+  <!-- Navbar Include -->
+  <div id="navbar-include"></div>
+  <script>
+    fetch('nav.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('navbar-include').innerHTML = html;
+        // Navbar dropdown/hamburger logic can be initialized here if needed
+      });
+  </script>
+
+  <!-- Hero Section -->
+  <section class="hero flex items-center justify-center min-h-[350px] py-16 md:py-20 text-center text-white bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600">
+    <div class="w-full max-w-2xl mx-auto px-4">
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">Research & Publications</h1>
+      <p class="text-lg md:text-xl font-medium max-w-xl mx-auto opacity-90">Explore the innovative research, publications, and projects by our CSE faculty and students at GM University.</p>
+    </div>
+  </section>
+
   <!-- Research & Publications Section -->
-  <section id="research-publications" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
+  <section id="research-publications" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100" style="margin-top:0;">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-12 fade-in">
         <h2 class="text-3xl sm:text-4xl font-bold section-title">📖 Research & Publications</h2>
         <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Built by CSE students at GM University! 🚀 We’re diving into cutting-edge research in AI, IoT, and more, with faculty and students pushing the boundaries of tech!</p>
       </div>
-
       <div class="section-divider"></div>
-
       <!-- Department Research Coordinator -->
       <div class="mb-12 fade-in">
         <div class="flex items-center gap-4 mb-6">
@@ -143,8 +144,8 @@
           <h3 class="text-2xl font-semibold section-title">🔹 Research Coordinator</h3>
         </div>
         <div class="profile-card p-6 flex flex-col sm:flex-row items-center gap-6">
-          <img src="https://placehold.co/150x150?text=Dr.+Basavaraddi" alt="Dr. Chethan Chandra S. Basavaraddi" class="rounded-full w-32 h-32 object-cover shadow-md">
-          <div class="text-center sm:text-left">
+          <img src="images_faculty/chethan.png" alt="Dr. Chethan Chandra S. Basavaraddi" class="rounded-full w-24 h-24 object-cover shadow-md">
+          <div>
             <h4 class="text-xl font-bold text-gray-800 font-['Patrick_Hand']">Dr. Chethan Chandra S. Basavaraddi</h4>
             <p class="text-gray-600 mb-4">Our research boss, working with GMU’s Dean and R&D Office to spark innovation!</p>
             <div class="flex flex-col sm:flex-row gap-4">
@@ -158,9 +159,7 @@
           </div>
         </div>
       </div>
-
       <div class="section-divider"></div>
-
       <!-- Faculty Research Profiles -->
       <div class="mb-12 fade-in">
         <div class="flex items-center gap-4 mb-6">
@@ -194,9 +193,7 @@
           </div>
         </div>
       </div>
-
       <div class="section-divider"></div>
-
       <!-- Publications, Funded Projects & Patents -->
       <div class="mb-12 fade-in">
         <div class="flex items-center gap-4 mb-6">
@@ -220,9 +217,7 @@
           </div>
         </div>
       </div>
-
       <div class="section-divider"></div>
-
       <!-- Student Research & Projects -->
       <div class="mb-12 fade-in">
         <div class="flex items-center gap-4 mb-6">
@@ -250,9 +245,7 @@
           </div>
         </div>
       </div>
-
       <div class="section-divider"></div>
-
       <!-- Image Showcase -->
       <div class="fade-in">
         <h3 class="text-2xl font-semibold section-title mb-6 text-center">Image Showcase</h3>
@@ -294,8 +287,6 @@
         }
       });
     }
-
-    // Throttled Scroll Handler
     let ticking = false;
     window.addEventListener('scroll', () => {
       if (!ticking) {
@@ -306,217 +297,272 @@
         ticking = true;
       }
     });
-
-    // Initialize on Page Load
     document.addEventListener('DOMContentLoaded', () => {
       fadeInOnScroll();
     });
-
-    // Handle Window Resize
     window.addEventListener('resize', fadeInOnScroll);
   </script>
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
   <script>
-  fetch('nav.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('navbar-include').innerHTML = html;
-      // After navbar is loaded, run the navbar script
-      const menuBtn = document.getElementById('menuBtn');
-      const navLinks = document.getElementById('navLinks');
-      const navbar = document.getElementById('navbar');
-
-      function closeMenu() {
-        navLinks.classList.remove('active');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        menuBtn.textContent = '☰';
-      }
-
-      menuBtn.addEventListener('click', () => {
-        const isOpen = navLinks.classList.toggle('active');
-        menuBtn.setAttribute('aria-expanded', String(isOpen));
-        menuBtn.textContent = isOpen ? '✕' : '☰';
-        if (isOpen) {
-          navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
-            el.setAttribute('tabindex', '0');
-          });
-        } else {
-          navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
-            el.setAttribute('tabindex', '-1');
-          });
-        }
-      });
-
-      navLinks.addEventListener('click', function(e) {
-        if (e.target.tagName === 'A' && window.innerWidth <= 900) {
-          closeMenu();
-        }
-      });
-
-      document.addEventListener('touchstart', function(e) {
-        if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== menuBtn) {
-          closeMenu();
-        }
-      });
-
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-          closeMenu();
-        }
-      });
-
-      let scrollTimeout;
-      window.addEventListener('scroll', () => {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-          navbar.classList.toggle('scrolled', window.scrollY > 80);
-          highlightOnScroll();
-        }, 50);
-      });
-
-      function highlightOnScroll() {
-        const sections = ['hero', 'about', 'hod', 'news'];
-        const fromTop = window.scrollY + 120;
-        let current = null;
-        for (const id of sections) {
-          const section = document.getElementById(id);
-          if (section && section.offsetTop <= fromTop) current = id;
-        }
-        if (current) {
-          document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => {
-            const href = a.getAttribute('href');
-            if (href === `#${current}`) a.classList.add('active');
-            else if (href?.startsWith('#')) a.classList.remove('active');
-          });
-        }
-      }
-
-      function setActiveLink(element) {
-        document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => a.classList.remove('active'));
-        element.classList.add('active');
-        if (element.closest('.dropdown')) {
-          element.closest('.dropdown').querySelector('.dropdown-btn').classList.add('active');
-        }
-      }
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      smoothTouch: false,
     });
-</script>
-<!-- Lenis Smooth Scroll -->
-<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
-<script>
-  const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // smooth easing
-    smoothWheel: true,
-    smoothTouch: false,
-  });
-
-  function raf(time) {
-    lenis.raf(time);
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
     requestAnimationFrame(raf);
-  }
+  </script>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Footer - GMU CSE</title>
 
-  requestAnimationFrame(raf);
-</script>
-<div id="navbar-include"></div>
-    <script>
-  fetch('nav.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('navbar-include').innerHTML = html;
-      // After navbar is loaded, run the navbar script
-      const menuBtn = document.getElementById('menuBtn');
-      const navLinks = document.getElementById('navLinks');
-      const navbar = document.getElementById('navbar');
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-      function closeMenu() {
-        navLinks.classList.remove('active');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        menuBtn.textContent = '☰';
+  <style>
+    :root {
+      --primary: #0f172a;
+      --primary-2: #111827;
+      --text-light: #f8fafc;
+      --accent: #3b82f6;
+      --accent-2: #8b5cf6;
+      --footer-container: min(90vw, 1000px);
+    }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6; overflow-x: hidden;
+    }
+    footer {
+      background: linear-gradient(180deg, var(--primary-2) 0%, var(--primary) 100%);
+      color: var(--text-light);
+      padding: clamp(1.5rem, 3vw, 3rem) 0; /* Reduced padding */
+      position: relative;
+      overflow: hidden;
+      font-family: "Inter", sans-serif;
+    }
+    .footer-inner {
+      width: var(--footer-container);
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: clamp(0.8rem, 1.5vw, 1.5rem);
+      align-items: start;
+      margin-bottom: 1rem;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: clamp(0.8rem, 1.5vw, 1.5rem);
+      align-items: start;
+      margin-bottom: 1rem;
+    }
+    .fcol {
+      padding: 0.6rem;
+      transition: transform 0.3s ease;
+    }
+    .fcol:hover {
+      transform: translateY(-5px);
+    }
+    .fcol h4 {
+      margin: 0 0 0.6rem;
+      color: var(--accent);
+      font-size: clamp(0.9rem, 1.2vw, 1.3rem);
+      font-weight: 800;
+      font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+      position: relative;
+      padding-bottom: 0.4rem;
+    }
+    .fcol p, .fcol a {
+      font-size: clamp(0.75rem, 0.9vw, 0.95rem);
+      color: rgba(248,250,252,0.9);
+      text-decoration: none;
+      margin: 0.4rem 0;
+      display: block;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .fcol a:hover {
+      color: var(--accent-2);
+      transform: translateX(5px);
+    }
+    .social-links {
+      display: flex;
+      gap: 0.8rem;
+      margin: 0.6rem 0;
+      flex-wrap: wrap;
+    }
+    .social-links a {
+      color: var(--text-light);
+      font-size: clamp(1rem, 1.4vw, 1.4rem);
+      transition: color 0.3s ease, transform 0.3s ease;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+    }
+    .social-links a:hover {
+      color: var(--accent-2);
+      transform: scale(1.2);
+      background: rgba(255,255,255,0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .footer-bottom {
+      text-align: center;
+      font-size: clamp(0.75rem, 0.9vw, 0.9rem);
+      color: rgba(255,255,255,0.7);
+      margin-top: 1rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      position: relative;
+    }
+    .footer-bottom::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      border-radius: 999px;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top center, rgba(59,130,246,0.15) 0%, transparent 70%);
+      opacity: 0.6;
+      z-index: -1;
+    }
+    @media (max-width: 980px) {
+      .footer-grid, .contact-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       }
-
-      menuBtn.addEventListener('click', () => {
-        const isOpen = navLinks.classList.toggle('active');
-        menuBtn.setAttribute('aria-expanded', String(isOpen));
-        menuBtn.textContent = isOpen ? '✕' : '☰';
-        if (isOpen) {
-          navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
-            el.setAttribute('tabindex', '0');
-          });
-        } else {
-          navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
-            el.setAttribute('tabindex', '-1');
-          });
-        }
-      });
-
-      navLinks.addEventListener('click', function(e) {
-        if (e.target.tagName === 'A' && window.innerWidth <= 900) {
-          closeMenu();
-        }
-      });
-
-      document.addEventListener('touchstart', function(e) {
-        if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== menuBtn) {
-          closeMenu();
-        }
-      });
-
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-          closeMenu();
-        }
-      });
-
-      let scrollTimeout;
-      window.addEventListener('scroll', () => {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-          navbar.classList.toggle('scrolled', window.scrollY > 80);
-          highlightOnScroll();
-        }, 50);
-      });
-
-      function highlightOnScroll() {
-        const sections = ['hero', 'about', 'hod', 'news'];
-        const fromTop = window.scrollY + 120;
-        let current = null;
-        for (const id of sections) {
-          const section = document.getElementById(id);
-          if (section && section.offsetTop <= fromTop) current = id;
-        }
-        if (current) {
-          document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => {
-            const href = a.getAttribute('href');
-            if (href === `#${current}`) a.classList.add('active');
-            else if (href?.startsWith('#')) a.classList.remove('active');
-          });
-        }
+    }
+    @media (max-width: 680px) {
+      .footer-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1rem;
       }
-
-      function setActiveLink(element) {
-        document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => a.classList.remove('active'));
-        element.classList.add('active');
-        if (element.closest('.dropdown')) {
-          element.closest('.dropdown').querySelector('.dropdown-btn').classList.add('active');
-        }
+      .fcol a:hover {
+        transform: none;
       }
+      .social-links {
+        justify-content: center;
+      }
+    }
+    @media (max-width: 480px) {
+      .footer-inner {
+        padding: 0 0.5rem;
+      }
+      .fcol h4 {
+        font-size: clamp(0.85rem, 1.1vw, 1.1rem);
+      }
+      .fcol p, .fcol a {
+        font-size: clamp(0.7rem, 0.8vw, 0.85rem);
+      }
+      .social-links a {
+        width: 28px;
+        height: 28px;
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Social Icon CSS */
+    .social-icon {
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .social-icon:hover {
+      transform: scale(1.2);
+      color: #93c5fd;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Footer -->
+<footer class="footer" aria-label="Footer navigation and contact information">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="fcol">
+        <h4>Information For</h4>
+        <p><a href="#" aria-label="Information for prospective students">Prospective Students</a></p>
+        <p><a href="#" aria-label="Information for current students">Current Students</a></p>
+        <p><a href="#" aria-label="Information for alumni">Alumni</a></p>
+      </div>
+      <div class="fcol">
+        <h4>Information About</h4>
+        <p><a href="#" aria-label="About GM University">About GM University</a></p>
+        <p><a href="#" aria-label="Academic programs">Academic Programs</a></p>
+        <p><a href="#" aria-label="Research at GM University">Research</a></p>
+      </div>
+      <div class="fcol">
+        <h4>Important Info</h4>
+        <p><a href="#" aria-label="Admissions information">Admissions</a></p>
+        <p><a href="#" aria-label="Career opportunities">Careers</a></p>
+        <p><a href="#" aria-label="Campus life">Campus Life</a></p>
+      </div>
+      <div class="fcol">
+        <h4>Placements & Internships</h4>
+        <p><a href="placements.html" aria-label="Placement overview">Placement Overview</a></p>
+        <p><a href="placements.html" aria-label="Star students">Star Students</a></p>
+        <p><a href="placements.html" aria-label="Top recruiters">Top Recruiters</a></p>
+      </div>
+    </div>
+    <div class="contact-grid">
+      <div class="fcol">
+        <h4>Address & Contact Info</h4>
+        <p>GM University, Davangere, Karnataka, India</p>
+        <p>Email: <a href="mailto:info@gmu.edu" aria-label="Email GM University">info@gmu.edu</a></p>
+        <p>Phone: <a href="tel:+911234567890" aria-label="Call GM University">+91-123-456-7890</a></p>
+      </div>
+      <div class="fcol">
+        <h4>Connect With Us</h4>
+        <div class="social-links">
+          <a href="https://facebook.com" target="_blank" class="social-icon" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com" target="_blank" class="social-icon" aria-label="Visit our Twitter page"><i class="fab fa-twitter"></i></a>
+          <a href="https://linkedin.com" target="_blank" class="social-icon" aria-label="Visit our LinkedIn page"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://instagram.com" target="_blank" class="social-icon" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com" target="_blank" class="social-icon" aria-label="Visit our YouTube page"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p><a href="https://www.google.com/maps/place/Davanagere,+Karnataka" target="_blank" class="flex items-center gap-2 hover:text-blue-200" aria-label="Find us on Google Maps"><i class="fa-solid fa-location-dot"></i> Find us on Google Maps</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 GM University. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Footer: Social icon hover
+  document.querySelectorAll('.social-icon').forEach(icon => {
+    icon.addEventListener('mouseover', () => {
+      icon.style.color = '#60a5fa';
     });
-</script>
-<!-- Lenis Smooth Scroll -->
-<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
-<script>
-  const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // smooth easing
-    smoothWheel: true,
-    smoothTouch: false,
+    icon.addEventListener('mouseout', () => {
+      icon.style.color = '';
+    });
   });
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-
-  requestAnimationFrame(raf);
 </script>
+
+</body>
+</html>
 </body>
 </html>
