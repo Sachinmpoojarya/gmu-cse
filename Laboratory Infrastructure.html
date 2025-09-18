@@ -1,1 +1,369 @@
-hi sudi 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GMU Laboratory Infrastructure</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --muted: #9aa4b2;
+      --glitter: linear-gradient(
+        45deg,
+        rgba(128, 208, 255, 0.8),
+        rgba(124, 58, 237, 0.8),
+        rgba(255, 184, 107, 0.8),
+        rgba(128, 208, 255, 0.8)
+      );
+    }
+    html, body {
+      font-family: "Inter", system-ui, sans-serif;
+      color: #1f2937;
+      background: #fff !important;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 1rem; }
+    /* NAVBAR REMOVED */
+    /* HERO */
+    .hero { padding: 5rem 0 3rem; margin-top: 60px; } /* Adjusted for navbar height */
+    .hero-inner { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; justify-content: space-between; }
+    .hero-copy { flex: 1 1 360px; min-width: 260px; }
+    .headline { font-size: clamp(1.5rem, 5vw, 2.5rem); margin: 0 0 0.75rem; font-weight: 800; letter-spacing: -0.02em; }
+    .headline-accent {
+      background: var(--glitter);
+      -webkit-background-clip: text; color: transparent;
+    }
+    .subheadline { color: var(--muted); margin-bottom: 1rem; font-size: clamp(0.9rem, 3vw, 1.1rem); max-width: 45ch; }
+    .btn {
+      display: inline-block; padding: 0.6rem 1rem; border-radius: 8px;
+      background: var(--glitter); color: #fff;
+      text-decoration: none; font-weight: 600; box-shadow: 0 4px 12px rgba(99,102,241,0.18);
+      margin-right: 0.5rem;
+    }
+    .btn-ghost { background: transparent; border: 1px solid rgba(99,102,241,0.3); color: #cfe7ff; }
+    .hero-media { flex: 0 1 360px; position: relative; height: 200px; min-width: 260px; }
+    .device { position: absolute; width: 300px; max-width: 45%; filter: drop-shadow(0 15px 30px rgba(2,6,23,.4)); }
+    .device-1 { left: 0; top: 0; transform: rotate(-6deg); }
+    .device-2 { right: 0; bottom: 0; transform: rotate(6deg); }
+    .device-3 { left: 20%; top: 15%; transform: rotate(-2deg); }
+    @media (max-width: 768px) {
+      .hero { padding: 4rem 0 2rem; margin-top: 80px; }
+      .hero-inner { flex-direction: column-reverse; gap: 1.5rem; }
+      .hero-media { order: 2; width: 100%; height: 180px; margin-top: 1rem; }
+      .device { width: 220px; max-width: 40%; }
+    }
+    @media (max-width: 480px) {
+      .hero { padding: 3rem 0 1.5rem; margin-top: 70px; }
+      .hero-media { height: 160px; }
+      .device { width: 180px; }
+      .headline { font-size: clamp(1.2rem, 4vw, 1.8rem); }
+      .subheadline { font-size: clamp(0.8rem, 2.5vw, 0.95rem); }
+    }
+    /* TABLE */
+    .section-title { font-size: clamp(1.2rem, 4vw, 1.5rem); margin-bottom: 1rem; font-weight: 700; }
+    .table-frame {
+      border-radius: 12px; padding: 1rem;
+      border: 2px solid transparent;
+      background: transparent;
+      position: relative;
+      overflow: hidden;
+      background-clip: padding-box;
+    }
+    .table-frame::before {
+      content: '';
+      position: absolute;
+      top: -2px; left: -2px; right: -2px; bottom: -2px;
+      background: var(--glitter);
+      background-size: 200% 200%;
+      animation: glitter 3s linear infinite;
+      z-index: -1;
+    }
+    @keyframes glitter {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .labs-table { width: 100%; border-collapse: collapse; }
+    .labs-table th { text-align: left; padding: 10px 12px; font-weight: 700; font-size: clamp(0.85rem, 2.5vw, 0.95rem); border-bottom: 1px solid rgba(0,0,0,0.1); }
+    .labs-table td { padding: 12px; font-size: clamp(0.8rem, 2.5vw, 0.9rem); border-bottom: 1px solid rgba(0,0,0,0.05); }
+    @media (max-width: 768px) {
+      .labs-table { display: block; }
+      .labs-table thead { display: none; }
+      .labs-table tbody { display: flex; flex-direction: column; gap: 8px; }
+      .labs-table tr { display: block; border-radius: 8px; padding: 10px; border: 1px solid rgba(0,0,0,0.05); }
+      .labs-table td { display: flex; justify-content: space-between; padding: 6px 0; border: none; }
+      .labs-table td::before { content: attr(data-label); font-weight: 700; margin-right: 8px; flex: 0 0 40%; }
+    }
+    @media (max-width: 480px) {
+      .labs-table td { font-size: clamp(0.75rem, 2vw, 0.85rem); }
+      .labs-table td::before { flex: 0 0 50%; }
+    }
+    /* CONTENT */
+    .content-section { padding: 2rem 0; }
+    .content-title { font-size: clamp(1rem, 3.5vw, 1.2rem); margin-bottom: 1rem; font-weight: 700; }
+    .content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+    .content-card { background: rgba(0,0,0,0.02); border-radius: 8px; padding: 1rem; }
+    .content-card h4 { margin: 0 0 0.4rem; font-size: clamp(0.9rem, 2.5vw, 0.95rem); }
+    .content-card p { margin: 0; line-height: 1.5; font-size: clamp(0.8rem, 2.5vw, 0.9rem); }
+    @media (max-width: 480px) {
+      .content-grid { grid-template-columns: 1fr; }
+      .content-card { padding: 0.8rem; }
+    }
+    /* FOOTER */
+    #footer-include { margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  
+  
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1 class="headline">
+          Innovation Begins Here:
+          <span class="headline-accent">GMU CSE Laboratories</span>
+        </h1>
+        <p class="subheadline">
+          State-of-the-art computing labs, hands-on research facilities, and resources that empower students to build, learn, and innovate.
+        </p>
+        <div class="hero-cta">
+          <a href="#labs" class="btn">Explore Labs</a>
+          <a href="#about" class="btn btn-ghost">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-media" aria-hidden="true">
+        <img src="https://via.placeholder.com/400x250?text=Laptop1" alt="" class="device device-1">
+        <img src="https://via.placeholder.com/400x250?text=Laptop2" alt="" class="device device-2">
+        <img src="https://via.placeholder.com/400x250?text=Monitor" alt="" class="device device-3">
+      </div>
+    </div>
+  </section>
+
+  <!-- LABS TABLE -->
+  <section id="labs" class="labs-section">
+    <div class="container">
+      <h2 class="section-title">Laboratory Infrastructure</h2>
+      <div class="table-frame">
+        <table class="labs-table" role="table">
+          <thead>
+            <tr><th>Lab Name</th><th>Systems</th><th>Key Configurations</th><th>Primary Use</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Lab Name">Programming Lab</td>
+              <td data-label="Systems">40 PCs</td>
+              <td data-label="Key Configurations">Intel i5, 8GB RAM, Ubuntu & Windows</td>
+              <td data-label="Primary Use">DSA, OOP, Compilers</td>
+            </tr>
+            <tr>
+              <td data-label="Lab Name">AI & ML Lab</td>
+              <td data-label="Systems">30 PCs + 2 GPU Workstations</td>
+              <td data-label="Key Configurations">NVIDIA GPUs, 32GB RAM, PyTorch, TensorFlow</td>
+              <td data-label="Primary Use">Deep Learning, Research</td>
+            </tr>
+            <tr>
+              <td data-label="Lab Name">Networks & Security Lab</td>
+              <td data-label="Systems">24 PCs + Routers/Switches</td>
+              <td data-label="Key Configurations">Packet Tracer, Kali Linux, Virtual Labs</td>
+              <td data-label="Primary Use">Networking, Cybersecurity</td>
+            </tr>
+            <tr>
+              <td data-label="Lab Name">Systems Lab</td>
+              <td data-label="Systems">36 PCs</td>
+              <td data-label="Key Configurations">I-Active AIO (12th Gen i5), 16GB RAM</td>
+              <td data-label="Primary Use">OS, Systems Programming</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section id="about" class="content-section">
+    <div class="container">
+      <h3 class="content-title">About Our Laboratories</h3>
+      <div class="content-grid">
+        <div class="content-card">
+          <h4>Comprehensive Infrastructure</h4>
+          <p>GMU CSE maintains over 180 computing systems, from high-performance machines to legacy setups, supporting courses from fundamentals to AI, Data Science, Cloud, and Cybersecurity.</p>
+        </div>
+        <div class="content-card">
+          <h4>Recent Additions</h4>
+          <p>New I-Active AIOs (12th Gen i5, 16GB RAM), GPU-enabled workstations, and networking hardware enhance hands-on learning and research.</p>
+        </div>
+        <div class="content-card">
+          <h4>Software & Tools</h4>
+          <p>Labs include dual-boot setups, Anaconda, PyTorch, TensorFlow, Wireshark, Packet Tracer, and cloud/containerized environments for experiments.</p>
+        </div>
+        <div class="content-card">
+          <h4>Research & Collaboration</h4>
+          <p>Facilities support faculty-student research, capstone projects, and industry collaborations with structured access and mentorship.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div id="footer-include"></div>
+
+  <!-- SCRIPTS -->
+  <script>
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('footer-include').innerHTML = html;
+      });
+  </script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
+  <script>
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      smoothTouch: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  </script>
+<!-- Lenis Smooth Scroll -->
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // smooth easing
+    smoothWheel: true,
+    smoothTouch: false,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+<!-- Place this where you want the navbar in index.html -->
+<div id="navbar-include"></div>
+<script>
+  fetch('nav.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-include').innerHTML = html;
+    });
+</script>
+
+<script>
+  fetch('nav.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-include').innerHTML = html;
+      // After navbar is loaded, run the navbar script
+      const menuBtn = document.getElementById('menuBtn');
+      const navLinks = document.getElementById('navLinks');
+      const navbar = document.getElementById('navbar');
+
+      function closeMenu() {
+        navLinks.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.textContent = '☰';
+      }
+
+      menuBtn.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('active');
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
+        menuBtn.textContent = isOpen ? '✕' : '☰';
+        if (isOpen) {
+          navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
+            el.setAttribute('tabindex', '0');
+          });
+        } else {
+          navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
+            el.setAttribute('tabindex', '-1');
+          });
+        }
+      });
+
+      navLinks.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A' && window.innerWidth <= 900) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('touchstart', function(e) {
+        if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== menuBtn) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+
+      let scrollTimeout;
+      window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          navbar.classList.toggle('scrolled', window.scrollY > 80);
+          highlightOnScroll();
+        }, 50);
+      });
+
+      function highlightOnScroll() {
+        const sections = ['hero', 'about', 'hod', 'news'];
+        const fromTop = window.scrollY + 120;
+        let current = null;
+        for (const id of sections) {
+          const section = document.getElementById(id);
+          if (section && section.offsetTop <= fromTop) current = id;
+        }
+        if (current) {
+          document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => {
+            const href = a.getAttribute('href');
+            if (href === `#${current}`) a.classList.add('active');
+            else if (href?.startsWith('#')) a.classList.remove('active');
+          });
+        }
+      }
+
+      function setActiveLink(element) {
+        document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => a.classList.remove('active'));
+        element.classList.add('active');
+        if (element.closest('.dropdown')) {
+          element.closest('.dropdown').querySelector('.dropdown-btn').classList.add('active');
+        }
+      }
+    });
+</script>
+<!-- Lenis Smooth Scroll -->
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // smooth easing
+    smoothWheel: true,
+    smoothTouch: false,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+</body>
+</html>
