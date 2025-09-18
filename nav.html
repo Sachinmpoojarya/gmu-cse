@@ -3,19 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Fonts -->
+  <title>Software & Tools - CSE Department</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=Plus+Jakarta+Sans:wght@400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
-  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    /* Navbar CSS */
     *, *::before, *::after { box-sizing: border-box; }
     :root {
       --primary: #0f172a;
       --text-light: #f8fafc;
       --muted: #64748b;
       --accent: #3b82f6;
-      --accent-2: #8b5cf6;
       --container: min(95vw, 1600px);
     }
     body {
@@ -66,15 +63,10 @@
       font-weight: 900;
       font-family: "Playfair Display", serif;
       color: #ffffff;
-      background: linear-gradient(90deg, #3b82f6, #db2777);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, text-shadow 0.3s ease;
+      transition: transform 0.3s ease;
     }
     .brand:hover .brand-text {
       transform: scale(1.05);
-      text-shadow: 0 4px 8px rgba(0,0,0,0.4);
     }
     .menu-btn {
       display: none;
@@ -141,7 +133,7 @@
       transition: background 0.3s ease, color 0.3s ease;
     }
     .dropdown-content a:hover {
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      background: rgba(255,255,255,0.1);
       color: #fff;
     }
     @media (max-width: 900px) {
@@ -223,7 +215,7 @@
       <div class="nav-links" id="navLinks" role="navigation" aria-label="Primary">
         <a href="index.html" class="nav-link">Home</a>
         <div class="dropdown">
-          <a href="#" class="dropdown-btn">Academics ▾</a>
+          <a href="#" class="dropdown-btn">Academics▾</a>
           <div class="dropdown-content">
             <a href="programs.html">Programs</a>
             <a href="IQAC.html">IQAC & BOS</a>
@@ -231,7 +223,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a href="#" class="dropdown-btn">Infrastructure & Learning Resources ▾</a>
+          <a href="#" class="dropdown-btn">Infrastructure▾</a>
           <div class="dropdown-content">
             <a href="Laboratory Infrastructure.html">Laboratory Infrastructure</a>
             <a href="Software & Tools.html">Software & Tools</a>
@@ -241,10 +233,10 @@
         <a href="placements.html" class="nav-link">Placements</a>
         <a href="faculty.html" class="nav-link">Faculty</a>
         <div class="dropdown">
-          <a href="#" class="dropdown-btn">Achievements ▾</a>
+          <a href="#" class="dropdown-btn">Achievements▾</a>
           <div class="dropdown-content">
-            <a href="std_Achievement.html">Faculty Achievements</a>
-            <a href="Student Achievements.html">Student Achievements</a>
+            <a href="std_Achievement.html">Student Achievements</a>
+            <a href="fac_achivements.html">Faculty Achievements</a>
           </div>
         </div>
         <a href="alumini.html" class="nav-link">Alumni</a>
@@ -253,17 +245,14 @@
     </div>
   </nav>
   <script>
-    // NAV: Mobile toggle + scroll state + active link + accessibility
     const menuBtn = document.getElementById('menuBtn');
     const navLinks = document.getElementById('navLinks');
     const navbar = document.getElementById('navbar');
 
-    // Hamburger toggle
     function closeMenu() {
       navLinks.classList.remove('active');
       menuBtn.setAttribute('aria-expanded', 'false');
       menuBtn.textContent = '☰';
-      // Close all dropdowns
       document.querySelectorAll('.dropdown').forEach(dropdown => {
         dropdown.classList.remove('active');
       });
@@ -284,14 +273,12 @@
       }
     });
 
-    // Toggle dropdowns on click for mobile
     document.querySelectorAll('.dropdown-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         if (window.innerWidth <= 900) {
           e.preventDefault();
           const dropdown = btn.closest('.dropdown');
           const isActive = dropdown.classList.toggle('active');
-          // Close other dropdowns
           document.querySelectorAll('.dropdown').forEach(other => {
             if (other !== dropdown) {
               other.classList.remove('active');
@@ -301,28 +288,50 @@
       });
     });
 
-    // Close menu on link click (mobile)
+    document.querySelectorAll('.dropdown-content').forEach(content => {
+      content.addEventListener('click', (e) => {
+        if (window.innerWidth <= 900) {
+          e.stopPropagation();
+        }
+      });
+    });
+
     navLinks.addEventListener('click', function(e) {
-      if (e.target.tagName === 'A' && window.innerWidth <= 900 && !e.target.classList.contains('dropdown-btn')) {
+      if (
+        e.target.tagName === 'A' &&
+        window.innerWidth <= 900 &&
+        !e.target.classList.contains('dropdown-btn')
+      ) {
         closeMenu();
       }
     });
 
-    // Touch outside to close
     document.addEventListener('touchstart', function(e) {
-      if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== menuBtn) {
+      if (
+        navLinks.classList.contains('active') &&
+        !navLinks.contains(e.target) &&
+        e.target !== menuBtn
+      ) {
         closeMenu();
       }
     });
 
-    // Keyboard: ESC to close
+    document.addEventListener('mousedown', function(e) {
+      if (
+        navLinks.classList.contains('active') &&
+        !navLinks.contains(e.target) &&
+        e.target !== menuBtn
+      ) {
+        closeMenu();
+      }
+    });
+
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && navLinks.classList.contains('active')) {
         closeMenu();
       }
     });
 
-    // Debounced scroll handler
     let scrollTimeout;
     window.addEventListener('scroll', () => {
       clearTimeout(scrollTimeout);
@@ -333,7 +342,6 @@
     });
 
     function highlightOnScroll() {
-      // Get all sections on the current page
       const sections = document.querySelectorAll('section[id]');
       const fromTop = window.scrollY + 120;
       let current = null;
@@ -352,7 +360,6 @@
           }
         });
       }
-      // Highlight current page link
       const currentPage = window.location.pathname.split('/').pop() || 'index.html';
       document.querySelectorAll('.nav-links a').forEach(a => {
         if (a.getAttribute('href') === currentPage) {
@@ -361,7 +368,6 @@
           a.classList.remove('active');
         }
       });
-      // Highlight dropdown if current page is in dropdown
       document.querySelectorAll('.dropdown').forEach(dropdown => {
         const dropdownLinks = dropdown.querySelectorAll('.dropdown-content a');
         dropdownLinks.forEach(link => {
@@ -380,7 +386,6 @@
       }
     }
 
-    // Run on page load to set active link
     highlightOnScroll();
   </script>
 </body>

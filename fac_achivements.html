@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Achievements - CSE Department</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+        .achievements-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><rect width="80" height="80" fill="none"/><g opacity="0.1"><line x1="0" y1="0" x2="80" y2="0" stroke="white" stroke-width="0.5"/><line x1="0" y1="10" x2="80" y2="10" stroke="white" stroke-width="0.5"/><line x1="0" y1="20" x2="80" y2="20" stroke="white" stroke-width="0.5"/><line x1="0" y1="30" x2="80" y2="30" stroke="white" stroke-width="0.5"/><line x1="0" y1="40" x2="80" y2="40" stroke="white" stroke-width="0.5"/><line x1="0" y1="50" x2="80" y2="50" stroke="white" stroke-width="0.5"/><line x1="0" y1="60" x2="80" y2="60" stroke="white" stroke-width="0.5"/><line x1="0" y1="70" x2="80" y2="70" stroke="white" stroke-width="0.5"/><line x1="0" y1="80" x2="80" y2="80" stroke="white" stroke-width="0.5"/><line x1="0" y1="0" x2="0" y2="80" stroke="white" stroke-width="0.5"/><line x1="10" y1="0" x2="10" y2="80" stroke="white" stroke-width="0.5"/><line x1="20" y1="0" x2="20" y2="80" stroke="white" stroke-width="0.5"/><line x1="30" y1="0" x2="30" y2="80" stroke="white" stroke-width="0.5"/><line x1="40" y1="0" x2="40" y2="80" stroke="white" stroke-width="0.5"/><line x1="50" y1="0" x2="50" y2="80" stroke="white" stroke-width="0.5"/><line x1="60" y1="0" x2="60" y2="80" stroke="white" stroke-width="0.5"/><line x1="70" y1="0" x2="70" y2="80" stroke="white" stroke-width="0.5"/><line x1="80" y1="0" x2="80" y2="80" stroke="white" stroke-width="0.5"/></g></svg>');
+            background-size: 80px 80px;
+            animation: gridMove 20s linear infinite;
+        }
+        @keyframes gridMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 80px 80px; }
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .award-badge {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header Section -->
+    <div class="achievements-header relative bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600 py-24 text-center text-white overflow-hidden">
+        <div class="container max-w-6xl mx-auto px-4">
+            <h1 class="text-4xl sm:text-5xl font-bold mb-4 relative z-10 text-shadow-md animate-[slideDown_1.2s_ease-out]">Faculty Achievements</h1>
+            <p class="text-lg sm:text-xl opacity-95 italic max-w-3xl mx-auto relative z-10 animate-[slideUp_1.2s_ease-out_0.3s_both]">
+                Faculty members of the Department of CSE have consistently contributed to research, innovation, and academic excellence. They have published research papers in reputed journals, guided student projects in cutting-edge areas like AI, ML, IoT, and Cybersecurity, and actively engaged in academic quality initiatives such as curriculum development, NBA/OBE practices, and IQAC activities. Faculty have also secured research grants and collaborated with industries to bridge the gap between academia and practice.
+            </p>
+        </div>
+    </div>
+
+    <!-- Faculty Achievements Section -->
+    <div class="section py-16 bg-gray-50">
+        <div class="container max-w-6xl mx-auto px-4">
+            <div class="section-title text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-semibold text-gray-800 relative">Our Faculty's Contributions</h2>
+                <div class="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-yellow-500 to-orange-400 rounded"></div>
+                <p class="text-gray-600 mt-4 max-w-lg mx-auto">Discover the remarkable achievements of our CSE faculty in research, innovation, and academic excellence.</p>
+            </div>
+
+            <div class="achievements-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Research & Publications -->
+                <div class="achievement-card bg-white rounded-2xl shadow-lg overflow-hidden relative transition-all duration-400 hover:shadow-2xl hover:-translate-y-2 hover:scale-102">
+                    <div class="award-badge absolute top-4 right-4 bg-gradient-to-r from-yellow-500 to-orange-400 text-white px-3 py-1 rounded-full text-sm font-semibold z-10">
+                        <i class="fas fa-book"></i> Research
+                    </div>
+                    <div class="card-image relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Research Papers" class="w-full h-full object-cover transition-transform duration-400 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent transition-all duration-600 left-[-100%] group-hover:left-[100%]"></div>
+                    </div>
+                    <div class="card-content p-6">
+                        <h3 class="card-title text-xl font-semibold text-gray-800 mb-2">Research & Publications</h3>
+                        <p class="card-description text-gray-600 text-sm">
+                            Our faculty have published numerous research papers in reputed journals, contributing to advancements in computer science and technology.
+                        </p>
+                        <a href="#" class="read-more-btn inline-flex items-center gap-2 text-blue-600 font-semibold text-sm hover:text-blue-800 hover:border-b-2 hover:border-yellow-500 transition-all duration-300">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Guiding Projects & Innovation -->
+                <div class="achievement-card bg-white rounded-2xl shadow-lg overflow-hidden relative transition-all duration-400 hover:shadow-2xl hover:-translate-y-2 hover:scale-102">
+                    <div class="award-badge absolute top-4 right-4 bg-gradient-to-r from-yellow-500 to-orange-400 text-white px-3 py-1 rounded-full text-sm font-semibold z-10">
+                        <i class="fas fa-lightbulb"></i> Innovation
+                    </div>
+                    <div class="card-image relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1516321310762-479e93c67b9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="AI/ML Projects" class="w-full h-full object-cover transition-transform duration-400 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent transition-all duration-600 left-[-100%] group-hover:left-[100%]"></div>
+                    </div>
+                    <div class="card-content p-6">
+                        <h3 class="card-title text-xl font-semibold text-gray-800 mb-2">Guiding Projects & Innovation</h3>
+                        <p class="card-description text-gray-600 text-sm">
+                            Faculty guide students in cutting-edge projects in AI, ML, IoT, and Cybersecurity, fostering innovation and practical learning.
+                        </p>
+                        <a href="#" class="read-more-btn inline-flex items-center gap-2 text-blue-600 font-semibold text-sm hover:text-blue-800 hover:border-b-2 hover:border-yellow-500 transition-all duration-300">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Academic Quality Initiatives -->
+                <div class="achievement-card bg-white rounded-2xl shadow-lg overflow-hidden relative transition-all duration-400 hover:shadow-2xl hover:-translate-y-2 hover:scale-102">
+                    <div class="award-badge absolute top-4 right-4 bg-gradient-to-r from-yellow-500 to-orange-400 text-white px-3 py-1 rounded-full text-sm font-semibold z-10">
+                        <i class="fas fa-graduation-cap"></i> Academic
+                    </div>
+                    <div class="card-image relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Curriculum Development" class="w-full h-full object-cover transition-transform duration-400 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent transition-all duration-600 left-[-100%] group-hover:left-[100%]"></div>
+                    </div>
+                    <div class="card-content p-6">
+                        <h3 class="card-title text-xl font-semibold text-gray-800 mb-2">Academic Quality Initiatives</h3>
+                        <p class="card-description text-gray-600 text-sm">
+                            Our faculty contribute to curriculum development, NBA/OBE practices, and IQAC activities to ensure academic excellence.
+                        </p>
+                        <a href="#" class="read-more-btn inline-flex items-center gap-2 text-blue-600 font-semibold text-sm hover:text-blue-800 hover:border-b-2 hover:border-yellow-500 transition-all duration-300">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Industry Collaboration & Grants -->
+                <div class="achievement-card bg-white rounded-2xl shadow-lg overflow-hidden relative transition-all duration-400 hover:shadow-2xl hover:-translate-y-2 hover:scale-102">
+                    <div class="award-badge absolute top-4 right-4 bg-gradient-to-r from-yellow-500 to-orange-400 text-white px-3 py-1 rounded-full text-sm font-semibold z-10">
+                        <i class="fas fa-handshake"></i> Collaboration
+                    </div>
+                    <div class="card-image relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Industry Collaboration" class="w-full h-full object-cover transition-transform duration-400 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent transition-all duration-600 left-[-100%] group-hover:left-[100%]"></div>
+                    </div>
+                    <div class="card-content p-6">
+                        <h3 class="card-title text-xl font-semibold text-gray-800 mb-2">Industry Collaboration & Grants</h3>
+                        <p class="card-description text-gray-600 text-sm">
+                            Faculty secure research grants and collaborate with industries to bridge the gap between academia and practice.
+                        </p>
+                        <a href="#" class="read-more-btn inline-flex items-center gap-2 text-blue-600 font-semibold text-sm hover:text-blue-800 hover:border-b-2 hover:border-yellow-500 transition-all duration-300">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-gradient-to-b from-gray-900 to-gray-800 text-white py-12 relative overflow-hidden" aria-label="Footer navigation and contact information">
+        <div class="footer-inner max-w-5xl mx-auto px-4">
+            <div class="footer-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="fcol p-4 hover:-translate-y-1 transition-transform duration-300">
+                    <h4 class="text-blue-400 text-lg font-bold mb-4 relative">Information For</h4>
+                    <p><a href="#" class="text-gray-200 hover:text-purple-400 hover:translate-x-1 transition-all duration-300 block" aria-label="Information for prospective students">Prospective Students</a></p>
+                    <p><a href="#" class="text-gray-200 hover:text-purple-400 hover:translate-x-1 transition-all duration-300 block" aria-label="Information for current students">Current Students</a></p>
+                    <p><a href="#" class="text-gray-200 hover:text-purple-400 hover:translate-x-1 transition-all duration-300 block" aria-label="Information for alumni">Alumni</a></p>
+                </div>
+                <div class="fcol p-4 hover:-translate-y-1 transition-transform duration-300">
+                    <h4 class="text-blue-400 text-lg font-bold mb-4 relative">Information About</h4>
+                    <p><a href="#" class="text-gray-200 hover:text-purple-400 hover:translate-x-1 transition-all duration-300 block" aria-label="About GM University">About GM University</a></p>
+                    <p><a href="#" class="text-gray-200 hover:text-purple-400 hover:translate-x-1 transition-all duration-300 block" aria-label="Academic programs">Academic Programs</a></p>
+                    <p><a href="#" class="text-gray-200 hover:text-purple-400 hover:translate-x-1 transition-all duration-300 block" aria-label="Research at GM University">Research</a></p>
+                </div>
+                <div class="fcol p-4 hover:-translate-y-1 transition-transform duration-300">
+                    <h4 class="text-blue-400 text-lg font-bold mb-4 relative">Important Info</h4>
+                    <p><a href="#" class="text-gray-200 hover:text-purple-400 hover:translate-x-1 transition-all duration-300 block" aria-label="Admissions information">Admissions</a></p>
+                    <p><a href="#" class="text-gray-200 hover:text-purple-400 hover:translate-x-1 transition-all duration-300 block" aria-label="Career opportunities">Careers</a></p>
+                    <p><a href="#" class="text-gray-200 hover:text-purple-400 hover:translate-x-1 transition-all duration-300 block" aria-label="Campus life">Campus Life</a></p>
+                </div>
+                <div class="fcol p-4 hover:-translate-y-1 transition-transform duration-300">
+                    <h4 class="text-blue-400 text-lg font-bold mb-4 relative">Placements & Internships</h4>
+                    <p><a href="placements.html" class="text-gray-200 hover:text-purple-400 hover:translate-x-1 transition-all duration-300 block" aria-label="Placement overview">Placement Overview</a></p>
+                    <p><a href="placements.html" class="text-gray-200 hover:text-purple-400 hover:translate-x-1 transition-all duration-300 block" aria-label="Star students">Star Students</a></p>
+                    <p><a href="placements.html" class="text-gray-200 hover:text-purple-400 hover:translate-x-1 transition-all duration-300 block" aria-label="Top recruiters">Top Recruiters</a></p>
+                </div>
+            </div>
+            <div class="contact-grid grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                <div class="fcol p-4 hover:-translate-y-1 transition-transform duration-300">
+                    <h4 class="text-blue-400 text-lg font-bold mb-4 relative">Address & Contact Info</h4>
+                    <p class="text-gray-200">GM University, Davangere, Karnataka, India</p>
+                    <p>Email: <a href="mailto:info@gmu.edu" class="text-gray-200 hover:text-purple-400 hover:translate-x-1 transition-all duration-300" aria-label="Email GM University">info@gmu.edu</a></p>
+                    <p>Phone: <a href="tel:+911234567890" class="text-gray-200 hover:text-purple-400 hover:translate-x-1 transition-all duration-300" aria-label="Call GM University">+91-123-456-7890</a></p>
+                </div>
+                <div class="fcol p-4 hover:-translate-y-1 transition-transform duration-300">
+                    <h4 class="text-blue-400 text-lg font-bold mb-4 relative">Connect With Us</h4>
+                    <div class="social-links flex gap-3 flex-wrap">
+                        <a href="https://facebook.com" target="_blank" class="social-icon text-white text-lg w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 hover:text-purple-400 hover:scale-110 transition-all duration-300" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank" class="social-icon text-white text-lg w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 hover:text-purple-400 hover:scale-110 transition-all duration-300" aria-label="Visit our Twitter page"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com" target="_blank" class="social-icon text-white text-lg w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 hover:text-purple-400 hover:scale-110 transition-all duration-300" aria-label="Visit our LinkedIn page"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="social-icon text-white text-lg w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 hover:text-purple-400 hover:scale-110 transition-all duration-300" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com" target="_blank" class="social-icon text-white text-lg w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 hover:text-purple-400 hover:scale-110 transition-all duration-300" aria-label="Visit our YouTube page"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p><a href="https://www.google.com/maps/place/Davanagere,+Karnataka" target="_blank" class="flex items-center gap-2 text-gray-200 hover:text-purple-400 hover:translate-x-1 transition-all duration-300" aria-label="Find us on Google Maps"><i class="fa-solid fa-location-dot"></i> Find us on Google Maps</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom text-center text-gray-400 text-sm mt-6 pt-4 border-t border-white/15 relative">
+                <p>&copy; 2025 GM University. All rights reserved.</p>
+                <div class="absolute top-[-8px] left-1/2 transform -translate-x-1/2 w-16 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 rounded"></div>
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_center,rgba(59,130,246,0.15)_0%,transparent_70%)] opacity-60 z-[-1]"></div>
+    </footer>
+
+    <script>
+        // Initialize animations on load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add hover effects for achievement cards
+            const achievementCards = document.querySelectorAll('.achievement-card');
+            achievementCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Add smooth scrolling for read more links
+            const readMoreLinks = document.querySelectorAll('.read-more-btn');
+            readMoreLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    link.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        link.style.transform = 'scale(1)';
+                    }, 150);
+                    console.log('Navigating to:', link.textContent);
+                });
+            });
+
+            // Add focus indicators for accessibility
+            const focusableElements = document.querySelectorAll('.achievement-card, .read-more-btn');
+            focusableElements.forEach(element => {
+                element.setAttribute('tabindex', '0');
+                element.addEventListener('focus', () => {
+                    element.style.outline = '3px solid #f6ad55';
+                    element.style.outlineOffset = '2px';
+                });
+                element.addEventListener('blur', () => {
+                    element.style.outline = 'none';
+                });
+            });
+
+            // Footer: Social icon hover
+            document.querySelectorAll('.social-icon').forEach(icon => {
+                icon.addEventListener('mouseover', () => {
+                    icon.style.color = '#60a5fa';
+                });
+                icon.addEventListener('mouseout', () => {
+                    icon.style.color = '';
+                });
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', e => {
+                    const targetId = anchor.getAttribute('href');
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+    </script>
+    
+  <!-- Place this where you want the navbar in index.html -->
+<div id="navbar-include"></div>
+<script>
+  fetch('nav.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-include').innerHTML = html;
+    });
+</script>
+
+<script>
+  fetch('nav.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-include').innerHTML = html;
+      // After navbar is loaded, run the navbar script
+      const menuBtn = document.getElementById('menuBtn');
+      const navLinks = document.getElementById('navLinks');
+      const navbar = document.getElementById('navbar');
+
+      function closeMenu() {
+        navLinks.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.textContent = '☰';
+      }
+
+      menuBtn.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('active');
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
+        menuBtn.textContent = isOpen ? '✕' : '☰';
+        if (isOpen) {
+          navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
+            el.setAttribute('tabindex', '0');
+          });
+        } else {
+          navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
+            el.setAttribute('tabindex', '-1');
+          });
+        }
+      });
+
+      navLinks.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A' && window.innerWidth <= 900) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('touchstart', function(e) {
+        if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== menuBtn) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+
+      let scrollTimeout;
+      window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          navbar.classList.toggle('scrolled', window.scrollY > 80);
+          highlightOnScroll();
+        }, 50);
+      });
+
+      function highlightOnScroll() {
+        const sections = ['hero', 'about', 'hod', 'news'];
+        const fromTop = window.scrollY + 120;
+        let current = null;
+        for (const id of sections) {
+          const section = document.getElementById(id);
+          if (section && section.offsetTop <= fromTop) current = id;
+        }
+        if (current) {
+          document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => {
+            const href = a.getAttribute('href');
+            if (href === `#${current}`) a.classList.add('active');
+            else if (href?.startsWith('#')) a.classList.remove('active');
+          });
+        }
+      }
+
+      function setActiveLink(element) {
+        document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => a.classList.remove('active'));
+        element.classList.add('active');
+        if (element.closest('.dropdown')) {
+          element.closest('.dropdown').querySelector('.dropdown-btn').classList.add('active');
+        }
+      }
+    });
+</script>
+<!-- Lenis Smooth Scroll -->
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // smooth easing
+    smoothWheel: true,
+    smoothTouch: false,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+</body>
+</html>
