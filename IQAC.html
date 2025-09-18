@@ -217,14 +217,14 @@
 
     /* Hero Section */
     .hero {
-      min-height: 60vh;
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3b5998 100%);
-      position: relative;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      padding: 60px 0;
-      margin-top: 60px;
+  min-height: 350px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3b5998 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 60px 0 40px 0;
+  margin-top: 60px;
     }
 
     .hero::before {
@@ -909,31 +909,117 @@
   </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a class="brand" href="#hero" aria-label="GMU CSE Home">
-        <img src="logo.jpg" alt="GMU CSE Logo">
-        <span class="brand-text">Dept of Computer Science & Engineering</span>
-      </a>
-      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">☰</button>
-      <div class="nav-links" id="navLinks" role="navigation" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <div class="dropdown">
-          <a href="#" class="dropdown-btn">Academics ▾</a>
-          <div class="dropdown-content">
-            <a href="programs.html">Programs</a>
-            <a href="IQAC.html" class="active">IQAC & BOS</a>
-          </div>
-        </div>
-        <a href="placements.html">Placements</a>
-        <a href="faculty.html">Faculty</a>
-        <a href="Achievement.html">Achievements</a>
-        <a href="alumini.html">Alumni</a>
-        <a href="contact.html">Contact us</a>
-      </div>
-    </div>
-  </nav>
+
+  <!-- Modular Navbar Loader -->
+  <div id="navbar-container"></div>
+  <script>
+    // Dynamically load navbar
+    fetch('nav.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('navbar-container').innerHTML = html;
+        // After navbar is loaded, run the navbar script
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+        const navbar = document.getElementById('navbar');
+
+        function closeMenu() {
+          navLinks.classList.remove('active');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          menuBtn.textContent = '☰';
+        }
+
+        menuBtn.addEventListener('click', () => {
+          const isOpen = navLinks.classList.toggle('active');
+          menuBtn.setAttribute('aria-expanded', String(isOpen));
+          menuBtn.textContent = isOpen ? '✕' : '☰';
+          if (isOpen) {
+            navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
+              el.setAttribute('tabindex', '0');
+            });
+          } else {
+            navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
+              el.setAttribute('tabindex', '-1');
+            });
+          }
+        });
+
+        navLinks.addEventListener('click', function(e) {
+          if (e.target.tagName === 'A' && window.innerWidth <= 900) {
+            closeMenu();
+          }
+        });
+
+        document.addEventListener('touchstart', function(e) {
+          if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== menuBtn) {
+            closeMenu();
+          }
+        });
+
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            closeMenu();
+          }
+        });
+
+        // Dropdown functionality for dynamically loaded navbar
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+          const btn = dropdown.querySelector('.dropdown-btn');
+          const content = dropdown.querySelector('.dropdown-content');
+          if (btn && content) {
+            btn.addEventListener('click', function(e) {
+              e.preventDefault();
+              // Close other dropdowns
+              document.querySelectorAll('.dropdown-content').forEach(dc => {
+                if (dc !== content) dc.style.display = 'none';
+              });
+              // Toggle this dropdown
+              content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+            });
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+              if (!dropdown.contains(e.target)) {
+                content.style.display = 'none';
+              }
+            });
+          }
+        });
+
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+          clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => {
+            navbar.classList.toggle('scrolled', window.scrollY > 80);
+            highlightOnScroll();
+          }, 50);
+        });
+
+        function highlightOnScroll() {
+          const sections = ['hero', 'about', 'hod', 'news'];
+          const fromTop = window.scrollY + 120;
+          let current = null;
+          for (const id of sections) {
+            const section = document.getElementById(id);
+            if (section && section.offsetTop <= fromTop) current = id;
+          }
+          if (current) {
+            document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => {
+              const href = a.getAttribute('href');
+              if (href === `#${current}`) a.classList.add('active');
+              else if (href?.startsWith('#')) a.classList.remove('active');
+            });
+          }
+        }
+
+        function setActiveLink(element) {
+          document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => a.classList.remove('active'));
+          element.classList.add('active');
+          if (element.closest('.dropdown')) {
+            element.closest('.dropdown').querySelector('.dropdown-btn').classList.add('active');
+          }
+        }
+      });
+  </script>
 
   <!-- Hero Section -->
   <section class="hero" id="hero" aria-label="IQAC and Quality Initiatives">

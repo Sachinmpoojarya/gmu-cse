@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programs Offered - B.Tech. Computer Science & Engineering</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .hero {
+  width: 100%;
+  min-height: 350px;
+  padding: 60px 0 40px 0;
+  text-align: center;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #6b48ff 100%);
+  background-size: 200% 200%;
+  animation: gradientGlow 5s ease infinite;
+  color: white;
+    }
+
+    @keyframes gradientGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .card-header {
+      padding: 20px;
+      cursor: pointer;
+      background: #fff;
+      position: relative;
+      z-index: 1;
+      border: 2px solid transparent;
+      border-image: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96c93d) 1;
+      animation: glitterBorder 3s linear infinite;
+    }
+
+    @keyframes glitterBorder {
+      0% { border-image-source: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96c93d); }
+      50% { border-image-source: linear-gradient(45deg, #96c93d, #ff6b6b, #4ecdc4, #45b7d1); }
+      100% { border-image-source: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96c93d); }
+    }
+
+    .card-header h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .card-content {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 20px;
+      transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
+      opacity: 0;
+    }
+
+    .card-content.open {
+      max-height: 1000px;
+      padding: 20px;
+      opacity: 1;
+    }
+
+    .card-content p, .card-content li {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-content ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .card-header h2 {
+        font-size: 1.2rem;
+      }
+      .card-content p, .card-content li {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Programs Offered – B.Tech. Computer Science & Engineering</h1>
+    <p>Explore our comprehensive Computer Science & Engineering curriculum designed to build future-ready innovators, leaders, and entrepreneurs.</p>
+  </section>
+
+  <div class="container">
+    <div class="card">
+      <div class="card-header" onclick="toggleAccordion(this)">
+        <h2>Program Overview</h2>
+      </div>
+      <div class="card-content">
+        <p>The B.Tech. in Computer Science & Engineering offers a balanced blend of theoretical foundations and practical applications, preparing students for the dynamic fields of software engineering, intelligent systems, and emerging technologies. The four-year, eight-semester program integrates core engineering principles with specialized CSE courses, emphasizing hands-on learning through projects, system design, and internships.</p>
+        <p>Key areas include programming, algorithms, data structures, AI, machine learning, software development, and computer networks, with training in modern tools and platforms. Graduates are equipped for diverse careers in software development, IT, AI, smart technologies, research, and entrepreneurship.</p>
+        <p>The interdisciplinary nature of CSE enables students to innovate across domains, contribute to technological advancements, and adapt to industry trends through lifelong learning. The program ensures a holistic education, producing competent, ethical, and industry-ready professionals capable of impactful contributions to society and technology.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleAccordion(this)">
+        <h2>Program Educational Objectives (PEOs)</h2>
+      </div>
+      <div class="card-content">
+        <ul>
+          <li><strong>PEO-1: Knowledge and Technical Skills</strong><br>Graduates will have a strong foundation in computer science and engineering principles, including algorithms, data structures, artificial intelligence, and machine learning. They will be able to analyze, design, implement, and optimize software systems and intelligent solutions to address real-world challenges in diverse sectors such as software development, IT, and emerging technologies.</li>
+          <li><strong>PEO-2: Professional Competence and Leadership</strong><br>Graduates will possess technical competencies, practical skills, and leadership abilities enabling them to excel in roles within technology companies, software industries, R&D, and entrepreneurial ventures. They will be capable of assuming both technical and leadership positions, contributing to technological advancements and innovation.</li>
+          <li><strong>PEO-3: Holistic Development and Adaptability</strong><br>Graduates will demonstrate critical thinking, creativity, innovation, collaboration, effective communication, adaptability, leadership, responsibility, and cross-cultural interaction skills. They will adapt to evolving professional environments, pursue diverse career trajectories, and engage in lifelong learning while contributing effectively to their fields and society.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleAccordion(this)">
+        <h2>Program Outcomes (POs)</h2>
+      </div>
+      <div class="card-content">
+        <ul>
+          <li><strong>PO-1: Engineering Knowledge</strong><br>Apply knowledge of mathematics, science, engineering fundamentals, and computer science specialization to solve complex engineering problems.</li>
+          <li><strong>PO-2: Problem Analysis</strong><br>Identify, formulate, review research literature, and analyze complex engineering problems using principles of mathematics, natural sciences, and computer science.</li>
+          <li><strong>PO-3: Design/Development of Solutions</strong><br>Design solutions for complex engineering problems and develop system components or processes that meet specified needs, considering health, safety, cultural, societal, and environmental factors.</li>
+          <li><strong>PO-4: Conduct Investigations of Complex Problems</strong><br>Use research-based knowledge and research methods including experiments, data analysis, and interpretation to provide valid conclusions.</li>
+          <li><strong>PO-5: Modern Tool Usage</strong><br>Create, select, and apply appropriate modern engineering and IT tools, including prediction and modeling, to complex engineering activities with an understanding of their limitations.</li>
+          <li><strong>PO-6: The Engineer and Society</strong><br>Apply contextual knowledge to assess societal, health, safety, legal, and cultural issues relevant to professional engineering practice.</li>
+          <li><strong>PO-7: Environment and Sustainability</strong><br>Understand the impact of engineering solutions in societal and environmental contexts and demonstrate knowledge of sustainable development.</li>
+          <li><strong>PO-8: Ethics</strong><br>Apply ethical principles and commit to professional ethics, responsibilities, and norms of engineering practice.</li>
+          <li><strong>PO-9: Individual and Team Work</strong><br>Function effectively as an individual, and as a member or leader in diverse and multidisciplinary teams.</li>
+          <li><strong>PO-10: Communication</strong><br>Communicate effectively on complex engineering activities with the engineering community and society at large, including writing effective reports, documentation, and presentations, and giving and receiving clear instructions.</li>
+          <li><strong>PO-11: Project Management and Finance</strong><br>Demonstrate knowledge and understanding of engineering and management principles and apply these to manage projects and work in multidisciplinary environments.</li>
+          <li><strong>PO-12: Lifelong Learning</strong><br>Recognize the need for, and have the ability to engage in, independent and lifelong learning in the context of technological change.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleAccordion(this)">
+        <h2>Program Specific Outcomes (PSOs)</h2>
+      </div>
+      <div class="card-content">
+        <ul>
+          <li><strong>PSO-1: Analyze and Address Computational Challenges</strong><br>Graduates will be able to analyze complex computational requirements, identify challenges, and deliver innovative, optimized solutions in software development, algorithm design, and computational applications.</li>
+          <li><strong>PSO-2: Apply Computer Science Concepts in System Development</strong><br>Graduates will be able to design, implement, and test software systems by applying knowledge of algorithms, data structures, and software engineering methodologies, thereby creating efficient, reliable, and innovative applications.</li>
+          <li><strong>PSO-3: Conduct and Lead Experimental Validation in CSE</strong><br>Graduates will be able to plan and conduct experiments for validating and verifying computational solutions using laboratory techniques and software tools. They will also be capable of leading research projects by managing teams and resources effectively.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleAccordion(header) {
+      const content = header.nextElementSibling;
+      const isOpen = content.classList.contains('open');
+      document.querySelectorAll('.card-content').forEach(c => {
+        c.classList.remove('open');
+      });
+      if (!isOpen) {
+        content.classList.add('open');
+      }
+    }
+  </script>
+</body>
+</html>
+  <!-- Place this where you want the navbar in index.html -->
+<div id="navbar-include"></div>
+<script>
+  fetch('nav.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-include').innerHTML = html;
+    });
+</script>
+
+<script>
+  fetch('nav.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-include').innerHTML = html;
+      // After navbar is loaded, run the navbar script
+      const menuBtn = document.getElementById('menuBtn');
+      const navLinks = document.getElementById('navLinks');
+      const navbar = document.getElementById('navbar');
+
+      function closeMenu() {
+        navLinks.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.textContent = '☰';
+      }
+
+      menuBtn.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('active');
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
+        menuBtn.textContent = isOpen ? '✕' : '☰';
+        if (isOpen) {
+          navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
+            el.setAttribute('tabindex', '0');
+          });
+        } else {
+          navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
+            el.setAttribute('tabindex', '-1');
+          });
+        }
+      });
+
+      navLinks.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A' && window.innerWidth <= 900) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('touchstart', function(e) {
+        if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== menuBtn) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+
+      let scrollTimeout;
+      window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          navbar.classList.toggle('scrolled', window.scrollY > 80);
+          highlightOnScroll();
+        }, 50);
+      });
+
+      function highlightOnScroll() {
+        const sections = ['hero', 'about', 'hod', 'news'];
+        const fromTop = window.scrollY + 120;
+        let current = null;
+        for (const id of sections) {
+          const section = document.getElementById(id);
+          if (section && section.offsetTop <= fromTop) current = id;
+        }
+        if (current) {
+          document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => {
+            const href = a.getAttribute('href');
+            if (href === `#${current}`) a.classList.add('active');
+            else if (href?.startsWith('#')) a.classList.remove('active');
+          });
+        }
+      }
+
+      function setActiveLink(element) {
+        document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => a.classList.remove('active'));
+        element.classList.add('active');
+        if (element.closest('.dropdown')) {
+          element.closest('.dropdown').querySelector('.dropdown-btn').classList.add('active');
+        }
+      }
+    });
+</script>
+<!-- Lenis Smooth Scroll -->
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // smooth easing
+    smoothWheel: true,
+    smoothTouch: false,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>

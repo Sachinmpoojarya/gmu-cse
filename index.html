@@ -40,8 +40,8 @@
     /* Enhanced Hero CSS */
     header.banner {
       position: relative;
-      height: clamp(400px, 80vh, 800px);
-      margin-top: 64px;
+      height: clamp(700px, 100vh, 1200px); /* Increased min, preferred, and max heights for immersive hero */
+      margin-top: 0;
       isolation: isolate;
       overflow: hidden;
       background: #111827;
@@ -435,8 +435,12 @@
     }
     .hod-photo {
       flex: 0 0 auto;
-      width: clamp(150px, 20vw, 250px);
-      height: clamp(150px, 20vw, 250px);
+      width: 220px;
+      height: 220px;
+      min-width: 220px;
+      min-height: 220px;
+      max-width: 220px;
+      max-height: 220px;
       border-radius: 50%;
       overflow: hidden;
       background: #111827;
@@ -447,18 +451,32 @@
       transform: scale(1.05);
       box-shadow: 0 12px 30px rgba(0,0,0,0.35);
     }
-    .hod-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      transition: transform 0.4s ease;
-    }
-    .hod-card:hover .hod-photo img {
-      transform: scale(1.1);
-    }
-    .hod-content {
-      flex: 1;
+.hod-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+    .hod-image {
+  min-height: 220px; /* or the height of your image */
+  max-height: 220px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hod-image img {
+  height: 220px;
+  width: auto;
+  object-fit: cover;
+  display: block;
+}
+    
+.hod-card:hover .hod-image img {
+  transform: scale(1.1);
+}
+.hod-content {
+  flex: 1;
       font-family: "Inter", sans-serif;
       color: #374151;
     }
@@ -854,7 +872,7 @@
           <h2 class="slide-title">Welcome to <span>GMU CSE</span></h2>
           <p class="slide-sub">Explore our vibrant campus and innovative programs in Computer Science.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#quick-links">Explore Now</a>
+            <!-- <a class="btn btn-primary" href="#quick-links">Explore Now</a> -->
             <a class="btn btn-outline" href="#about">Learn More</a>
           </div>
         </div>
@@ -873,7 +891,7 @@
           <h2 class="slide-title">Tech Events & <span>Hackathons</span></h2>
           <p class="slide-sub">Join exciting events to showcase your skills and innovate.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#news">View Events</a>
+            <!-- <a class="btn btn-primary" href="#news">View Events</a> -->
           </div>
         </div>
       </section>
@@ -952,10 +970,12 @@
       Message from the Head of Department
       <span class="sub">Guidance & Vision</span>
     </h2>
-    <div class="hod-card">
-      <figure class="hod-photo">
+    <div style="display:flex;justify-content:center;margin-bottom:2rem;">
+      <figure class="hod-photo" style="margin:0 auto;">
         <img src="images_faculty/shivanagowda.jpg" alt="Dr. Shivanagowda G M, HoD of CSE" loading="lazy" />
       </figure>
+    </div>
+    <div class="hod-card">
       <div class="hod-content">
         <h3>Dr. Shivanagowda G. M.</h3>
         <div class="title">Professor & Head, Department of Computer Science & Engineering</div>

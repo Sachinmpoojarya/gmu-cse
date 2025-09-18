@@ -94,44 +94,155 @@
   <div class="h-1 bg-gradient-to-r from-blue-500 to-blue-700"></div>
 
   <!-- Projects & Product Models -->
-  <section id="projects" class="py-16 px-4 md:px-8 max-w-7xl mx-auto" aria-label="Projects and Product Models">
-    <div class="text-center mb-12 fade-in">
-      <h2 class="text-3xl md:text-4xl font-['Roboto_Slab'] font-bold text-blue-900">
-        <i class="fas fa-lightbulb text-blue-500 mr-2"></i> Turning Ideas into Reality
-      </h2>
+<section id="projects" class="py-16 px-4 md:px-8 max-w-7xl mx-auto" aria-label="Projects and Product Models">
+  <div class="text-center mb-12 fade-in">
+    <h2 class="text-3xl md:text-4xl font-['Roboto_Slab'] font-bold text-blue-900">
+      <i class="fas fa-lightbulb text-blue-500 mr-2"></i> Turning Ideas into Reality
+    </h2>
+  </div>
+  
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-12">
+    <div class="order-2 lg:order-1 fade-in">
+      <p class="text-lg text-gray-700 mb-4 leading-relaxed">Our students engage in both academic and self-initiated projects, transforming innovative ideas into tangible solutions. Under the guidance of expert project coordinators, they develop product models that align with industry standards and research advancements.</p>
+      <p class="text-gray-600 leading-relaxed">From conceptual designs to functional prototypes, these projects foster creativity, technical expertise, and problem-solving skills.</p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-      <div class="fade-in">
-        <p class="text-lg text-gray-700 mb-4">Our students engage in both academic and self-initiated projects, transforming innovative ideas into tangible solutions. Under the guidance of expert project coordinators, they develop product models that align with industry standards and research advancements.</p>
-        <p class="text-gray-600">From conceptual designs to functional prototypes, these projects foster creativity, technical expertise, and problem-solving skills.</p>
-      </div>
-      <div class="fade-in">
-        <img src="student_activites.html/ignitron.png" alt="Project Demo" class="rounded-lg shadow-lg w-full hover-scale">
-      </div>
+    <div class="order-1 lg:order-2 fade-in">
+      <img src="student_activities/ignitron.png" alt="Project Demo" class="rounded-lg shadow-lg w-full h-64 md:h-80 object-cover hover:scale-105 transition-transform duration-300">
     </div>
-    <!-- Carousel -->
-    <div class="mt-12 fade-in">
-      <div class="carousel snap-x">
-        <div class="carousel-item w-80 mx-2">
-          <img src="student_activites.html/samarthhacko.png0" alt="Smart Home Automation Project" class="rounded-lg shadow-md">
-          <p class="text-center text-gray-700 mt-2">Smart Home Automation</p>
-        </div>
-        <div class="carousel-item w-80 mx-2">
-          <img src="student_activites.html/turiningi_ideas.png" alt="AI-Powered Chatbot Project" class="rounded-lg shadow-md">
-          <p class="text-center text-gray-700 mt-2">AI-Powered Chatbot</p>
-        </div>
-        <div class="carousel-item w-80 mx-2">
-          <img src="student_activites.html/pratam.png" alt="IoT-Based Health Monitor Project" class="rounded-lg shadow-md">
-          <p class="text-center text-gray-700 mt-2">IoT-Based Health Monitor</p>
-        </div>
-        <div class="carousel-item w-80 mx-2">
-          <img src="https://images.unsplash.com/photo-1516321310762-479437144403?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Robotics Prototype Project" class="rounded-lg shadow-md">
-          <p class="text-center text-gray-700 mt-2">Robotics Prototype</p>
+  </div>
+  
+  <!-- Carousel -->
+  <div class="mt-12 fade-in">
+    <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">Featured Student Projects</h3>
+    <div class="carousel-container relative">
+      <div class="carousel snap-x overflow-x-auto scrollbar-hide pb-4">
+        <div class="flex gap-4 justify-center">
+          <div class="carousel-item flex-shrink-0 w-80 mx-2 bg-white rounded-lg shadow-md p-4 text-center hover:shadow-xl transition-shadow duration-300">
+            <img src="student_activities/samarthhacko.png" alt="Smart Home Automation Project" class="rounded-lg w-full h-48 object-cover mb-3">
+            <p class="text-gray-700 font-medium">Smart Home Automation</p>
+          </div>
+          <div class="carousel-item flex-shrink-0 w-80 mx-2 bg-white rounded-lg shadow-md p-4 text-center hover:shadow-xl transition-shadow duration-300">
+            <img src="student_activities/turiningi_ideas.png" alt="AI-Powered Chatbot Project" class="rounded-lg w-full h-48 object-cover mb-3">
+            <p class="text-gray-700 font-medium">AI-Powered Chatbot</p>
+          </div>
+          <div class="carousel-item flex-shrink-0 w-80 mx-2 bg-white rounded-lg shadow-md p-4 text-center hover:shadow-xl transition-shadow duration-300">
+            <img src="student_activities/pratam.png" alt="IoT-Based Health Monitor Project" class="rounded-lg w-full h-48 object-cover mb-3">
+            <p class="text-gray-700 font-medium">IoT-Based Health Monitor</p>
+          </div>
+          <div class="carousel-item flex-shrink-0 w-80 mx-2 bg-white rounded-lg shadow-md p-4 text-center hover:shadow-xl transition-shadow duration-300">
+            <img src="https://images.unsplash.com/photo-1516321310762-479437144403?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Robotics Prototype Project" class="rounded-lg w-full h-48 object-cover mb-3">
+            <p class="text-gray-700 font-medium">Robotics Prototype</p>
+          </div>
         </div>
       </div>
+      
+      <!-- Navigation Arrows -->
+      <button class="carousel-nav prev absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-all duration-300" aria-label="Previous slide">
+        <i class="fas fa-chevron-left text-gray-700"></i>
+      </button>
+      <button class="carousel-nav next absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-all duration-300" aria-label="Next slide">
+        <i class="fas fa-chevron-right text-gray-700"></i>
+      </button>
     </div>
-  </section>
+  </div>
+</section>
 
+<style>
+  /* Custom Carousel Styles */
+  .carousel {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .carousel-item {
+    scroll-snap-align: center;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .carousel-nav {
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .carousel-container:hover .carousel-nav {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  .carousel-nav:hover {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Fade-in Animation */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .fade-in:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .fade-in:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .carousel-item {
+      w-64;
+    }
+    
+    .carousel-nav {
+      padding: 8px;
+    }
+  }
+</style>
+
+<script>
+  // Carousel Navigation
+  const prevBtn = document.querySelector('.carousel-nav.prev');
+  const nextBtn = document.querySelector('.carousel-nav.next');
+  const carousel = document.querySelector('.carousel');
+  
+  prevBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: -320, behavior: 'smooth' });
+  });
+  
+  nextBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: 320, behavior: 'smooth' });
+  });
+  
+  // Auto-scroll (optional)
+  // let autoScroll = setInterval(() => {
+  //   carousel.scrollBy({ left: 320, behavior: 'smooth' });
+  // }, 5000);
+  
+  // Pause on hover
+  // carousel.addEventListener('mouseenter', () => clearInterval(autoScroll));
+  // carousel.addEventListener('mouseleave', () => autoScroll = setInterval(() => {
+  //   carousel.scrollBy({ left: 320, behavior: 'smooth' });
+  // }, 5000));
+</script>
   <!-- Section Divider -->
   <div class="h-1 bg-gradient-to-r from-blue-500 to-blue-700"></div>
 
@@ -273,22 +384,22 @@
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div class="gallery-item fade-in">
-        <img src="https://images.unsplash.com/photo-1517457453436-1e6b2e1015a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Kannada Folk Dance" class="rounded-lg">
-        <div class="caption">Folk Dance Performance</div>
+        <img src="https://gmu.ac.in/assets/imgs/StudentGallery/WhatsApp%20Image%202024-11-17%20at%2012.20.32_3b64908f.jpg" alt="Kannada Folk Dance" class="rounded-lg">
+        <!-- <div class="caption">Folk Dance Performance</div> -->
       </div>
       <div class="gallery-item fade-in">
-        <img src="https://images.unsplash.com/photo-1516321310762-479437144403?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Kannada Poetry" class="rounded-lg">
-        <div class="caption">Poetry Recitation</div>
+        <img src="https://gmu.ac.in/assets/imgs/StudentGallery/WhatsApp%20Image%202024-11-17%20at%2012.20.33_e7377a0b.jpg" alt="Kannada Poetry" class="rounded-lg">
+        <!-- <div class="caption">Poetry Recitation</div> -->
       </div>
       <div class="gallery-item fade-in">
-        <img src="https://images.unsplash.com/photo-1543946603-3e3b6a3c9503?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Kannada Music" class="rounded-lg">
-        <div class="caption">Classical Music</div>
+        <img src="https://gmu.ac.in/assets/imgs/StudentGallery/WhatsApp%20Image%202024-11-17%20at%2012.20.31_81818a8e.jpg" alt="Kannada Music" class="rounded-lg">
+        <!-- <div class="caption">Classical Music</div> -->
       </div>
     </div>
     <div class="text-center mt-8 fade-in">
       <div class="flex items-center justify-center gap-2 text-sm text-blue-600">
         <i class="fas fa-calendar"></i>
-        <span>November 2025</span>
+        <span>November</span>
       </div>
     </div>
   </section>
@@ -389,11 +500,9 @@
     <!-- Formal Description -->
     <div class="max-w-4xl mx-auto text-center mb-16">
       <p class="text-lg text-gray-700 leading-relaxed">
-        The <strong>ACM Student Chapter</strong> was formally inaugurated today at our University, 
-        signifying a new beginning in fostering research, technical expertise, and global collaboration.  
-        The ceremony was graced by our esteemed Principal, <strong>Dr. Sanjay Pande</strong>, 
-        along with all Heads of Departments, faculty members, ACM committee representatives, and enthusiastic students.  
-        The event marks a significant milestone in enriching the academic and research culture of the institution.
+       The ACM Student Chapter at our campus connects students to the world’s largest computing society, offering opportunities to learn, innovate, and grow. Through coding contests, workshops, seminars, and expert talks, we aim to sharpen skills, foster research, and encourage collaboration.
+
+Our chapter also prepares students to participate in national and international ACM events—conferences, hackathons, and competitions—building a strong foundation for future careers in technology.
       </p>
     </div>
 
@@ -817,6 +926,358 @@
   </style>
 </head>
 <body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Life & Memories</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Slider Section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Video Section Styling */
+        .video-section {
+            padding: 60px 20px;
+            background: #f9fafb;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #222;
+        }
+
+        .video-slider {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .video-slide {
+            display: none;
+            position: relative;
+            animation: fadeIn 0.7s ease-in-out;
+        }
+
+        .video-slide.active {
+            display: block;
+        }
+
+        .video-slide video {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        /* Video Controls */
+        .video-controls {
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .video-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .play-pause-btn {
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .play-pause-btn:hover {
+            background: #1e40af;
+        }
+
+        /* Slider Arrows */
+        .slider-arrows {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            padding: 12px;
+            border-radius: 50%;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .slider-arrows:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .slider-arrows.prev {
+            left: 15px;
+        }
+
+        .slider-arrows.next {
+            right: 15px;
+        }
+
+        /* Navigation Dots */
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .nav-dot {
+            width: 14px;
+            height: 14px;
+            background: #d1d5db;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .nav-dot.active,
+        .nav-dot:hover {
+            background: #2563eb;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .video-controls {
+                font-size: 0.85rem;
+            }
+            .video-title {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+  <!-- Video Slider Section -->
+  <div class="video-section flex justify-center">
+    <div class="container flex flex-col items-center justify-center">
+      <div class="section-title">
+        <h2>Campus Life & Memories</h2>
+      </div>
+      <div class="video-slider" id="videoSlider">
+
+        <!-- Video 1 -->
+        <div class="video-slide active">
+          <video id="video1">
+            <source src="https://gmu.ac.in/assets/imgs/StudentGallery/VID-20241203-WA0002.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-controls">
+            <div class="video-title">SPORTS</div>
+            <button class="play-pause-btn" onclick="toggleVideo('video1')">
+              <i class="fas fa-play"></i> 
+            </button>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-slide">
+          <video id="video2">
+            <source src="https://gmu.ac.in/assets/imgs/StudentGallery/WhatsApp%20Video%202024-11-23%20at%2020.32.46_1889c550.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-controls">
+            <div class="video-title">IGNITRON</div>
+            <button class="play-pause-btn" onclick="toggleVideo('video2')">
+              <i class="fas fa-play"></i> 
+            </button>
+          </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="video-slide">
+          <video id="video3">
+            <source src="https://gmu.ac.in/assets/imgs/StudentGallery/WhatsApp%20Video%202024-10-11%20at%2020.52.22_e591602c.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-controls">
+            <div class="video-title">IGNITRON</div>
+            <button class="play-pause-btn" onclick="toggleVideo('video3')">
+              <i class="fas fa-play"></i> 
+            </button>
+          </div>
+        </div>
+          
+        <!-- Video 4 -->
+        <div class="video-slide">
+          <video id="video4">
+            <source src="https://gmu.ac.in/assets/imgs/StudentGallery/WhatsApp%20Video%202024-11-17%20at%2012.22.21_2b11f42a.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-controls">
+            <div class="video-title">IGNITRON</div>
+            <button class="play-pause-btn" onclick="toggleVideo('video4')">
+              <i class="fas fa-play"></i> 
+            </button>
+          </div>
+        </div>
+
+        <!-- Video 5 -->
+        <div class="video-slide">
+          <video id="video5">
+            <source src="https://gmu.ac.in/assets/imgs/StudentGallery/WhatsApp%20Video%202024-11-12%20at%2019.17.55_12c55eee.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-controls">
+            <div class="video-title">IGNITRON</div>
+            <button class="play-pause-btn" onclick="toggleVideo('video5')">
+              <i class="fas fa-play"></i> 
+            </button>
+          </div>
+        </div>
+
+        <!-- Video 6 -->
+        <div class="video-slide">
+          <video id="video6">
+            <source src="https://gmu.ac.in/assets/imgs/StudentGallery/VID-20241202-WA0003.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-controls">
+            <div class="video-title">IGNITRON</div>
+            <button class="play-pause-btn" onclick="toggleVideo('video6')">
+              <i class="fas fa-play"></i> 
+            </button>
+          </div>
+        </div>
+
+        <!-- Video 7 -->
+        <div class="video-slide">
+          <video id="video7">
+            <source src="https://gmu.ac.in/assets/imgs/StudentGallery/VID-20241202-WA0001.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-controls">
+            <div class="video-title">IGNITRON</div>
+            <button class="play-pause-btn" onclick="toggleVideo('video7')">
+              <i class="fas fa-play"></i> 
+            </button>
+          </div>
+        </div>
+
+        <!-- Video 8 -->
+        <div class="video-slide">
+          <video id="video8">
+            <source src="https://gmu.ac.in/assets/imgs/StudentGallery/VID-20241214-WA0005.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-controls">
+            <div class="video-title">IGNITRON</div>
+            <button class="play-pause-btn" onclick="toggleVideo('video8')">
+              <i class="fas fa-play"></i> 
+            </button>
+          </div>
+        </div>
+
+        <!-- Arrows -->
+        <button class="slider-arrows prev" onclick="changeSlide(-1)">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-arrows next" onclick="changeSlide(1)">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <!-- Dots -->
+      <div class="slider-nav">
+        <div class="nav-dot active" onclick="currentSlide(1)"></div>
+        <div class="nav-dot" onclick="currentSlide(2)"></div>
+        <div class="nav-dot" onclick="currentSlide(3)"></div>
+        <div class="nav-dot" onclick="currentSlide(4)"></div>
+        <div class="nav-dot" onclick="currentSlide(5)"></div>
+        <div class="nav-dot" onclick="currentSlide(6)"></div>
+        <div class="nav-dot" onclick="currentSlide(7)"></div>
+        <div class="nav-dot" onclick="currentSlide(8)"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function changeSlide(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let slides = document.getElementsByClassName("video-slide");
+      let dots = document.getElementsByClassName("nav-dot");
+
+      // Pause all videos and reset icons
+      Array.from(document.querySelectorAll('.video-slide video')).forEach(v => v.pause());
+      Array.from(document.querySelectorAll('.play-pause-btn i')).forEach(i => i.className = 'fas fa-play');
+
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+      }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+      }
+      slides[slideIndex - 1].classList.add("active");
+      dots[slideIndex - 1].classList.add("active");
+    }
+
+    function toggleVideo(videoId) {
+      let video = document.getElementById(videoId);
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+      let buttonIcon = video.parentElement.querySelector('.play-pause-btn i');
+      buttonIcon.className = video.paused ? 'fas fa-play' : 'fas fa-pause';
+    }
+  </script>
+</body>
+</html>
 
 <!-- Footer -->
 <footer class="footer" aria-label="Footer navigation and contact information">
