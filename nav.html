@@ -86,6 +86,11 @@
       display: flex;
       align-items: center;
       gap: .25rem;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
     }
     .nav-links a, .nav-links .dropdown-btn {
       --pad-x: .9rem;
@@ -147,8 +152,7 @@
         left: auto;
         width: 75vw;
         max-width: 270px;
-        height: auto;
-        max-height: 90vh;
+        height: 100vh;
         background: rgba(15,23,42,0.98);
         flex-direction: column;
         align-items: flex-start;
@@ -166,6 +170,9 @@
         transform: translateX(100%);
         opacity: 0;
         transition: transform 0.3s cubic-bezier(.4,1,.7,1), opacity 0.3s cubic-bezier(.4,1,.7,1);
+        flex-wrap: wrap;
+        overflow-x: visible;
+        white-space: normal;
       }
       .nav-links.active {
         display: flex;
@@ -177,6 +184,7 @@
         text-align: left;
         font-size: 1rem;
         width: 100%;
+        white-space: normal;
       }
       .dropdown-content {
         position: static;
@@ -300,14 +308,27 @@
         if (window.innerWidth <= 900) {
           e.preventDefault();
           const dropdown = btn.closest('.dropdown');
-          const isActive = dropdown.classList.toggle('active');
+          const isActive = dropdown.classList.contains('active');
+          // Close all dropdowns first
           document.querySelectorAll('.dropdown').forEach(other => {
-            if (other !== dropdown) {
-              other.classList.remove('active');
-            }
+            other.classList.remove('active');
           });
+          // Only open if it was not already open
+          if (!isActive) {
+            dropdown.classList.add('active');
+          }
         }
       });
+    });
+
+    // Close dropdowns when clicking outside nav-links on mobile
+    document.addEventListener('click', function(e) {
+      if (window.innerWidth <= 900) {
+        const navLinks = document.getElementById('navLinks');
+        if (navLinks && !navLinks.contains(e.target)) {
+          document.querySelectorAll('.dropdown').forEach(dropdown => dropdown.classList.remove('active'));
+        }
+      }
     });
 
     document.querySelectorAll('.dropdown-content').forEach(content => {
