@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +15,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
+    /* Remove blue focus outline/underline from nav and footer links */
+    .nav-links a:focus, .nav-links a:active, .nav-links .dropdown-btn:focus, .nav-links .dropdown-btn:active,
+    .footer a:focus, .footer a:active {
+      outline: none !important;
+      box-shadow: none !important;
+      text-decoration: none !important;
+    }
     /* Core CSS */
     *, *::before, *::after { box-sizing: border-box; }
     :root {
@@ -152,36 +158,14 @@
 
     /* Placement Header */
     .placement-header {
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3b5998 100%);
+      background: none !important;
       position: relative;
-      padding: 80px 0;
-      color: white;
-      text-align: center;
-      overflow: hidden;
-      margin-top: 80px; /* Adjusted for fixed header */
-    }
-    .placement-header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><rect width="80" height="80" fill="none"/><g opacity="0.1"><line x1="0" y1="0" x2="80" y2="0" stroke="white" stroke-width="0.5"/><line x1="0" y1="10" x2="80" y2="10" stroke="white" stroke-width="0.5"/><line x1="0" y1="20" x2="80" y2="20" stroke="white" stroke-width="0.5"/><line x1="0" y1="30" x2="80" y2="30" stroke="white" stroke-width="0.5"/><line x1="0" y1="40" x2="80" y2="40" stroke="white" stroke-width="0.5"/><line x1="0" y1="50" x2="80" y2="50" stroke="white" stroke-width="0.5"/><line x1="0" y1="60" x2="80" y2="60" stroke="white" stroke-width="0.5"/><line x1="0" y1="70" x2="80" y2="70" stroke="white" stroke-width="0.5"/><line x1="0" y1="80" x2="80" y2="80" stroke="white" stroke-width="0.5"/><line x1="0" y1="0" x2="0" y2="80" stroke="white" stroke-width="0.5"/><line x1="10" y1="0" x2="10" y2="80" stroke="white" stroke-width="0.5"/><line x1="20" y1="0" x2="20" y2="80" stroke="white" stroke-width="0.5"/><line x1="30" y1="0" x2="30" y2="80" stroke="white" stroke-width="0.5"/><line x1="40" y1="0" x2="40" y2="80" stroke="white" stroke-width="0.5"/><line x1="50" y1="0" x2="50" y2="80" stroke="white" stroke-width="0.5"/><line x1="60" y1="0" x2="60" y2="80" stroke="white" stroke-width="0.5"/><line x1="70" y1="0" x2="70" y2="80" stroke="white" stroke-width="0.5"/><line x1="80" y1="0" x2="80" y2="80" stroke="white" stroke-width="0.5"/></g></svg>');
-      background-size: 80px 80px;
-      animation: gridMove 20s linear infinite;
-    }
-    @keyframes gridMove {
-      0% { background-position: 0 0; }
-      100% { background-position: 80px 80px; }
-    }
-    .placement-header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      position: relative;
-      z-index: 1;
-      animation: slideDown 1s ease-out;
+      padding: 0;
+      color: inherit;
+      text-align: inherit;
+      overflow: visible;
+      margin: 0; /* Adjusted to remove gap */
+      min-height: 0; /* Adjusted to remove gap */
     }
     .placement-header p {
       font-size: 1.2rem;
@@ -415,36 +399,39 @@
       overflow: hidden;
       position: relative;
       background: white;
-      padding: 40px 0;
+      padding: 40px 20px;
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
     }
     .recruiters-track {
       display: flex;
       animation: slide 20s linear infinite;
-      gap: 40px;
+      gap: 30px;
+      align-items: center;
     }
     .recruiter-logo {
       flex-shrink: 0;
-      width: 120px;
-      height: 80px;
+      width: 150px;
+      height: 100px;
       display: flex;
       align-items: center;
       justify-content: center;
       background: white;
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 15px;
-      transition: transform 0.3s ease;
-      filter: grayscale(100%);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
     .recruiter-logo:hover {
-      transform: scale(1.1);
-      filter: grayscale(0%);
+      transform: scale(1.15);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
     .recruiter-logo img {
-      max-width: 100%;
-      max-height: 100%;
+      max-width: 90%;
+      max-height: 90%;
       object-fit: contain;
+      transition: filter 0.3s ease;
     }
     @keyframes slide {
       0% { transform: translateX(0); }
@@ -490,13 +477,10 @@
       padding: 0 30px 30px;
     }
     .alumni-info h4 {
-      font-size: 1.3rem;
-      color: #1e3c72;
-      margin-bottom: 5px;
-    }
-    .alumni-position {
-      color: #666;
+      font-size: 1.8rem;
+      font-weight: 700;
       margin-bottom: 15px;
+      color: #1e3c72;
     }
     .company-logo {
       width: 60px;
@@ -757,7 +741,7 @@
       .nav-inner { flex-direction: column; align-items: flex-start; }
       .brand { margin-bottom: 1rem; }
       .container { padding: 0 15px; }
-      .placement-header { padding: 60px 0; }
+      .placement-header { padding: 0; }
       .placement-header h1 { font-size: 2rem; }
       .coordinator-card { padding: 20px; }
       .stats-container, .recruiters-carousel { padding: 20px; }
@@ -786,41 +770,87 @@
   </style>
 </head>
 <body>
-  <!-- NAV
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a class="brand" href="#hero" aria-label="GMU CSE Home">
-        <img src="logo.jpg" alt="GMU CSE Logo">
-        <span class="brand-text">Dept of Computer Science & Engineering</span>
-      </a>
-      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">☰</button>
-      <div class="nav-links" id="navLinks" role="navigation" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <div class="dropdown">
-          <a href="#" class="dropdown-btn">Academics ▾</a>
-          <div class="dropdown-content">
-            <a href="programs.html">Programs</a>
-            <a href="IQAC.html">IQAC & BOS</a>
+  <!-- HERO IMAGE CAROUSEL SECTION WITH OVERLAY HEADLINE -->
+  <section class="hero-carousel-section" style="padding: 0; margin: 0; position: relative; width: 100vw; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;">
+    <div class="hero-carousel-container" style="width: 100vw; min-height: 520px; height: 60vh; max-height: 700px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+      <div class="carousel-wrapper" style="width: 100vw; height: 100%; overflow: hidden; position: absolute; top: 0; left: 0;">
+        <div class="carousel-track" id="placementHeroCarousel" style="display: flex; align-items: center; height: 100%; width: max-content; animation: heroScroll 40s linear infinite;">
+          <img src="images_placements/pla1.jpg" alt="Placement 1" style="height: 60vh; min-height: 520px; max-height: 700px; width: auto; min-width: 600px; border-radius: 0; object-fit: cover; flex-shrink: 0;" />
+          <img src="images_placements/pla2.jpg" alt="Placement 2" style="height: 60vh; min-height: 520px; max-height: 700px; width: auto; min-width: 600px; border-radius: 0; object-fit: cover; flex-shrink: 0;" />
+          <img src="images_placements/pla3.jpg" alt="Placement 3" style="height: 60vh; min-height: 520px; max-height: 700px; width: auto; min-width: 600px; border-radius: 0; object-fit: cover; flex-shrink: 0;" />
+          <img src="images_placements/pla4.jpg" alt="Placement 4" style="height: 60vh; min-height: 520px; max-height: 700px; width: auto; min-width: 600px; border-radius: 0; object-fit: cover; flex-shrink: 0;" />
+          <img src="images_placements/pla5.jpg" alt="Placement 5" style="height: 60vh; min-height: 520px; max-height: 700px; width: auto; min-width: 600px; border-radius: 0; object-fit: cover; flex-shrink: 0;" />
+          <img src="images_placements/placement.jpg" alt="Placement 6" style="height: 60vh; min-height: 520px; max-height: 700px; width: auto; min-width: 600px; border-radius: 0; object-fit: cover; flex-shrink: 0;" />
+        </div>
+        <!-- Full black transparent overlay -->
+        <div style="position: absolute; top: 0; left: 0; width: 100vw; height: 100%; background: rgba(18, 24, 38, 0.55); z-index: 1;"></div>
+        <!-- New images from user links -->
+        <div class="gallery-item" onclick="openLightbox('https://gmit.ac.in/images/p1.jpg', 'image')" role="button" aria-label="Gallery image 8, click to enlarge">
+          <img src="https://gmit.ac.in/images/p1.jpg" alt="Placement Event 1" class="lazy">
+          <div class="gallery-overlay">
+            <h3>Placement Event</h3>
+            <p>On-campus recruitment highlight</p>
           </div>
         </div>
-        <a href="placements.html" class="active">Placements</a>
-        <a href="faculty.html">Faculty</a>
-        <a href="Achievement.html">Achievements</a>
-        <a href="alumini.html">Alumni</a>
-        <a href="contact.html">Contact us</a>
+        <div class="gallery-item" onclick="openLightbox('https://gmit.ac.in/images/p2.jpg', 'image')" role="button" aria-label="Gallery image 9, click to enlarge">
+          <img src="https://gmit.ac.in/images/p2.jpg" alt="Placement Event 2" class="lazy">
+          <div class="gallery-overlay">
+            <h3>Placement Event</h3>
+            <p>Student interaction with recruiters</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://gmit.ac.in/images/ph1.jpg', 'image')" role="button" aria-label="Gallery image 10, click to enlarge">
+          <img src="https://gmit.ac.in/images/ph1.jpg" alt="Placement Event 3" class="lazy">
+          <div class="gallery-overlay">
+            <h3>Placement Event</h3>
+            <p>Career guidance session</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://gmit.ac.in/images/ph4.jpg', 'image')" role="button" aria-label="Gallery image 11, click to enlarge">
+          <img src="https://gmit.ac.in/images/ph4.jpg" alt="Placement Event 4" class="lazy">
+          <div class="gallery-overlay">
+            <h3>Placement Event</h3>
+            <p>Recruitment drive in progress</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-carousel-headline" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 2; pointer-events: none;">
+        <div style="background: none; border-radius: 2rem; padding: 2.5rem 3.5rem; max-width: 900px; margin: 0 auto; text-align: center;">
+          <h1 style="color: #fff; font-size: 3.2rem; font-weight: 900; letter-spacing: 1.5px; font-family: 'Playfair Display', serif; margin-bottom: 1.2rem; text-shadow: 0 8px 32px rgba(0,0,0,0.25);">Department of Computer Science</h1>
+          <h3 style="color: #e0e7ef; font-size: 1.7rem; font-weight: 700; margin-bottom: 1.2rem; letter-spacing: 0.5px;">Our Belief</h3>
+          <div style="font-size: 1.2rem; color: #e0e7ef; font-weight: 400; max-width: 700px; margin: 0 auto; text-shadow: 0 4px 16px rgba(0,0,0,0.18);">We believe that every student has the potential to excel in their chosen field when provided with proper guidance, resources, and opportunities. Our department is committed to nurturing not just technical skills, but also leadership qualities, ethical values, and innovative thinking that are essential for long-term career success.</div>
+        </div>
       </div>
     </div>
-  </nav> -->
+    <style>
+      @keyframes heroScroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-60%); }
+      }
+      @media (max-width: 1200px) {
+        .hero-carousel-container { min-height: 320px !important; height: 32vh !important; }
+        .carousel-track img { min-width: 320px !important; height: 32vh !important; min-height: 320px !important; }
+        .hero-carousel-headline h1 { font-size: 2.1rem !important; }
+        .hero-carousel-headline h3 { font-size: 1.1rem !important; }
+      }
+      @media (max-width: 900px) {
+        .hero-carousel-container { min-height: 180px !important; height: 22vh !important; }
+        .carousel-track img { min-width: 180px !important; height: 22vh !important; min-height: 180px !important; }
+        .hero-carousel-headline h1 { font-size: 1.2rem !important; }
+        .hero-carousel-headline h3 { font-size: 0.9rem !important; }
+      }
+      @media (max-width: 600px) {
+        .hero-carousel-container { min-height: 110px !important; height: 14vh !important; }
+        .carousel-track img { min-width: 110px !important; height: 14vh !important; min-height: 110px !important; }
+        .hero-carousel-headline div { padding: 1rem 0.5rem !important; border-radius: 1rem !important; }
+        .hero-carousel-headline h1 { font-size: 0.9rem !important; }
+        .hero-carousel-headline h3 { font-size: 0.7rem !important; }
+      }
+    </style>
+  </section>
 
   <!-- Placement Header -->
-  <div class="placement-header min-h-[350px] py-16 md:py-20 flex items-center justify-center text-center" id="placement-header">
-    <div class="container">
-      <h1>Department of Computer Science</h1>
-      <h3>Our Belief</h3>
-      <div class="icon"><i class="fas fa-heart"></i></div>
-      <p>We believe that every student has the potential to excel in their chosen field when provided with proper guidance, resources, and opportunities. Our department is committed to nurturing not just technical skills, but also leadership qualities, ethical values, and innovative thinking that are essential for long-term career success</p>
-    </div>
-  </div>
+  <div class="placement-header" id="placement-header"></div>
 
   <!-- Introductory Content -->
   <div class="section">
@@ -895,10 +925,10 @@
       </div>
       <div class="coordinator-card">
         <div class="coordinator-photo">
-          <img src="kattimanisir.png" alt="Mr. Tejasvi Kattimani">
+          <img src="kattimanisir.png" alt=" Kavya Shree">
         </div>
         <div class="coordinator-info">
-          <h3>Mr. Tejasvi Kattimani</h3>
+          <h3>Ms. Kavya Shree</h3>
           <div class="designation">Director, Career Advice and Students Placements</div>
           <p>The Training & Placement Cell connects students with industry through placements, internships, and skill development programs. It organizes workshops, guest lectures, and industrial visits to make students industry-ready and ensure a smooth transition from education to employment.</p>
           <div class="contact-info">
@@ -1016,37 +1046,21 @@
         <p>Leading companies that regularly recruit our graduates</p>
       </div>
       <div class="recruiters-carousel">
-        <div class="recruiters-track">
-          <div class="recruiter-logo">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIGZpbGw9IiNlMzFiMjMiLz48dGV4dCB4PSI2MCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFkb2JlPC90ZXh0Pjwvc3ZnPg==" alt="Adobe">
+        <div class="recruiters-track" style="display: flex; flex-wrap: wrap; gap: 2.2rem 2.5rem; align-items: center; justify-content: center; margin: 2.5rem 0 1.5rem 0;">
+          <div class="recruiter-logo" style="background:#fff; border-radius:10px; min-width:120px; min-height:56px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px #e0e7ef; padding:10px;">
+            <img src="https://1000logos.net/wp-content/uploads/2021/04/Adobe-logo.png" alt="Adobe" style="height:40px; width:auto; object-fit:contain; max-width:100px;" loading="lazy" />
           </div>
-          <div class="recruiter-logo">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIGZpbGw9IiMwMDYxZmYiLz48dGV4dCB4PSI2MCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPklCTTwvdGV4dD48L3N2Zz4=" alt="IBM">
+          <div class="recruiter-logo" style="background:#fff; border-radius:10px; min-width:120px; min-height:56px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px #e0e7ef; padding:10px;">
+            <img src="https://1000logos.net/wp-content/uploads/2016/10/IBM-Logo-1972.png" alt="IBM" style="height:40px; width:auto; object-fit:contain; max-width:100px;" loading="lazy" />
           </div>
-          <div class="recruiter-logo">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIGZpbGw9IiMwMDczZTYiLz48dGV4dCB4PSI2MCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk1pY3Jvc29mdDwvdGV4dD48L3N2Zz4=" alt="Microsoft">
+          <div class="recruiter-logo" style="background:#fff; border-radius:10px; min-width:120px; min-height:56px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px #e0e7ef; padding:10px;">
+            <img src="https://1000logos.net/wp-content/uploads/2021/04/Microsoft-logo.png" alt="Microsoft" style="height:40px; width:auto; object-fit:contain; max-width:100px;" loading="lazy" />
           </div>
-          <div class="recruiter-logo">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIGZpbGw9IiM0Mjg1ZjQiLz48dGV4dCB4PSI2MCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkdvb2dsZTwvdGV4dD48L3N2Zz4=" alt="Google">
+          <div class="recruiter-logo" style="background:#fff; border-radius:10px; min-width:120px; min-height:56px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px #e0e7ef; padding:10px;">
+            <img src="https://1000logos.net/wp-content/uploads/2021/05/Google-logo.png" alt="Google" style="height:40px; width:auto; object-fit:contain; max-width:100px;" loading="lazy" />
           </div>
-          <div class="recruiter-logo">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIGZpbGw9IiNmZjkwMDAiLz48dGV4dCB4PSI2MCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1saXplPSIxNCIgZmlsbD0iYmxhY2siIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFtYXpvbjwvdGV4dD48L3N2Zz4=" alt="Amazon">
-          </div>
-          <!-- Duplicate for seamless loop -->
-          <div class="recruiter-logo">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIGZpbGw9IiNlMzFiMjMiLz48dGV4dCB4PSI2MCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFkb2JlPC90ZXh0Pjwvc3ZnPg==" alt="Adobe">
-          </div>
-          <div class="recruiter-logo">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIGZpbGw9IiMwMDYxZmYiLz48dGV4dCB4PSI2MCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPklCTTwvdGV4dD48L3N2Zz4=" alt="IBM">
-          </div>
-          <div class="recruiter-logo">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIGZpbGw9IiMwMDczZTYiLz48dGV4dCB4PSI2MCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk1pY3Jvc29mdDwvdGV4dD48L3N2Zz4=" alt="Microsoft">
-          </div>
-          <div class="recruiter-logo">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIGZpbGw9IiM0Mjg1ZjQiLz48dGV4dCB4PSI2MCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkdvb2dsZTwvdGV4dD48L3N2Zz4=" alt="Google">
-          </div>
-          <div class="recruiter-logo">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIGZpbGw9IiNmZjkwMDAiLz48dGV4dCB4PSI2MCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1saXplPSIxNCIgZmlsbD0iYmxhY2siIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFtYXpvbjwvdGV4dD48L3N2Zz4=" alt="Amazon">
+          <div class="recruiter-logo" style="background:#fff; border-radius:10px; min-width:120px; min-height:56px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px #e0e7ef; padding:10px;">
+            <img src="https://1000logos.net/wp-content/uploads/2016/10/Amazon-Logo-1998.png" alt="Amazon" style="height:40px; width:auto; object-fit:contain; max-width:100px;" loading="lazy" />
           </div>
         </div>
       </div>
@@ -1109,14 +1123,6 @@
             <h3>Mock Interviews</h3>
             <p>Practice sessions with industry experts</p>
           </div>
-        </div>
-        <!-- <div class="gallery-item" onclick="openLightbox('https://videos.pexels.com/video-files/854015/854015-hd_1920_1080_25fps.mp4', 'video')" role="button" aria-label="Gallery video 8, click to enlarge">
-          <video src="" muted loop data-src="https://videos.pexels.com/video-files/854015/854015-hd_1280_720_25fps.mp4" class="lazy"></video>
-          <div class="gallery-overlay">
-            <h3>Success Celebration</h3>
-            <p>Video celebrating successful placements</p>
-          </div> -->
-          <i class="fas fa-play video-controls"></i>
         </div>
       </div>
     </div>
@@ -1324,108 +1330,102 @@
     });
   </script>
   <script>
+    fetch('nav.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('navbar-include').innerHTML = html;
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+        const navbar = document.getElementById('navbar');
+
+        function closeMenu() {
+          navLinks.classList.remove('active');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          menuBtn.textContent = '☰';
+        }
+
+        menuBtn.addEventListener('click', () => {
+          const isOpen = navLinks.classList.toggle('active');
+          menuBtn.setAttribute('aria-expanded', String(isOpen));
+          menuBtn.textContent = isOpen ? '✕' : '☰';
+          if (isOpen) {
+            navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
+              el.setAttribute('tabindex', '0');
+            });
+          } else {
+            navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
+              el.setAttribute('tabindex', '-1');
+            });
+          }
+        });
+
+        navLinks.addEventListener('click', function(e) {
+          if (e.target.tagName === 'A' && window.innerWidth <= 900) {
+            closeMenu();
+          }
+        });
+
+        document.addEventListener('touchstart', function(e) {
+          if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== menuBtn) {
+            closeMenu();
+          }
+        });
+
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            closeMenu();
+          }
+        });
+
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+          clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => {
+            navbar.classList.toggle('scrolled', window.scrollY > 80);
+            highlightOnScroll();
+          }, 50);
+        });
+
+        function highlightOnScroll() {
+          const sections = ['hero', 'about', 'hod', 'news'];
+          const fromTop = window.scrollY + 120;
+          let current = null;
+          for (const id of sections) {
+            const section = document.getElementById(id);
+            if (section && section.offsetTop <= fromTop) current = id;
+          }
+          if (current) {
+            document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => {
+              const href = a.getAttribute('href');
+              if (href === `#${current}`) a.classList.add('active');
+              else if (href?.startsWith('#')) a.classList.remove('active');
+            });
+          }
+        }
+
+        function setActiveLink(element) {
+          document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => a.classList.remove('active'));
+          element.classList.add('active');
+          if (element.closest('.dropdown')) {
+            element.closest('.dropdown').querySelector('.dropdown-btn').classList.add('active');
+          }
+        }
+      });
+  </script>
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
+  <div id="navbar-include"></div>
+   <!-- Place this where you want the navbar in index.html -->
+<div id="navbar-include"></div>
+<script>
   fetch('nav.html')
     .then(res => res.text())
     .then(html => {
       document.getElementById('navbar-include').innerHTML = html;
-      // After navbar is loaded, run the navbar script
-      const menuBtn = document.getElementById('menuBtn');
-      const navLinks = document.getElementById('navLinks');
-      const navbar = document.getElementById('navbar');
-
-      function closeMenu() {
-        navLinks.classList.remove('active');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        menuBtn.textContent = '☰';
-      }
-
-      menuBtn.addEventListener('click', () => {
-        const isOpen = navLinks.classList.toggle('active');
-        menuBtn.setAttribute('aria-expanded', String(isOpen));
-        menuBtn.textContent = isOpen ? '✕' : '☰';
-        if (isOpen) {
-          navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
-            el.setAttribute('tabindex', '0');
-          });
-        } else {
-          navLinks.querySelectorAll('a, .dropdown-btn').forEach(el => {
-            el.setAttribute('tabindex', '-1');
-          });
-        }
-      });
-
-      navLinks.addEventListener('click', function(e) {
-        if (e.target.tagName === 'A' && window.innerWidth <= 900) {
-          closeMenu();
-        }
-      });
-
-      document.addEventListener('touchstart', function(e) {
-        if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== menuBtn) {
-          closeMenu();
-        }
-      });
-
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-          closeMenu();
-        }
-      });
-
-      let scrollTimeout;
-      window.addEventListener('scroll', () => {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-          navbar.classList.toggle('scrolled', window.scrollY > 80);
-          highlightOnScroll();
-        }, 50);
-      });
-
-      function highlightOnScroll() {
-        const sections = ['hero', 'about', 'hod', 'news'];
-        const fromTop = window.scrollY + 120;
-        let current = null;
-        for (const id of sections) {
-          const section = document.getElementById(id);
-          if (section && section.offsetTop <= fromTop) current = id;
-        }
-        if (current) {
-          document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => {
-            const href = a.getAttribute('href');
-            if (href === `#${current}`) a.classList.add('active');
-            else if (href?.startsWith('#')) a.classList.remove('active');
-          });
-        }
-      }
-
-      function setActiveLink(element) {
-        document.querySelectorAll('.nav-links a, .nav-links .dropdown-btn').forEach(a => a.classList.remove('active'));
-        element.classList.add('active');
-        if (element.closest('.dropdown')) {
-          element.closest('.dropdown').querySelector('.dropdown-btn').classList.add('active');
-        }
-      }
     });
 </script>
-<!-- Lenis Smooth Scroll -->
-<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
+
 <script>
-  const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // smooth easing
-    smoothWheel: true,
-    smoothTouch: false,
-  });
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-
-  requestAnimationFrame(raf);
-</script>
-<div id="navbar-include"></div>
-    <script>
   fetch('nav.html')
     .then(res => res.text())
     .then(html => {
