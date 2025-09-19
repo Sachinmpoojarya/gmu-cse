@@ -210,9 +210,15 @@
       .brand img {
         height: 30px;
       }
-      .nav-links a, .nav-links .dropdown-btn {
-        font-size: 1rem;
-      }
+     .nav-links {
+    display: flex;
+     align-items: center;
+     gap: .25rem;
+    flex-wrap: nowrap;         /* Prevents wrapping */
+      overflow-x: auto;          /* Allows horizontal scroll if needed */
+    white-space: nowrap;       /* Prevents text from wrapping */
+    scrollbar-width: thin;     /* Optional: makes scrollbar less obtrusive */
+    }
       .menu-btn {
         margin-left: auto;
       }
